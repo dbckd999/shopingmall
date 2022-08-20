@@ -16,14 +16,11 @@ import com.shoping.dbckd.service.MainService;
 class DbckdApplicationTests {
 
 	@Autowired
-	public MainService service;
-	
-//	@Autowired
-//	private MainMapper mapper;
+	private MainMapper mapper;
 	
 	@Test
 	void contextLoads() {
-		service.test();
+		// mapper.[method...]
 	}
 
 }

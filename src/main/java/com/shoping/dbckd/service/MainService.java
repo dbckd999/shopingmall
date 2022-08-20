@@ -19,4 +19,8 @@ public class MainService {
 	public List<Integer> test() {
 		return mapper.getMember();
 	}
+	
+	public String loginRes(String id, String pw) {
+		return mapper.loginRes(id, pw);
+	}
 }

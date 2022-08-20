@@ -12,6 +12,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MainMapper {
     List<Integer> getMember();
 
+	String loginRes(String id, String pw);
+
 //    List<Integer> getMemberList();
 
 //    int createMember();

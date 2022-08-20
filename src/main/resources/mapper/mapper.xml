@@ -6,9 +6,4 @@
 <!-- 맵퍼의 위치를 적는 곳. -->
 <mapper namespace="com.shoping.dbckd.mapper.MainMapper">
 
-	<!-- id=mapper 클래스의 메서드 이름. resultType=반환 타입(DB의 테이블 데이터 중 1개 행을 의미) parameterType=입력 데이터 타입. -->
-	<select id="getMember" resultType="Integer">
-        select * from test;
-    </select>
-
 </mapper>
