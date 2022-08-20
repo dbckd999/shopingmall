@@ -18,7 +18,7 @@ class DbckdApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		// mapper.[method...]
+		// mapper.[method...] ㅁㅁ
 	}
 
 }
