@@ -173,4 +173,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,java,maven,eclipse
 
-/src/test/java/com/shoping/dbckd.*
+src/test/*
+# src/test/java/com/shoping/dbckd/DbckdApplicationTests.java
