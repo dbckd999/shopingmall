@@ -1,6 +1,7 @@
 package com.shoping.dbckd.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +14,8 @@ public interface MainMapper {
     List<Integer> getMember();
 
 	String loginRes(String id, String pw);
+
+    void save(Map<String, Object> map);
 
 //    List<Integer> getMemberList();
 

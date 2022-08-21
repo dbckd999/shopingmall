@@ -6,4 +6,8 @@
 <!-- 맵퍼의 위치를 적는 곳. -->
 <mapper namespace="com.shoping.dbckd.mapper.MainMapper">
 
+        <insert id="save" parameterType="java.util.Map">
+                INSERT INTO image_test (image) VALUES (#{bytes, jdbcType=BLOB, javaType=[B});
+        </insert>
+
 </mapper>

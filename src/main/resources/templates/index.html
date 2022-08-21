@@ -2,15 +2,15 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>login page</title>
+<title>index page</title>
 </head>
 <body>
-	<form action="login" method="post">
-		<input type="text" id="id" name="id"/>
-		<br>
-		<input type="text" id="pw" name="pw"/>
-		<br>
-		<input type="submit" value="login" />
+	이미지 업로드
+	<form action="/fileTest" method="post" enctype="multipart/form-data">
+		<input multiple type="file" name="file"/>
+		<button type="submit">tt</button>
 	</form>
+
+	(고정된 이미지 가져오기)
 </body>
 </html>
