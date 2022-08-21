@@ -1,0 +1,65 @@
+.screen-base{
+    border: 1px solid black;
+}
+
+.big_category .imgs{
+    margin: 10px;
+    margin-top: 10px;
+}
+
+.product_dbckd{
+    width: 264px;
+    height: 264px;
+}
+
+.product_dbckd img{
+    width: 100%;
+    height: 100%;
+}
+
+#menu_top{
+    margin-top: 0px;
+    margin-right: 2.3%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.horizontal_list{
+    padding: 0;
+    text-align: center;
+}
+
+.horizontal_list li{
+    float: left;
+    margin: 0 10px;
+}
+
+/* 요소의 갯수가 많은 부분은 가로폭을 제한하고 가운데로 위치합니다. */
+.elements_group_pointing{
+    width:100%;
+    height:auto;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.catalog_wrap {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.catalog_wrap div {
+    padding-right: 10px;
+    width: 25%;
+    display: inline-block;
+}
+
+.bestitem_list {
+    display: inline;
+    padding: 0;
+}
+
+.bestitem_list li {
+    display: inline-block;
+    margin: 0 10px;
+}
