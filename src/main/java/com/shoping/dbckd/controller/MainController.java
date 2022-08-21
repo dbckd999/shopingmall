@@ -35,11 +35,9 @@ public class MainController {
 	}
 
 	@PostMapping("/fileTest")
-	public String blobTest(@RequestParam("file") MultipartFile file) {
-		System.out.println(file);
-
+	public String blobTest(@RequestParam("file") MultipartFile file) throws IOException {
+		System.out.println("test...");
 		service.saveImg(file);
-
 		return "redirect:/";
 	}
 }

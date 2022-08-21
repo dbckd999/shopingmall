@@ -1,12 +1,8 @@
 package com.shoping.dbckd.service;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 // import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,22 +15,15 @@ import com.shoping.dbckd.mapper.MainMapper;
 @Service
 public class MainService {
 	
-	@Autowired
-	private MainMapper mapper;
+	// @Autowired
+	// private MainMapper mapper;
 
     public void saveImg(MultipartFile file) {
-		Path serverPath = Paths.get(
-                uploadDir +
-                        File.separator +
-                        StringUtils.cleanPath(multipartFile.getOriginalFilename()));
-
-        try {
-            Files.copy(multipartFile.getInputStream(), serverPath, StandardCopyOption.REPLACE_EXISTING);
+        try{
+            file.transferTo(new File("/Users/dbckd/git/shopingmall/images/"+file.getOriginalFilename()));
         } catch (IOException e) {
-			e.printStackTrace()
+            e.printStackTrace();
         }
-		
-		// mapper.save(file);
 
     }
 }
