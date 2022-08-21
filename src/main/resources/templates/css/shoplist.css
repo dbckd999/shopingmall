@@ -1,0 +1,84 @@
+/* div{border:1px solid gray;} */
+.list_box{
+    float:left;
+}
+.elements_group_pointing{
+    width:100%;
+    height:auto;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.shop_list{
+    padding-top:70px;
+    padding-bottom:70px;
+}
+.shop_list .container{
+    width:1100px;
+    margin:auto;
+}
+.list_box{
+    width:200px;
+    height:auto;
+    background-color:#fff;
+    border:1px solid gray;
+    border-radius: 5px;
+    margin:0 20px 20px;
+    text-align: center;
+}
+
+.function{
+    margin:30px 0 30px;
+}
+.item_list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.item_list .card{
+    border: 1px solid #b4b4dc;
+    border-radius: 2px;
+    height:350px;
+    width:250px;
+    padding:5px;
+    margin-bottom:10px; 
+}
+
+.col{
+    margin:0 10px 10px;
+}
+
+.select{
+    width: 200px;
+    padding: .8em .5em; 
+    border: 1px solid #999;
+    font-family: inherit;  
+    background: url('images/arrow.jpg') no-repeat 95% 50%; 
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+}
+
+.deco{
+    text-decoration: none;
+    color:black;
+}
+
+.product_list{
+    width: 264px;
+    height: 264px;
+}
+
+.product_list img{
+    width: 100%;
+    height: 100%;
+}
+.product_a{
+    width:50px; height:auto;
+    
+    border-radius: 20px;
+    background-color: #444;
+    color:#fff;
+    
+}
