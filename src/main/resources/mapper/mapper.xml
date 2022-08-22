@@ -10,4 +10,8 @@
                 INSERT INTO image_test (image) VALUES (#{bytes, jdbcType=BLOB, javaType=[B});
         </insert>
 
+        <select id="test" parameterType="Integer" resultType="CustomerDTO">
+                select * from customer where iden = #{iden}
+        </select>
+
 </mapper>
