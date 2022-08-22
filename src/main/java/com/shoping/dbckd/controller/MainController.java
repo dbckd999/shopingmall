@@ -22,7 +22,38 @@ public class MainController {
 	public String index() {
 		return "index";
 	}
-
+	@GetMapping("/sign")
+	public String sign() {
+		return "sign";
+	}
+	@GetMapping("/sign_up")
+	public String sign_up() {
+		return "sign_up";
+	}
+	@GetMapping("/uploaditem")
+	public String uploaditem() {
+		return "uploaditem";
+	}
+	@GetMapping("/shopList")
+	public String shoplist() {
+		return "shopList";
+	}
+	@GetMapping("/view")
+	public String view() {
+		return "view";
+	}
+	@GetMapping("/index")
+	public String returnindex() {
+		return "index";
+	}
+	@GetMapping("/find_id")
+	public String find_id() {
+		return "find_id";
+	}
+	@GetMapping("/find_pw")
+	public String find_pw() {
+		return "find_pw";
+	}
 	@PostMapping("/fileTest")
 	public String blobTest(@RequestParam("file") MultipartFile file) throws IOException {
 		System.out.println("test...");

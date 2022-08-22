@@ -20,7 +20,9 @@
     left:0;
     top:0;
 }
-
+.product_view .img >ul > li{
+    float:left; padding:10px 10px 10px 10px;
+}
 .product_view .img > img{
     width:370px;
     height:370px;
