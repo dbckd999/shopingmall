@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mysql.cj.jdbc.Blob;
+import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.service.MainService;
 
 @Controller
@@ -18,8 +19,14 @@ public class MainController {
 	@Autowired
 	MainService service;
 
+	@Autowired
+	MainMapper mapper;
+
 	@GetMapping("/")
 	public String index() {
+		// 아래 주석을 해제하면 내 집에있는 db서버에서 데이터를 가져온다.
+		// 너무 많이 새로고침만 하지 마셈.... 파이로 켜놓는거라 자원이 적다
+		// System.out.println(mapper.test(1));
 		return "index";
 	}
 	@GetMapping("/sign")
