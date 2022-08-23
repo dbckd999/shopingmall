@@ -57,7 +57,7 @@ height:20px;line-height:20px;}
     height:20px;
 }
 .dropdown > ul > a:hover{color:gray;}
-.dropdown:hover .dropdown > ul{display:block;}
+.dropdown:hover .dropdown-menu > ul{display:block;}
 
 /* .dropdown-right{position:relative;}
 .dropdown-right ul{position:absolute;display:none; width:100px; background:rgba(250, 250, 250, 0.96);font-size:13px;}
@@ -74,25 +74,9 @@ header .othermenu li a:hover span:after {content:"";display:block;position:stati
 .icon img{height:30px;height:30px; top:0;}
 .icon:last-child{margin-right:50px;}
 .icon a{position:absolute;}
+
 .jump{padding-top:75px;}
 
 
 
 
-#bootstrap-overrides .navbar{position:fixed;}
-nav{
-	background:rgba(250, 250, 250, 0.96);
-	position:fixed;
-	z-index:1;
-	width:100%;
-}
-.upclass{
-	background:rgba(250, 250, 250, 0.96);
-	position:fixed;
-	z-index:1;
-	width:100%;
-}
-.navbar-nav > li >a{
-    font:montserrat;
-    font-size: 13px;
-}
