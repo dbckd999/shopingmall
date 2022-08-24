@@ -53,7 +53,7 @@ nav{
     display: none;
     min-width: var(--bs-dropdown-min-width);
     padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
-    margin: 8rem;
+    margin: 6rem;
     font-size: var(--bs-dropdown-font-size);
     color: var(--bs-dropdown-color);
     text-align: left;
@@ -62,6 +62,7 @@ nav{
     background-clip: padding-box;
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
     border-radius: var(--bs-dropdown-border-radius);
+    top:-8px;
 }
 .dropend:hover .dropdown-menu-right{
 	display: block;
