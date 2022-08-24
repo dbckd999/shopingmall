@@ -21,9 +21,8 @@ nav{
     margin-top: 0;
  }
  .jump{padding-top:75px;}
- 
  .dropdown-menu-right {
-    --bs-dropdown-min-width: 10rem;
+    --bs-dropdown-min-width: 8rem;
     --bs-dropdown-padding-x: 0;
     --bs-dropdown-padding-y: 0.5rem;
     --bs-dropdown-spacer: 0.125rem;
@@ -48,6 +47,7 @@ nav{
     --bs-dropdown-header-color: #6c757d;
     --bs-dropdown-header-padding-x: 1rem;
     --bs-dropdown-header-padding-y: 0.5rem;
+    --bs-dropdown-header-bottom: 0.5rem;
     position: absolute;
     z-index: 1000;
     display: none;
@@ -66,4 +66,8 @@ nav{
 .dropend:hover .dropdown-menu-right{
 	display: block;
     margin-top: 0;
+}
+.dropend:hover .dropdwon-menu{
+	display:block;
+	margin-top:0;
 }
