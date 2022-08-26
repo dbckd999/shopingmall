@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>놀이골프 | nollnollgolf</title>
+    <link rel="icon" type="image/x-icon" href="/images/nollnoll.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css">    
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        /* 전역설정 */
+        html,
+        body {
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+            font-family: arial;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 전역설정 */
+
+        .best_list {
+            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            width:100%;
+            height:auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .best_items {
+            display: inline-block;
+            justify-content: center;
+            margin:0 0.5%;
+        }  
+        .multi-layout {
+            justify-content: center;
+            text-align: center;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.8em;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .inner_multi-layout {
+            text-align: left;
+            display: inline-block;
+            margin: 0px 60px;
+            top: 0;
+        }
+
+        .Member-benefit {
+            background-color: #efefec;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        #btn_group button {
+            background-color: black;
+            color: white;
+            padding: 10px 50px 10px 50px;
+            font-size: 1.4em
+        }
+
+        #btn_group button:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .footer {
+            padding-left:22%;
+            padding-right:22%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            font-size: 0.8em;
+            text-align: left;
+        }
+        .menu:after{
+            display:block; 
+            content:''; 
+            clear:both;
+        }
+        .menu > li{
+            position:relative;
+            float:left; 
+            margin-right:5px;
+        }
+        .menu > li > a{
+            display:block; 
+            padding:0 0.1%;
+            height: 20px; 
+            background:rgba(250, 250, 250, 0.96); 
+            line-height:auto; 
+            color:black;
+            width:auto;
+        }
+        .menu > li:hover .dropdown-content {
+            display:block; 
+        }
+        .menu .dropdown-content{
+            width:150%;
+            height:auto;
+            display:none; 
+            position:absolute; 
+            left:0; 
+            right:0; 
+            text-align:center;
+        }
+        .menu .dropdown-content a{
+            display:block; 
+            padding:0; 
+            background:rgba(250, 250, 250, 0.96); 
+            color:black;
+        }  
+    </style> 
+</head>
+
+<body>
+    <div class="upclass" style="z-index:9000">
+	<nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand logoimg" href="index"><img src="images/logo.ico" alt="" width="100" height="50" style="margin-left:40px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="shopList" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        SHOP
+                        </a>                        
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">신상품</a></li>
+                            <li class="dropend"><a class="dropdown-item" href="#">MAN</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">아우터</a></li>
+                            		<li><a class="dropdown-item" href="#">상의</a></li>
+                            		<li><a class="dropdown-item" href="#">하의</a></li>
+                            	</ul>
+                            </li>
+                            <li class="dropend"><a class="dropdown-item" href="#">WOMAN</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">아우터</a></li>
+                            		<li><a class="dropdown-item" href="#">상의</a></li>
+                            		<li><a class="dropdown-item" href="#">하의</a></li>
+                            	</ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">전체상품</a></li>
+                            <li class="dropend"><a class="dropdown-item" href="#">아우터</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">아우터</a></li>                            		
+                            	</ul>
+                            </li>
+                            <li class="dropend"><a class="dropdown-item" href="#">상의</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">반팔티셔츠</a></li>
+                            		<li><a class="dropdown-item" href="#">긴팔티셔츠</a></li>
+                            		<li><a class="dropdown-item" href="#">맨투맨/후드</a></li>
+                            		<li><a class="dropdown-item" href="#">니트/카디건</a></li>
+                            		<li><a class="dropdown-item" href="#">베스트</a></li>
+                            	</ul>
+                            </li>
+                            <li class="dropend"><a class="dropdown-item" href="#">하의</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">롱펜츠</a></li>
+                            		<li><a class="dropdown-item" href="#">숏펜츠</a></li>
+                            		<li><a class="dropdown-item" href="#">스커트</a></li>
+                            	</ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">슈즈</a></li>
+                            <li class="dropend"><a class="dropdown-item" href="#">엑세서리</a>
+                            	<ul class="dropdown-menu-right">
+                            		<li><a class="dropdown-item" href="#">모자</a></li>
+                            		<li><a class="dropdown-item" href="#">헤드커버</a></li>
+                            		<li><a class="dropdown-item" href="#">볼마커</a></li>
+                            		<li><a class="dropdown-item" href="#">골프장갑</a></li>
+                            		<li><a class="dropdown-item" href="#">가방</a></li>
+                            		<li><a class="dropdown-item" href="#">양말</a></li>
+                            		<li><a class="dropdown-item" href="#">벨트</a></li>
+                            		<li><a class="dropdown-item" href="#">기타</a></li>
+                            		<li><a class="dropdown-item" href="#">악세서리</a></li>
+                            	</ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view">NOLNOL STORY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LOOKBOOK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">EVENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thanks, Archive</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" style="margin-right:40px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">SIGN OUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CS center</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mypage">MY PAGE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="uploaditem"><img src="images/search.png" alt="" width="24" height="24" ></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><img src="images/basket.png" alt="" width="24" height="24" ></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <!-- 상단메뉴 다른 컨텐츠 가리는것 방지 -->
+    <div class="jump"></div>
+
+    <span th:text="${var123}"></span>
+
+    <br><h3 style="text-align: center;font-size: 26px;">NEW ARRIVALS</h3>
+    <br><br>
+    <!-- 신상품 목록 -->
+    <div id="wrapper">
+        <div class="owl-carousel owl-theme elements_group_pointing">
+            <div class="item">
+                <a href="trash"><img src="./images/b1.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash"><img src="./images/b2.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash.html"><img src="./images/b3.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash"><img src="./images/b4.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash"><img src="./images/b5.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash.html"><img src="./images/b6.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash.html"><img src="./images/b7.jpg"></a>
+                <p><span>헤으응</span></p>
+                <p><span>abweklawle</span></p>
+                <p><span>1234598원</span></p>
+            </div>
+            <div class="item">
+                <a href="trash.html"><img src="./images/b8.jpg"></a>
+                <p><span style="font-size:14px;color:#000000;">헤으응</span></p>
+                <p><span style="font-size:12px;color:#777777;">abweklawle</span></p>
+                <p><span style="font-size:13px;color:#153e35;font-weight:bold;">1234598원</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="js/owl.carousel.js"></script>
+    <script src="js/owl.autoplay.js"></script>
+    <script src="js/owl.navigation.js"></script> -->
+    <!-- 유튜브 -->
+    <div style="position: relative; padding-bottom: 56.25%;">
+        
+        <iframe style="position: absolute; width: 100%; height: 100%;" src="https://www.youtube.com/embed/yi-QhdFyDm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- 주력상품 목록 -->
+    <div class="elements_group_pointing" style="text-align:center; margin-top: 100px;">
+        <h2>BEST ITEM</h2>
+        <div style="margin: 0 auto;">
+            <ul class="bestitem_list">
+                <li><span>전체</span></li>
+                <li><span>모자</span></li>
+                <li><span>상의</span></li>
+                <li><span>하의</span></li>
+                <li><span>액세서리</span></li>
+            </ul>
+        </div>
+        <div class="best_list">
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+            <div class="best_items">
+                <div id="best_items" style="clear:both; width: 264px; text-align: center;">
+                    <div class="product_dbckd" style="border: 1px solid gray;">
+                        <img src="./images/b1.jpg" class="before">
+                        <img style="visibility: hidden;" src="./images/b1.jpg" class="after">
+                    </div>
+                    <p class="product-name"><span style="font-size:14px;color:#000000;">말본 체커보더 패턴 폴로 티셔츠 BROWN
+                            (MAN)</span></p>
+                    <p><span style="font-size:12px;color:#777777;">M2321PTS03BRN</span></p>
+                    <p class="product-price"><span
+                            style="font-size:13px;color:#153e35;font-weight:bold;">279,000원</span></p>
+                </div>
+            </div>
+       </div>
+        <!-- 케케케케케케케케케케케 -->
+        <button id="load_more" style="padding: 15px; color: white; background-color: black; margin: 100px;">LOAD MORE
+            (1/6)</button>
+        <script>
+            document.getElementById('load_more').addEventListener('click', () => {
+                console.log('test');
+            })
+        </script>
+    </div>
+
+    <!-- 주제별 상품 카테고리 -->
+    <div class="elements_group_pointing">
+        <div>
+            <img id="menu_top" style="width: 66.668%; margin: 0 0 2.378%;" src='https://via.placeholder.com/1680x945' />
+            <img class="imgs" style="width: 30.954%; margin-bottom: 2.35%; float: right;"
+                src='https://via.placeholder.com/780x945' />
+        </div>
+        <div>
+            <img class="imgs" style="width:100%;" src='https://via.placeholder.com/1680x380' />
+        </div>
+    </div>
+
+    <!-- 주제별 상품 카테고리 -->
+    <div class="elements_group_pointing">
+        <div class="catalog_wrap">
+            <!-- 내부 태그는 가로로 정렬 -->
+            <!-- 태그 리스트는 가로로 정렬 -->
+            <div style="padding-left: 0;">
+                <p>LOOK BOOK</p>
+                <img style="width: 100%;" src='https://via.placeholder.com/1000'></img>
+            </div>
+            <div>
+                <p>LOOK BOOK</p>
+                <img style="width: 100%;" src='https://via.placeholder.com/1000'></img>
+            </div>
+            <div>
+                <p>EVENT</p>
+                <img style="width: 100%;" src='https://via.placeholder.com/1000'></img>
+            </div>
+            <div style="padding-right: 0;">
+                <p>MALBON STORY</p>
+                <img style="width: 100%;" src='https://via.placeholder.com/1000'></img>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 회원가입 유도 레이아웃 -->
+    <div class="Member-benefit" style="margin: auto;clear: both;">
+        <div style="text-align: center;">
+            <h2>MEMBER BENEFIT</h2>
+        </div>
+        <br>
+        <div style="text-align: center;"><span>아직 회원이 아니신가요?</span></div>
+        <div style="text-align: center;"><span>가입 후 쿠폰 및 포인트 적립 등의 다양한 혜택을 받아보세요.</span></div>
+        <br>
+        <div id="btn_group" style="text-align: center;"><button>Sign Up</button></div>
+    </div>
+
+
+    <div class="elements_group"></div>
+    <div class="elements_group_pointing"></div>
+    <br>
+    <hr>
+    <!-- 회사 안내 -->
+    <div class="multi-layout">
+        <div class="inner_multi-layout">
+            <ul>
+                <li><span>개인정보처리방침</span></li>
+                <li><span>이용약관</span></li>
+                <li><span>주문조회</span></li>
+                <li><span>공지사항</span></li>
+                <li><span>Q&A</span></li>
+                <li><span>회원가입</span></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>CS Center</b></span></li>
+                <li><span>Mon-Fri(10:00 - 17:00)</span></li>
+                <li><span>031-8060-2090</span></li>
+                <li><span>반품배송지: 경기도 안산시 단원구 시화호수로 835</span></li>
+                <li><span>로지스벨리 3층</span></li>
+                <li><span>마케팅 제휴 : marketing@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul style="margin-bottom: 10px;">
+                <li style="margin-bottom: 10px;"><span><b>계좌 안내</b></li>
+                <li><span>계좌번호 : 신한은행 140-013-349110</span></li>
+                <li><span>예금주 : 주식회사 하이라이트브랜즈</span></li>
+
+            </ul>
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>매장 안내</b></li>
+                <li><span>전국 매장 정보</span></li>
+                <li><span>대리점 입점문의 : insung.park@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+    </div>
+    <hr style="clear:both;">
+    <div class="footer">
+        <ul>
+            <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
+            <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
+            <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
+            <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
+            <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
+                    from</span></li>
+            <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
+        </ul>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/owl.carousel.js"></script>
+    <script src="./js/owl.autoplay.js"></script>
+    <script src="./js/owl.navigation.js"></script>
+    <script>
+        $(function () {
+            $('.owl-carousel').owlCarousel({
+                items: 4,
+                margin: 10,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: ['이전', '다음']
+            });
+        });
+    </script>
+</body>
+
+</html>
