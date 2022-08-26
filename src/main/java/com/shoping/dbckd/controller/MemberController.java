@@ -31,7 +31,14 @@ public class MemberController {
 	public String find_pw() {
 		return "find_pw";
 	}
-
+	@GetMapping("indexlogin")
+	public String indexlogin() {
+		return "indexlogin";
+	}
+	@GetMapping("mypage")
+	public String mypage() {
+		return "mypage";
+	}
     @GetMapping(value = "sign_up2")
     public String sign_up_test(@RequestParam String id2){
         System.out.println("id2: " + id2);

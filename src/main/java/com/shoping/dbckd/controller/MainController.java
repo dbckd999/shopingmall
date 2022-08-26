@@ -33,9 +33,9 @@ public class MainController {
 		// 너무 많이 새로고침만 하지 마셈.... 파이로 켜놓는거라 자원이 적다
 		System.out.println(mapper.test(1));
 
-		CustomerDTO dto = mapper.test(1);
-
-		model.addAttribute("var123", dto.getNick());
+//		CustomerDTO dto = mapper.test(1);
+//
+//		model.addAttribute("var123", dto.getNick());
 
 		return "index";
 	}
