@@ -1,0 +1,109 @@
+.jump{padding-top:75px;}
+.title{padding-top:20px; font-size:17px;
+text-align:left;
+border-bottom: 1px dotted #ccc;
+margin-bottom:20px;
+width:95%;
+justify-content: center;
+place-content: center;
+margin: auto;
+}
+.title h3{font-size: 17px;}
+.contents{
+    margin:auto;
+    width:100%;
+    width:1260px;
+}
+.shoppinglist{
+    width:1260px;
+    border:1px solid #ddd;
+    justify-content: center;
+    margin:auto;
+    margin-bottom:50px;
+}
+.shoppinglist li{
+    width:16.37%;
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0 0 0 -1px;
+    border-left: 1px dotted #ccc;
+    text-align: center;
+    vertical-align: top;
+}
+.shoppinglist a{
+    text-decoration: none;
+    color:black;
+}
+.ratinglist{
+    width:1260px;
+    border:1px solid #ddd;
+    justify-content: center;
+    margin:auto;
+    margin-bottom:50px;
+}
+
+.ratingtext{ padding:20px 20px 10px 20px; margin-bottom:20px;}
+.ratingtext li{margin-left:30px;}
+
+.orderlist{
+    width:1260px;
+    border:1px solid #ddd;
+    justify-content: center;
+    margin:auto;
+    margin-bottom:50px;
+}
+.orderlist a{
+    text-decoration: none;
+    color:black;
+}
+.orderlist .four{
+    width:24%;
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0 0 0 -1px;
+    border-left: 1px dotted #ccc;
+    text-align: center;
+    vertical-align: top;
+}
+.orderlist .three{
+    width:33%;
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0 0 0 -1px;
+    border-left: 1px dotted #ccc;
+    text-align: center;
+    vertical-align: top;
+}
+
+.menulist{
+    width:1260px;
+    border:1px solid #ddd;
+    justify-content: center;
+    margin:auto;
+    margin-bottom:50px;
+}
+.menulist a{
+    text-decoration: none;
+    color:black;
+}
+.menulist a:hover{color:black;}
+.menulist li{
+    width:100%;
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0 0 0 -1px;
+    border-bottom: 1px dotted #ccc;
+    text-align: center;
+    vertical-align: top;
+}
+.menulist a{
+    width:100%;
+    text-align: left;
+    float:left;
+}
+.menulist a::after{
+    content:">";
+    text-align:right;
+    float:right;
+    margin-right: 30px;
+}
