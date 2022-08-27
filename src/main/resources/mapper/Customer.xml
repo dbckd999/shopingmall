@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원 계정 기능 -->
+<mapper namespace="com.shoping.dbckd.mapper.CustomerMapper">
+
+    <insert id="Join" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        INSERT INTO customer (id, pw, nick, name, address, address_eng, phone_call, general_call, email, birth)
+        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{address_eng}, #{phone_call}, #{general_call}, #{email}, #{birth})
+    </insert>
+<!-- 
+    <select id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        SELECT id, nick, name, address, address_eng, phone_call, general_call, email, birth 
+        FROM customer
+        WHERE iden = #{iden}
+    </select>
+
+    <update id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        UPDATE customer
+        SET id = #{id}, pw = #{pw}, nick = #{nick}, name = #{name}, address = #{address}, address_eng = #{address_eng}, phone_call = #{phone_call}, general_call = #{general_call}, email = #{email}, birth = #{birth}
+        WHERE iden = ${iden}
+    </update>
+
+    <delete id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        DELETE FROM customer WHERE iden = #{iden}
+    </delete>
+ -->
+</mapper>

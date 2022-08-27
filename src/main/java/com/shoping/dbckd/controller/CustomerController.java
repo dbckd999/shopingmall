@@ -3,15 +3,21 @@ package com.shoping.dbckd.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller(value = "/sign")
+import com.shoping.dbckd.model.CustomerDTO;
+
 /**
  * 회원이 사용하는 페이지 입니다.
  */
-public class MemberController {
+@Controller
+@RequestMapping("/sign")
+public class CustomerController {
     
-    @GetMapping("sign")
+    @GetMapping
 	public String sign() {
         return "sign";
 	}
@@ -39,12 +45,12 @@ public class MemberController {
 	public String mypage() {
 		return "mypage";
 	}
-    @GetMapping(value = "sign_up2")
-    public String sign_up_test(@RequestParam String id2){
-        System.out.println("id2: " + id2);
 
+	@PostMapping(value = "sign_up")
+	public String sign_up123(CustomerDTO customer){
+		System.out.println(customer);
         System.out.println("회원가입 완료.");
         return "/";
-    }
+	}
 
 }
