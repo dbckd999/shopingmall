@@ -57,7 +57,10 @@ public class MainController {
 	public String detailpage() {
 		return "detailpage";
 	}
-
+	@GetMapping("/deposit")
+	public String deposit() {
+		return "deposit";
+	}
 
 	@PostMapping("/fileTest")
 	public String blobTest(@RequestParam("file") MultipartFile file) throws IOException {
