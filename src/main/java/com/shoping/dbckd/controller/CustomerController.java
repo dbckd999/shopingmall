@@ -45,6 +45,13 @@ public class CustomerController {
 	public String mypage() {
 		return "mypage";
 	}
+	@GetMapping("usablereserve")
+	public String usablereserve() {
+		return "usablereserve";
+	}
+    @GetMapping(value = "sign_up2")
+    public String sign_up_test(@RequestParam String id2){
+        System.out.println("id2: " + id2);
 
 	@PostMapping(value = "sign_up")
 	public String sign_up123(CustomerDTO customer){

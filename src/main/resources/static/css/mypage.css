@@ -22,7 +22,7 @@ margin: auto;
     margin-bottom:50px;
 }
 .shoppinglist li{
-    width:16.37%;
+    width:19%;
     display: inline-block;
     padding: 10px 0;
     margin: 0 0 0 -1px;
@@ -30,10 +30,15 @@ margin: auto;
     text-align: center;
     vertical-align: top;
 }
+.shoppinglist li:last-child{
+	border-right: 1px dotted #ccc;
+}
 .shoppinglist a{
     text-decoration: none;
     color:black;
 }
+.shoppinglist a:hover{color:black;}
+.shoppinglist strong{color:black;}
 .ratinglist{
     width:1260px;
     border:1px solid #ddd;
@@ -56,6 +61,9 @@ margin: auto;
     text-decoration: none;
     color:black;
 }
+.orderlist a:hover{
+    color:black;
+}
 .orderlist .four{
     width:24%;
     display: inline-block;
@@ -64,6 +72,7 @@ margin: auto;
     border-left: 1px dotted #ccc;
     text-align: center;
     vertical-align: top;
+    margin-top:30px;
 }
 .orderlist .three{
     width:33%;
@@ -73,6 +82,7 @@ margin: auto;
     border-left: 1px dotted #ccc;
     text-align: center;
     vertical-align: top;
+    margin-top:30px;
 }
 
 .menulist{
