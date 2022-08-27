@@ -39,6 +39,10 @@ public class MemberController {
 	public String mypage() {
 		return "mypage";
 	}
+	@GetMapping("usablereserve")
+	public String usablereserve() {
+		return "usablereserve";
+	}
     @GetMapping(value = "sign_up2")
     public String sign_up_test(@RequestParam String id2){
         System.out.println("id2: " + id2);

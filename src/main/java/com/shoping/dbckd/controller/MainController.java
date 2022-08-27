@@ -53,9 +53,9 @@ public class MainController {
 	public String shoplist() {
 		return "shopList";
 	}
-	@GetMapping("/view")
-	public String view() {
-		return "view";
+	@GetMapping("/detailpage")
+	public String detailpage() {
+		return "detailpage";
 	}
 
 
