@@ -1,6 +1,11 @@
 package com.shoping.dbckd;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +22,11 @@ public class DbckdApplicationTests {
 
     @Test
     public void test() {
-        CustomerDTO customer = new CustomerDTO();
-        customer.setId("testid");
-        customer.setPw("tsetpw");
-        customer.setNick("testnick");
-        customer.setName("testname");
-        customer.setAddress("testaddress");
-        customer.setAddress_eng("testaddress_eng");
-        customer.setPhone_call("010....");
-        customer.setGeneral_call("053...");
-        customer.setEmail("testemail");
-        customer.setBirth(new Timestamp(System.currentTimeMillis()));
-        System.out.println(customerService.join(customer));
+        
     }
 
 }
-
+// 시간 문자열 생성 > 삽입
 /*
 id varchar(20) unique not null,         -- 아이디
 pw varchar(20) not null,            -- 비밀번호

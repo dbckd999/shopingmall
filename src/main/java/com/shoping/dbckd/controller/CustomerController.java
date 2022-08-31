@@ -22,12 +22,6 @@ public class CustomerController {
         return "sign";
 	}
     
-	@GetMapping("sign_up")
-	public String sign_up() {
-        System.out.println("aaa");
-		return "sign_up";
-	}
-
     @GetMapping("find_id")
 	public String find_id() {
 		return "find_id";
@@ -37,27 +31,32 @@ public class CustomerController {
 	public String find_pw() {
 		return "find_pw";
 	}
+
 	@GetMapping("indexlogin")
 	public String indexlogin() {
 		return "indexlogin";
 	}
+
 	@GetMapping("mypage")
 	public String mypage() {
 		return "mypage";
 	}
+	
 	@GetMapping("usablereserve")
 	public String usablereserve() {
 		return "usablereserve";
 	}
-    @GetMapping(value = "sign_up2")
-    public String sign_up_test(@RequestParam String id2){
-        System.out.println("id2: " + id2);
 
-	@PostMapping(value = "sign_up")
-	public String sign_up123(CustomerDTO customer){
-		System.out.println(customer);
-        System.out.println("회원가입 완료.");
-        return "/";
-	}
+	// @PostMapping(value = "sign_up")
+	// public String sign_up123(CustomerDTO customer){
+	// 	System.out.println(customer);
+    //     System.out.println("회원가입 완료.");
+    //     return "sign";
+	// }
+
+	// @GetMapping("test")
+	// public String test(){
+	// 	return "/";
+	// }
 
 }

@@ -11,6 +11,19 @@ import com.shoping.dbckd.model.CustomerDTO;
 public interface CustomerService {
 
     public Integer join(CustomerDTO customer);
-    public Integer checkID(CustomerDTO customer);
-    public Integer checkNick(CustomerDTO customer);
+
+    /**
+     * 기존에 가입한 계정이 있는지 확인합니다.
+     * @param customer 가입할 계정입니다.
+     * @return 가입 가능한 계정이라면 true, 이미있는 계정이 존재하는 등 불가하면 false을 반환.
+     */
+    public boolean isUniqueID(CustomerDTO customer);
+
+    /**
+     * @serial
+     * 닉네임 중복을 확인합니다.
+     * @param customer 가입할 계정입니다.
+     * @return 유일한 닉네임이라면 true를 반환합니다.
+     */
+    public boolean isOverlapNick(CustomerDTO customer);
 }

@@ -16,6 +16,8 @@ import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.service.MainService;
 
+import ch.qos.logback.core.util.SystemInfo;
+
 @Controller
 @RequestMapping("/")
 /**
@@ -29,45 +31,56 @@ public class MainController {
 	@Autowired
 	MainMapper mapper;
 
-	@GetMapping("/")
+	/**
+	 * @param model 데이터를 가져오는 실험적 기능입니다.
+	 * @return index.html
+	 */
+	@GetMapping
 	public String index(Model model) {
-		// 아래 주석을 해제하면 내 집에있는 db서버에서 데이터를 가져온다.
-		// 너무 많이 새로고침만 하지 마셈.... 파이로 켜놓는거라 자원이 적다
+		// 데이터베이스 가져오기 기능(실험적)
 		System.out.println(mapper.test(1));
-
 //		CustomerDTO dto = mapper.test(1);
-//
 //		model.addAttribute("var123", dto.getNick());
 
 		return "index";
 	}
 
-	@GetMapping("/index")
-	public String returnindex() {
-		return "index";
-	}
-
-	@GetMapping("/uploaditem")
+	@GetMapping("uploaditem")
 	public String uploaditem() {
 		return "uploaditem";
 	}
-	@GetMapping("/shopList")
+	@GetMapping("shopList")
 	public String shoplist() {
 		return "shopList";
 	}
-	@GetMapping("/detailpage")
+	@GetMapping("detailpage")
 	public String detailpage() {
 		return "detailpage";
 	}
-	@GetMapping("/deposit")
+	@GetMapping("deposit")
 	public String deposit() {
 		return "deposit";
 	}
 
-	@PostMapping("/fileTest")
+	// 파일을 저장하는 태그. 실험용으로써 삭제할 수도 있음.
+	@PostMapping("fileTest")
 	public String blobTest(@RequestParam("file") MultipartFile file) throws IOException {
 		System.out.println("test...");
 		service.saveImg(file);
 		return "redirect:/";
+	}
+
+	/**
+	 * @return 회원가입 페이지
+	 */
+	@GetMapping("sign_up")
+	public String sign_up() {
+		return "sign_up";
+	}
+
+	@PostMapping("sign_up")
+	public String sign_up(CustomerDTO customer) {
+		System.out.println(customer);
+		return "index";
 	}
 }

@@ -17,14 +17,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Integer checkID(CustomerDTO customer) {
-        // TODO Auto-generated method stub
-        return null;
+    public boolean isUniqueID(CustomerDTO customer) {
+        if(customer.getId().equals(customerMapper.checkID(customer).getId())){
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public Integer checkNick(CustomerDTO customer) {
-        // TODO Auto-generated method stub
-        return null;
+    public boolean isOverlapNick(CustomerDTO customer) {
+        if(customer.getNick().equals(customerMapper.checkNick(customer).getNick())){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

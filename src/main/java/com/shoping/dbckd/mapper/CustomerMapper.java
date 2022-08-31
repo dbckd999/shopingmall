@@ -14,4 +14,7 @@ public interface CustomerMapper {
      * @return 회원가입 성공여부를 반환합니다
      */
     public Integer Join(CustomerDTO customer);
+
+    public CustomerDTO checkID(CustomerDTO customer);
+    public CustomerDTO checkNick(CustomerDTO customer);
 }
