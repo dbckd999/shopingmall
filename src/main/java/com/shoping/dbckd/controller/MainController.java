@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.mysql.cj.jdbc.Blob;
 import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
+import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
 
 import ch.qos.logback.core.util.SystemInfo;
@@ -30,6 +31,9 @@ public class MainController {
 
 	@Autowired
 	MainMapper mapper;
+
+	@Autowired
+	CustomerService customerService;
 
 	/**
 	 * @param model 데이터를 가져오는 실험적 기능입니다.
@@ -81,6 +85,16 @@ public class MainController {
 	@PostMapping("sign_up")
 	public String sign_up(CustomerDTO customer) {
 		System.out.println(customer);
+		if(customer.getAddress_eng() == null){
+			customer.setAddress_eng("n/a");
+		}
+		if(customer.getPhone_call() == null){
+			customer.setPhone_call("010...1");
+		}
+		if(customer.getGeneral_call() == null){
+			customer.setGeneral_call("053...01");
+		}
+		customerService.join(customer);
 		return "index";
 	}
 }
