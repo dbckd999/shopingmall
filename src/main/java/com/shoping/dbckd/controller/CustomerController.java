@@ -46,6 +46,11 @@ public class CustomerController {
 	public String usablereserve() {
 		return "usablereserve";
 	}
+	
+	@GetMapping("userinfo")
+	public String userinfo() {
+		return "userinfo";
+	}
 
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
