@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>놀이골프 | NOLLNOLL GOLF</title>
+    <link rel="stylesheet" type="text/css" href="./css/ordercheck.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="  crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jump"></div><div class="jump"></div>
+    <div class="btnlist">
+            <button type="button" id="btn1">주문내역 조회(<span class="">x</span>건)</button>
+            <button type="butoon" id="btn2">취소/교환/반품 내역(<span class="">x</span>건)</button>
+            <div id="first_state">
+                <form>
+                    <div class="state">
+                        <span>상태</span>
+                        <select class="state_select" style="margin-left:30px;">
+                            <option value="031">전체 주문처리상태</option>
+                            <option value="032">입금전</option>
+                            <option value="033">배송준비전</option>
+                            <option value="041">배송중</option>
+                            <option value="042">배송완료</option>
+                            <option value="043">취소</option>
+                            <option value="044">교환</option>
+                            <option value="043">환불</option>
+                        </select>
+                    </div>
+                    <div class="period">
+                        <span style="padding-top:10px;">기간</span>
+                        <div class="button_group">
+                            <button type="button" class="btn_period btn-toolbar">오늘</button>
+                            <button type="button" class="btn_period">1개월</button>
+                            <button type="button" class="btn_period">3개월</button>
+                            <button type="button" class="btn_period">6개월</button>
+                            <button type="button" class="btn_period">1년</button>
+                        </div>
+                    </div>
+                    <ul class="notice">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                          </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                          </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                          </svg> 취소/교환/반품 신청은 배송완료일 기준 7일까지 가능합니다.</li>
+                    </ul>
+                </form>
+            </div>
+            
+            <div id="second_state">
+                <form>
+                    <div class="period">
+                        <span style="padding-top:10px">기간</span>
+                        <div class="button_group">
+                            <button type="button" class="btn_period">오늘</button>
+                            <button type="button" class="btn_period">1개월</button>
+                            <button type="button" class="btn_period">3개월</button>
+                            <button type="button" class="btn_period">6개월</button>
+                            <button type="button" class="btn_period">1년</button>
+                        </div>
+                    </div>
+                <ul class="notice">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                      </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                      </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+                </ul>
+                </form>
+            </div>
+    </div>
+    <script>
+        $('#btn1').click(function(){
+            $("#first_state").show();
+            $("#second_state").hide();
+        })
+        $('#btn2').click(function(){
+            $("#first_state").hide();
+            $("#second_state").show();
+        })
+    </script>
+</body>
+</html>
