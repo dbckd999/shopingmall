@@ -61,10 +61,7 @@ public class MainController {
 	public String detailpage() {
 		return "detailpage";
 	}
-	@GetMapping("deposit")
-	public String deposit() {
-		return "deposit";
-	}
+	
 	@GetMapping("index")
 	public String index(){
 		return "index";
