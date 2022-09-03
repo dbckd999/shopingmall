@@ -57,6 +57,15 @@ public class CustomerController {
 		return "ordercheck";
 	}
 
+	@GetMapping("list")
+	public String list() {
+		return "list";
+	}
+	@GetMapping("deposit")
+	public String deposit() {
+		return "deposit";
+	}
+
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
