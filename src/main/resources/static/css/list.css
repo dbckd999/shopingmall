@@ -114,4 +114,5 @@ p.name{font-size: 13px; line-height: 43px; color: #508bed; font-weight: bold; ma
     color: #333;
     font:"맑은 고딕";
     padding: 0 0 0 14px;
+    display:none;
 }

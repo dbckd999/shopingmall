@@ -65,7 +65,10 @@ public class CustomerController {
 	public String deposit() {
 		return "deposit";
 	}
-
+	@GetMapping("register")
+	public String register() {
+		return "register";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
