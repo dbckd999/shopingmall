@@ -2,7 +2,8 @@
 li a{text-decoration: none;color:#333;}
 li a:hover{color:#333;}
 .btnlist{
-    width:1260px;
+    width:100%;
+    max-width:1260px;
     vertical-align: center;
     justify-content: center;
     margin:0 auto;
