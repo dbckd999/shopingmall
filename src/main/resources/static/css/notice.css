@@ -33,6 +33,7 @@
     list-style: none;
     border-radius: 50px;
     float:right;
+    text-decoration: none;
 }
 .btnright:hover{background: #153e35; color: #fff;}
 
