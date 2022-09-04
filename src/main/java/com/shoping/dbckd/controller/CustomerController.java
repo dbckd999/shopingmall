@@ -69,6 +69,18 @@ public class CustomerController {
 	public String register() {
 		return "register";
 	}
+	@GetMapping("notice")
+	public String notice() {
+		return "notice";
+	}
+	@GetMapping("qanda")
+	public String qanda() {
+		return "qanda";
+	}
+	@GetMapping("review")
+	public String review() {
+		return "review";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
