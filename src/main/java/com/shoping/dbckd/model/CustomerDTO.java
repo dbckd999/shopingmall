@@ -1,7 +1,6 @@
 package com.shoping.dbckd.model;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -19,7 +18,7 @@ public class CustomerDTO {
     private String phone_call;      // 휴대전화 번호
     private String general_call;    // 집 전화번호
     private String email;           // 이메일
-    public Date birth;        // 생년월일
+    private Date birth;        // 생년월일
 
     public void setBirth(String date) {
         java.util.Date date2 = null;

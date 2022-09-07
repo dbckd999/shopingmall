@@ -13,142 +13,152 @@
 </head>
 <style>
     li {
-            list-style-type: none;
-            font-family: arial;
-            padding: 0;
-            margin: 0;
-        }
-     .multi-layout {
-            justify-content: center;
-            text-align: center;
-            height: auto;
-            overflow: hidden;
-            font-size: 0.8em;
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
+        list-style-type: none;
+        font-family: arial;
+        padding: 0;
+        margin: 0;
+    }
 
-        .inner_multi-layout {
-            text-align: left;
-            display: inline-block;
-            margin: 0px 60px;
-            top: 0;
-        }
+    .multi-layout {
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        overflow: hidden;
+        font-size: 0.8em;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .inner_multi-layout {
+        text-align: left;
+        display: inline-block;
+        margin: 0px 60px;
+        top: 0;
+    }
+
     .footer {
-            padding-left:22%;
-            padding-right:22%;
-            padding-top: 1%;
-            padding-bottom: 1%;
-            font-size: 0.8em;
-            text-align: left;
-        }
+        padding-left: 22%;
+        padding-right: 22%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        font-size: 0.8em;
+        text-align: left;
+    }
 </style>
+
 <body>
-<div class="upclass" style="z-index:9000">
-	<nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand logoimg" href="index"><img src="/images/logo.ico" alt="" width="100" height="50" style="margin-left:40px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="shopList" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        SHOP
-                        </a>                        
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">신상품</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">MAN</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>
-                            		<li><a class="dropdown-item" href="#">상의</a></li>
-                            		<li><a class="dropdown-item" href="#">하의</a></li>
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">WOMAN</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>
-                            		<li><a class="dropdown-item" href="#">상의</a></li>
-                            		<li><a class="dropdown-item" href="#">하의</a></li>
-                            	</ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">전체상품</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">아우터</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>                            		
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">상의</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">반팔티셔츠</a></li>
-                            		<li><a class="dropdown-item" href="#">긴팔티셔츠</a></li>
-                            		<li><a class="dropdown-item" href="#">맨투맨/후드</a></li>
-                            		<li><a class="dropdown-item" href="#">니트/카디건</a></li>
-                            		<li><a class="dropdown-item" href="#">베스트</a></li>
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">하의</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">롱펜츠</a></li>
-                            		<li><a class="dropdown-item" href="#">숏펜츠</a></li>
-                            		<li><a class="dropdown-item" href="#">스커트</a></li>
-                            	</ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">슈즈</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">엑세서리</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">모자</a></li>
-                            		<li><a class="dropdown-item" href="#">헤드커버</a></li>
-                            		<li><a class="dropdown-item" href="#">볼마커</a></li>
-                            		<li><a class="dropdown-item" href="#">골프장갑</a></li>
-                            		<li><a class="dropdown-item" href="#">가방</a></li>
-                            		<li><a class="dropdown-item" href="#">양말</a></li>
-                            		<li><a class="dropdown-item" href="#">벨트</a></li>
-                            		<li><a class="dropdown-item" href="#">기타</a></li>
-                            		<li><a class="dropdown-item" href="#">악세서리</a></li>
-                            	</ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="view">NOLNOL STORY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LOOKBOOK</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">EVENT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Thanks, Archive</a>
-                    </li>
-                </ul>
+    <div class="upclass" style="z-index:9000">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand logoimg" href="index"><img src="/images/logo.ico" alt="" width="100" height="50"
+                        style="margin-left:40px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="shopList" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                SHOP
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">신상품</a></li>
+                                <li class="dropend"><a class="dropdown-item" href="#">MAN</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">아우터</a></li>
+                                        <li><a class="dropdown-item" href="#">상의</a></li>
+                                        <li><a class="dropdown-item" href="#">하의</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend"><a class="dropdown-item" href="#">WOMAN</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">아우터</a></li>
+                                        <li><a class="dropdown-item" href="#">상의</a></li>
+                                        <li><a class="dropdown-item" href="#">하의</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">전체상품</a></li>
+                                <li class="dropend"><a class="dropdown-item" href="#">아우터</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">아우터</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend"><a class="dropdown-item" href="#">상의</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">반팔티셔츠</a></li>
+                                        <li><a class="dropdown-item" href="#">긴팔티셔츠</a></li>
+                                        <li><a class="dropdown-item" href="#">맨투맨/후드</a></li>
+                                        <li><a class="dropdown-item" href="#">니트/카디건</a></li>
+                                        <li><a class="dropdown-item" href="#">베스트</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend"><a class="dropdown-item" href="#">하의</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">롱펜츠</a></li>
+                                        <li><a class="dropdown-item" href="#">숏펜츠</a></li>
+                                        <li><a class="dropdown-item" href="#">스커트</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">슈즈</a></li>
+                                <li class="dropend"><a class="dropdown-item" href="#">엑세서리</a>
+                                    <ul class="dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#">모자</a></li>
+                                        <li><a class="dropdown-item" href="#">헤드커버</a></li>
+                                        <li><a class="dropdown-item" href="#">볼마커</a></li>
+                                        <li><a class="dropdown-item" href="#">골프장갑</a></li>
+                                        <li><a class="dropdown-item" href="#">가방</a></li>
+                                        <li><a class="dropdown-item" href="#">양말</a></li>
+                                        <li><a class="dropdown-item" href="#">벨트</a></li>
+                                        <li><a class="dropdown-item" href="#">기타</a></li>
+                                        <li><a class="dropdown-item" href="#">악세서리</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="view">NOLNOL STORY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LOOKBOOK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">EVENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Thanks, Archive</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown"
+                    style="margin-right:40px;">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sign">SIGN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CS center</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="uploaditem"><img src="/images/search.png" alt="" width="24"
+                                    height="24"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="/images/basket.png" alt="" width="24"
+                                    height="24"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" style="margin-right:40px;">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="sign">SIGN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CS center</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="uploaditem"><img src="/images/search.png" alt="" width="24" height="24" ></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="/images/basket.png" alt="" width="24" height="24" ></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
     </div>
     <div class="jump"></div>
     <div class="jump"></div>
 
     <div id="wrap">
-        <form action="sign_up" method="post">
+        <form action="sign_up" method="post" id="sign_up">
             <fieldset>
                 <legend class="title">필수입력정보</legend>
                 <table class="table_box">
@@ -160,7 +170,8 @@
                     </tr>
                     <tr>
                         <th><label for="user_pw">pw *</label></th>
-                        <td><input type="password" id="user_pw" name="pw" class="textform" placeholder="8자 이상 영어 숫자 기호 중 2가지 이상 조합"required></td>
+                        <td><input type="password" id="user_pw" name="pw" class="textform"
+                                placeholder="8자 이상 영어 숫자 기호 중 2가지 이상 조합" required></td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">pw 확인 *</label></th>
@@ -170,7 +181,7 @@
                         <th><label for="user_pw">이름 *</label></th>
                         <td><input type="text" id="user_name" name="name" class="textform" required></td>
                     </tr>
-					<tr>
+                    <tr>
                         <th><label for="user_pw">별명 *</label></th>
                         <td><input type="text" id="user_nick" name="nick" class="textform" required></td>
                     </tr>
@@ -181,8 +192,8 @@
                     <tr class="grid">
                         <th><label for="user_home">일반전화</label></th>
                         <td>
-                            <select id="user_home_first"  class="callform">
-                                <option value="02"selected="selected">02</option>
+                            <select id="user_home_first" class="callform">
+                                <option value="02" selected="selected">02</option>
                                 <option value="031">031</option>
                                 <option value="032">032</option>
                                 <option value="033">033</option>
@@ -202,26 +213,29 @@
                             </select>
                             <input type="text" id="user_home_second" class="callform" maxlength="4">
                             <input type="text" id="user_home_third" class="callform" maxlength="4">
+                            <input type="hidden" id="user_home" name="general_call">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="user_phone">휴대전화 *</label></th>
                         <td><select id="user_phone_first" class="callform" required>
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="016">016</option>
-                            <option value="017">017</option>
-                            <option value="018">018</option>
-                            <option value="019">019</option>
-                        </select>
-                        <input type="text" id="user_phone_second" class="callform " maxlength="4" required>
-                        <input type="text" id="user_phone_third" class="callform " maxlength="4" required></td>
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                            <input type="text" id="user_phone_second" class="callform " maxlength="4" required>
+                            <input type="text" id="user_phone_third" class="callform " maxlength="4" required>
+                        </td>
+                        <input type="hidden" name="phone_call" id="phone_call">
                     </tr>
                     <tr>
                         <th><label for="user_pw">EMail *</label></th>
                         <td><input type="text" id="email" name="email" class="textform" required></td>
                     </tr>
-                    
+
                 </table>
             </fieldset>
             <br><br>
@@ -240,57 +254,70 @@
             </div>
         </form>
     </div>
-<!-- 회사 안내 -->
-<hr>
-<div class="multi-layout">
-    <div class="inner_multi-layout">
-        <ul>
-            <li><span>개인정보처리방침</span></li>
-            <li><span>이용약관</span></li>
-            <li><span>주문조회</span></li>
-            <li><span>공지사항</span></li>
-            <li><span>Q&A</span></li>
-            <li><span>회원가입</span></li>
-        </ul>
-    </div>
-    <div class="inner_multi-layout">
-        <ul>
-            <li style="margin-bottom: 10px;"><span><b>CS Center</b></span></li>
-            <li><span>Mon-Fri(10:00 - 17:00)</span></li>
-            <li><span>031-8060-2090</span></li>
-            <li><span>반품배송지: 경기도 안산시 단원구 시화호수로 835</span></li>
-            <li><span>로지스벨리 3층</span></li>
-            <li><span>마케팅 제휴 : marketing@hibs.co.kr</span></li>
-        </ul>
-    </div>
-    <div class="inner_multi-layout">
-        <ul style="margin-bottom: 10px;">
-            <li style="margin-bottom: 10px;"><span><b>계좌 안내</b></li>
-            <li><span>계좌번호 : 신한은행 140-013-349110</span></li>
-            <li><span>예금주 : 주식회사 하이라이트브랜즈</span></li>
+    <script>
+        document.getElementById("sign_up").addEventListener("change", () => {
+            document.getElementById("phone_call").value =
+                document.getElementById("user_phone_first").value
+                + document.getElementById("user_phone_second").value
+                + document.getElementById("user_phone_third").value
 
-        </ul>
+            document.getElementById("user_home").value = 
+                document.getElementById("user_home_first").value
+                + document.getElementById("user_home_second").value
+                + document.getElementById("user_home_third").value
+        })
+    </script>
+    <!-- 회사 안내 -->
+    <hr>
+    <div class="multi-layout">
+        <div class="inner_multi-layout">
+            <ul>
+                <li><span>개인정보처리방침</span></li>
+                <li><span>이용약관</span></li>
+                <li><span>주문조회</span></li>
+                <li><span>공지사항</span></li>
+                <li><span>Q&A</span></li>
+                <li><span>회원가입</span></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>CS Center</b></span></li>
+                <li><span>Mon-Fri(10:00 - 17:00)</span></li>
+                <li><span>031-8060-2090</span></li>
+                <li><span>반품배송지: 경기도 안산시 단원구 시화호수로 835</span></li>
+                <li><span>로지스벨리 3층</span></li>
+                <li><span>마케팅 제휴 : marketing@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul style="margin-bottom: 10px;">
+                <li style="margin-bottom: 10px;"><span><b>계좌 안내</b></li>
+                <li><span>계좌번호 : 신한은행 140-013-349110</span></li>
+                <li><span>예금주 : 주식회사 하이라이트브랜즈</span></li>
+
+            </ul>
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>매장 안내</b></li>
+                <li><span>전국 매장 정보</span></li>
+                <li><span>대리점 입점문의 : insung.park@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+    </div>
+    <hr style="clear:both;">
+    <div class="footer">
         <ul>
-            <li style="margin-bottom: 10px;"><span><b>매장 안내</b></li>
-            <li><span>전국 매장 정보</span></li>
-            <li><span>대리점 입점문의 : insung.park@hibs.co.kr</span></li>
+            <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
+            <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
+            <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
+            <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
+            <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
+                    from</span></li>
+            <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
         </ul>
     </div>
-    <br>
-    <br>
-</div>
-<hr style="clear:both;">
-<div class="footer">
-    <ul>
-        <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
-        <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
-        <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
-        <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
-        <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
-                from</span></li>
-        <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
-    </ul>
-</div>
 
 </body>
 

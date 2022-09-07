@@ -89,9 +89,6 @@ public class MainController {
 		if(customer.getAddress_eng() == null){
 			customer.setAddress_eng("n/a");
 		}
-		if(customer.getPhone_call() == null){
-			customer.setPhone_call("010...1");
-		}
 		if(customer.getGeneral_call() == null){
 			customer.setGeneral_call("053...01");
 		}
