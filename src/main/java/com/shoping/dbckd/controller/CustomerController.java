@@ -46,7 +46,41 @@ public class CustomerController {
 	public String usablereserve() {
 		return "usablereserve";
 	}
+	
+	@GetMapping("userinfo")
+	public String userinfo() {
+		return "userinfo";
+	}
 
+	@GetMapping("ordercheck")
+	public String ordercheck() {
+		return "ordercheck";
+	}
+
+	@GetMapping("list")
+	public String list() {
+		return "list";
+	}
+	@GetMapping("deposit")
+	public String deposit() {
+		return "deposit";
+	}
+	@GetMapping("register")
+	public String register() {
+		return "register";
+	}
+	@GetMapping("notice")
+	public String notice() {
+		return "notice";
+	}
+	@GetMapping("qanda")
+	public String qanda() {
+		return "qanda";
+	}
+	@GetMapping("review")
+	public String review() {
+		return "review";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);

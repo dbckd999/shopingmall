@@ -61,9 +61,10 @@ public class MainController {
 	public String detailpage() {
 		return "detailpage";
 	}
-	@GetMapping("deposit")
-	public String deposit() {
-		return "deposit";
+	
+	@GetMapping("index")
+	public String index(){
+		return "index";
 	}
 
 	// 파일을 저장하는 태그. 실험용으로써 삭제할 수도 있음.

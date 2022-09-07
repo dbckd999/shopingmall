@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>놀이골프 | NOLLNOLL GOLF</title>
+    <link rel="stylesheet" type="text/css" href="/css/userinfo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="  crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jump"></div>
+    <div id="wrap">
+        <form>
+            <fieldset>
+                <legend class="title">필수입력정보</legend>
+                <table class="table_box">
+                    <tr>
+                        <th class="frist"><label for="user_id">id *</label></th>
+                        <td><input type="text" id="user_id" class="textform" required autofocus>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">pw *</label></th>
+                        <td><input type="password" name="pw1" id="password1" class="textform" onchange="isSame()" required>
+                        <p class="alertpw" style="margin:0">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</p></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">pw 확인 *</label></th>
+                        <td><input type="password" name="pw2" id="password2" class="textform" onchange="isSame()" required>
+                            <font id="checkPW"></font></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">이름 *</label></th>
+                        <td><input type="text" id="uesr_name" class="textform" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">주소 *</label></th>
+                        <td><input type="text" id="uesr_address" class="textform" required></td>
+                    </tr>
+                    <tr class="grid">
+                        <th><label for="user_home">일반전화</label></th>
+                        <td>
+                            <select id="user_home_first" class="callform">
+                                <option value="02"selected="selected">02</option>
+                                <option value="031">031</option>
+                                <option value="032">032</option>
+                                <option value="033">033</option>
+                                <option value="041">041</option>
+                                <option value="042">042</option>
+                                <option value="043">043</option>
+                                <option value="044">044</option>
+                                <option value="051">051</option>
+                                <option value="052">052</option>
+                                <option value="053">053</option>
+                                <option value="054">054</option>
+                                <option value="055">055</option>
+                                <option value="061">061</option>
+                                <option value="062">062</option>
+                                <option value="063">063</option>
+                                <option value="064">064</option>
+                            </select>
+                            <input type="text" id="user_home_second" class="callform" maxlength="4">
+                            <input type="text" id="user_home_third" class="callform" maxlength="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_phone">휴대전화 *</label></th>
+                        <td><select id="user_phone_first" class="callform" required>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                        <input type="text" id="user_phone_second" class="callform " maxlength="4" required>
+                        <input type="text" id="user_phone_third" class="callform " maxlength="4" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">SMS 수신여부</label></th>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="issmsok" id="inlineRadio1" value="T">
+                                <label class="form-check-label" for="inlineRadio1">수신함</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="issmsok" id="inlineRadio2" value="F">
+                                <label class="form-check-label" for="inlineRadio2">수신안함</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">EMail *</label></th>
+                        <td><input type="text" id="user_Email" class="textform" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">EMail 수신여부</label></th>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="isemailok" id="inlineRadio1" value="T">
+                                <label class="form-check-label" for="inlineRadio1">수신함</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="isemailok" id="inlineRadio2" value="F">
+                                <label class="form-check-label" for="inlineRadio2">수신안함</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend class="title">선택입력정보</legend>
+                <table class="table_box">
+                    <tr>
+                        <th><label for="user_birthday">생년월일</label></th>
+                        <td><input type="date" id="user_birthday" class="textform"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div class="btn_area">
+                <button type="submit" onclick="javascript:checkchange()">회원정보수정</button>
+                <button type="button" onclick="location.href='mypage'" class="btn_join">취소</button>
+                <button type="button" onclick="javascript:userbye()" class="btn_join">회원탈퇴</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function userbye(){
+            if(confirm("정말로 회원탈퇴를 진행하시겠습니까?")){
+                if(confirm("지금까지 모은 마일리지가 전부 사라집니다. 정말로 탈퇴를 원하십니까?")){
+                    alert("회원탈퇴가 완료되었습니다.")
+                    location.href="index"
+                }
+                return false;
+                
+            }
+            else{return false;}
+        }
+        function checkchange(){
+            if(confirm("정말로 회원정보를 수정하시겠습니까?")){
+                alert("회원정보가 수정되었습니다.")
+                location.href="mypage"
+            }
+
+        }
+        $('.textform').focusout(function(){
+            let pass1=$("#password1").val();
+            let pass2=$("#password2").val();
+
+            if(pass1!= "" || pass2!= "" ){
+                if(pass1==pass2){
+                    $("#checkPW").html('일치');
+                    $("#checkPW").attr('color','blue');
+                }else{
+                    $("#checkPW").html('불일치');
+                    $("#checkPW").attr('color','red');
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
