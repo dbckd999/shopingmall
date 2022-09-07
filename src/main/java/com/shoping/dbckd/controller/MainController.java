@@ -41,11 +41,6 @@ public class MainController {
 	 */
 	@GetMapping
 	public String index(Model model) {
-		// 데이터베이스 가져오기 기능(실험적)
-		System.out.println(mapper.test(1));
-//		CustomerDTO dto = mapper.test(1);
-//		model.addAttribute("var123", dto.getNick());
-
 		return "index";
 	}
 
