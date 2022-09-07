@@ -21,6 +21,12 @@ public class CustomerController {
 	public String sign() {
         return "sign";
 	}
+
+	@PostMapping
+	public String sign_(){
+		System.out.println("login");
+		return "redirect:/";
+	}
     
     @GetMapping("find_id")
 	public String find_id() {
