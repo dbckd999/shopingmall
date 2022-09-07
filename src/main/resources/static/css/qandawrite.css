@@ -43,3 +43,72 @@
     font-weight: bold;
     color: #333;
 }
+
+.issecret{
+    width:100%;
+    border:1px solid #d5d5d5;
+    float:left;
+}
+.checksecret{
+    width:100%;
+    border:1px solid #d5d5d5;
+}
+.secretpwd{
+    width: 80px;
+    padding: 12px 0 12px 13px;
+    text-align: left;
+    border-top: 1px solid #ececec;
+    font-size: 13px;
+    vertical-align: top;
+    display: inline-block;
+}
+.marg{margin-top:8px; margin-left:10px;}
+.btnlist{
+    
+    margin-top: 10px;
+    padding: 0 14px 14px;
+    background: #fff;
+    text-align: right;
+}
+.select{float:left; text-align: left;}
+.leftbtn{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    word-spacing: -0.5px;
+    letter-spacing: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: #222;
+    background-color: #f0f0f0;
+    width: 96px;
+}
+.leftbtn:hover{color:#222;}
+.rightbtn{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    font-family: 'Noto Sans KR',sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    word-spacing: -0.5px;
+    letter-spacing: 0;
+    text-align: middle;
+    white-space: nowrap;
+    color: #222;
+    width: 96px;
+}
+.rightbtn a{text-align: center;}
+.rightbtn:hover{color:#222;}

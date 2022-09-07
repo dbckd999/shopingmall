@@ -24,7 +24,7 @@ public class CustomerController {
     
     @GetMapping
 	public String sign() {
-        return "sign";
+        return "/user/sign";
 	}
 
 	@PostMapping
@@ -36,66 +36,65 @@ public class CustomerController {
     
     @GetMapping("find_id")
 	public String find_id() {
-		return "find_id";
+		return "/user/find_id";
 	}
 
 	@GetMapping("find_pw")
 	public String find_pw() {
-		return "find_pw";
+		return "/user/find_pw";
 	}
 
 	@GetMapping("indexlogin")
 	public String indexlogin() {
-		return "indexlogin";
+		return "/user/indexlogin";
 	}
 
 	@GetMapping("mypage")
 	public String mypage() {
-		return "mypage";
+		return "/user/mypage";
 	}
 	
 	@GetMapping("usablereserve")
 	public String usablereserve() {
-		return "usablereserve";
+		return "/user/usablereserve";
 	}
 	
 	@GetMapping("userinfo")
 	public String userinfo() {
-		return "userinfo";
+		return "/user/userinfo";
 	}
 
 	@GetMapping("ordercheck")
 	public String ordercheck() {
-		return "ordercheck";
+		return "/user/ordercheck";
 	}
-
 	@GetMapping("list")
 	public String list() {
-		return "list";
+		return "/user/list";
 	}
 	@GetMapping("deposit")
 	public String deposit() {
-		return "deposit";
+		return "/user/deposit";
 	}
 	@GetMapping("register")
 	public String register() {
-		return "register";
+		return "/user/register";
 	}
 	@GetMapping("notice")
 	public String notice() {
-		return "notice";
+		return "/user/notice";
 	}
 	@GetMapping("qanda")
 	public String qanda() {
-		return "qanda";
+		return "/user/qanda";
 	}
 	@GetMapping("review")
 	public String review() {
-		return "review";
+		return "/user/review";
 	}
 	@GetMapping("qandawrite")
 	public String qandawrite() {
-		return "qandawrite";
+		return "/user/qandawrite";
 	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){

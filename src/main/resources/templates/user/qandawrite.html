@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
 <body>
-    <div class="jump"></div> <div class="jump"></div>
+    <div class="jump"></div><div class="jump"></div>
     <div class="contents">
         <div class="title">
             <span class="abc">CS CENTER</span>
@@ -27,6 +27,24 @@
         </div>
         <span class="line_line">Q&A</span>
         <div id="summernote"></div>
+        <div class="issecret">
+            <div class="secretpwd">비밀번호</div>
+            <input id="password" class="marg" name="password" fw-filter="" fw-label="비밀번호" fw-msg="" value="" type="password">
+        </div>
+        <div class="checksecret">
+            <div class="secretpwd">비밀글여부</div>
+            <div class="form-check form-check-inline marg">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="secret">
+                <label class="form-check-label" for="inlineCheckbox1">비밀글</label>
+            </div>
+        </div>
+        <div class="btnlist">
+            <span class="select">
+                <a href="#" type="submit" class="leftbtn" id="btn1" >목록</a>
+            </span>
+            <a href="" class="rightbtn" style="text-align:center;">등록</a>
+            <a href="" class="rightbtn" style="text-align:center;">취소</a>
+        </div>
     </div>
     <script>
         $(document).ready(function() {
@@ -35,9 +53,13 @@
             });
         });
         $('#summernote').summernote({
-            placeholder: 'Hello Bootstrap 5',
+            lang: 'ko-KR',
+            placeholder: '내용을 입력하세요',
             tabsize: 2,
-            height: 300,
+            height: 500,
+            minheight:500,
+            maxheight:501,
+            focus:true,
             toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
