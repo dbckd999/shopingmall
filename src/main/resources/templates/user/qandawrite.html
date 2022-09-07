@@ -27,6 +27,13 @@
         </div>
         <span class="line_line">Q&A</span>
         <div id="summernote"></div>
+        <div class="issecret">
+            <div class="secretpwd">비밀번호</div>
+            <div class="inputpwd">
+                <input id="password" name="password" fw-filter="" fw-label="비밀번호" fw-msg="" value="" type="password">
+            </div>
+        </div>
+        <div class="clickbutton"></div>
     </div>
     <script>
         $(document).ready(function() {
@@ -35,9 +42,13 @@
             });
         });
         $('#summernote').summernote({
-            placeholder: 'Hello Bootstrap 5',
+            lang: 'ko-KR',
+            placeholder: '내용을 입력하세요',
             tabsize: 2,
-            height: 300,
+            height: 500,
+            minheight:500,
+            maxheight:501,
+            focus:true,
             toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
