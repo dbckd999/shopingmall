@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.shoping.dbckd.mapper.CustomerMapper;
 import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.service.CustomerService;
@@ -20,9 +21,15 @@ public class DbckdApplicationTests {
     @Autowired
     public CustomerService customerService;
 
+    @Autowired
+    public CustomerMapper customerMapper;
+
     @Test
     public void test() {
-        
+        CustomerDTO customer = new CustomerDTO();
+        customer.setId("test_id");
+        customer.setPw("test_pw");
+        System.out.println(customerService.login(customer));
     }
 
 }

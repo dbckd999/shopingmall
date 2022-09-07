@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Integer join(CustomerDTO customer){
-        return customerMapper.Join(customer);
+        return customerMapper.join(customer);
     }
 
     @Override
@@ -31,5 +31,10 @@ public class CustomerServiceImpl implements CustomerService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public CustomerDTO login(CustomerDTO customer){
+        return customerMapper.login(customer);
     }
 }

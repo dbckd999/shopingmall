@@ -1,14 +1,16 @@
 package com.shoping.dbckd.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoping.dbckd.model.CustomerDTO;
+import com.shoping.dbckd.service.CustomerService;
 
 /**
  * 회원이 사용하는 페이지 입니다.
@@ -16,6 +18,9 @@ import com.shoping.dbckd.model.CustomerDTO;
 @Controller
 @RequestMapping("/sign")
 public class CustomerController {
+
+	@Autowired
+	private CustomerService customerService;
     
     @GetMapping
 	public String sign() {
@@ -23,8 +28,9 @@ public class CustomerController {
 	}
 
 	@PostMapping
-	public String sign_(){
-		System.out.println("login");
+	public String sign_(CustomerDTO customer, HttpServletRequest request){
+		HttpSession sessoin = request.getSession();
+		sessoin.setAttribute("customer", customerService.login(customer));
 		return "redirect:/";
 	}
     

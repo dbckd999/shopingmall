@@ -6,10 +6,14 @@
 <!-- 회원 계정 기능 -->
 <mapper namespace="com.shoping.dbckd.mapper.CustomerMapper">
 
-    <insert id="Join" parameterType="com.shoping.dbckd.model.CustomerDTO">
+    <insert id="join" parameterType="com.shoping.dbckd.model.CustomerDTO">
         INSERT INTO customer (id, pw, nick, name, address, address_eng, phone_call, general_call, email, birth)
         VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{address_eng}, #{phone_call}, #{general_call}, #{email}, #{birth})
     </insert>
+
+    <select id="login" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="com.shoping.dbckd.model.CustomerDTO">
+        SELECT iden, id, nick, name, address, phone_call, general_call, email, birth, join_date FROM customer WHERE id = #{id} and pw = #{pw}
+    </select>
 <!-- 
     <select id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
         SELECT id, nick, name, address, address_eng, phone_call, general_call, email, birth 

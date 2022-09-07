@@ -26,4 +26,12 @@ public interface CustomerService {
      * @return 유일한 닉네임이라면 true를 반환합니다.
      */
     public boolean isOverlapNick(CustomerDTO customer);
+
+    /**
+     * @serial
+     * 로그인
+     * @param customer id, pw를 입력합니다.
+     * @return 로그인 된 사용자의 정보를 반환.
+     */
+    public CustomerDTO login(CustomerDTO customer);
 }
