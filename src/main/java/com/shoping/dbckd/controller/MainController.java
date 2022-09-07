@@ -85,7 +85,6 @@ public class MainController {
 
 	@PostMapping("sign_up")
 	public String sign_up(CustomerDTO customer) {
-		customer.setPhone_call();
 		System.out.println(customer);
 		if(customer.getAddress_eng() == null){
 			customer.setAddress_eng("n/a");
