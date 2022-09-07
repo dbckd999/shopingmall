@@ -43,3 +43,17 @@
     font-weight: bold;
     color: #333;
 }
+
+.issecret{
+    width:100%;
+    border:1px solid #d5d5d5;
+    float:left;
+}
+.secretpwd{
+    width: 80px;
+    padding: 12px 0 12px 13px;
+    text-align: left;
+    border-top: 1px solid #ececec;
+    font-size: 13px;
+    vertical-align: top;
+}
