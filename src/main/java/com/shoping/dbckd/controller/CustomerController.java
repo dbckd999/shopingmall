@@ -81,6 +81,10 @@ public class CustomerController {
 	public String review() {
 		return "review";
 	}
+	@GetMapping("qandawrite")
+	public String qandawrite() {
+		return "qandawrite";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
