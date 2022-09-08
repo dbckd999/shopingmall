@@ -100,6 +100,10 @@ public class CustomerController {
 	public String policy() {
 		return "/user/policy";
 	}
+	@GetMapping("terms_of_service")
+	public String terms_of_service() {
+		return "/user/terms_of_service";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
