@@ -96,6 +96,10 @@ public class CustomerController {
 	public String qandawrite() {
 		return "/user/qandawrite";
 	}
+	@GetMapping("policy")
+	public String policy() {
+		return "/user/policy";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
