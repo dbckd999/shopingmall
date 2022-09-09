@@ -1,6 +1,9 @@
 package com.shoping.dbckd.controller;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,16 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mysql.cj.jdbc.Blob;
 import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
-
-import ch.qos.logback.core.util.SystemInfo;
-
+import com.shoping.dbckd.service.ProductManagerSev;
 @Controller
 @RequestMapping("/")
 /**
@@ -81,13 +82,38 @@ public class MainController {
 	@PostMapping("sign_up")
 	public String sign_up(CustomerDTO customer) {
 		System.out.println(customer);
-		if(customer.getAddress_eng() == null){
-			customer.setAddress_eng("n/a");
-		}
 		if(customer.getGeneral_call() == null){
 			customer.setGeneral_call("053...01");
 		}
 		customerService.join(customer);
 		return "index";
 	}
+
+	@GetMapping("imagetest")
+	public String imgtest(){
+		return "imagetest";
+	}
+
+	@Autowired
+	ProductManagerSev p_srv;
+
+	@PostMapping(value="imagetest")
+	public String postMethodName(@RequestParam("imgName") List<String> imgName, @RequestParam("img") List<MultipartFile> img) {
+		// String[] imgNames = req.getParameterValues("imgName");
+		System.out.println(img);
+		// p_srv.addProduct(imgName2, img2);
+		for(String name: imgName){
+			// p_srv.addProduct(imgName, img);
+			System.out.println(name);
+		}
+		for(MultipartFile i : img){
+			System.out.println(i);
+		}
+
+		// for(int imgIndex = 0; imgIndex < imgName.size(); imgIndex++){
+		// 	p_srv.addProduct(imgName[imgIndex], img[imgIndex]);
+		// }
+		return "redirect:uploaditem";
+	}
+	
 }
