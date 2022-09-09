@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/detailpage.css">
     <link rel="stylesheet" type="text/css" href="./css/header.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="  crossorigin="anonymous"></script>
 </head>
 <style>
    li {
@@ -143,16 +143,15 @@
         </div>
     </nav>
     </div>
-    <div class="jump"></div>
-    <div class="jump"></div>
+    <div class="jump"></div><div class="jump"></div>
     <div class="product_view">
-        <h2>제목 영역 에베베베벱벱벱베베베베베베베베베</h2>
+        <h2>제목 영역 </h2> <a></a>
     <table>
         <caption>
             <details class="hide">
                 <!-- 수정필요 -->
                 <summary>상품정보</summary>
-                에베베베베베베벱베베베베베벱
+                임시정보
             </details>
         </caption>
         <colgroup>
@@ -169,9 +168,7 @@
                 <th>구매수량</th>
                 <td>
                     <div class="length">
-                    <input type="number" min="0" id="pd_count">
-                    <!-- <a href="#a">증가</a>
-                    <a href="#a">감소</a> -->
+                        <input type="number" min="0" id="pd_count" value='1'>
                     </div>
                 </td>
             </tr>
@@ -179,7 +176,9 @@
                 <th>사이즈 선택</th>
                 <td>
                     <select>
-                        <option>에베벱ㅂㅂ베베베베</option>
+                        <option>사이즈1</option>
+                        <option>사이즈2</option>
+                        <option>사이즈3</option>
                     </select>
                 </td>
             </tr>
@@ -193,15 +192,105 @@
         <img src="images/b20.jpg " alt="">
         <ul>
             <li class="on"><a href="#"><img src="images/b20.jpg " alt=""></a></li>
-            <li><a href="#"><img src="images/b20.jpg " alt=""></a></li>
+            <li class=""><a href="#"><img src="images/b20.jpg " alt=""></a></li>
         </ul>
     </div>
-    <div class="btns">
-        <a href="#" class="btns1">장바구니</a>
-        <a href="#" class="btns2">구매</a>
-    </div>
+        <div class="btns">
+            <a href="#" class="btns1">장바구니</a>
+            <a href="#" class="btns2">구매</a>
+        </div>
     </div>
     <div class="jump"></div>
+    <div class="btnlist">
+        <button type="button" id="btn1" class="translate-middle">상세정보(<span class="">x</span>건)</button>
+        <button type="butoon" id="btn2" class="translate-middle">상품후기(<span class="">x</span>건)</button>
+        <button type="butoon" id="btn3" class="translate-middle">상품문의(<span class="">x</span>건)</button>
+        <div id="first_state">
+            <form>
+                <div class="state">
+                    <span>상태</span>
+                    <select class="state_select" style="margin-left:30px;">
+                        <option value="031">전체 주문처리상태</option>
+                        <option value="032">입금전</option>
+                        <option value="033">배송준비전</option>
+                        <option value="041">배송중</option>
+                        <option value="042">배송완료</option>
+                        <option value="043">취소</option>
+                        <option value="044">교환</option>
+                        <option value="043">환불</option>
+                    </select>
+                </div>
+                <div class="period">
+                    <span style="padding-top:10px;">기간</span>
+                    <div class="button_group">
+                        <button type="button" class="btn_period btn-toolbar">오늘</button>
+                        <button type="button" class="btn_period">1개월</button>
+                        <button type="button" class="btn_period">3개월</button>
+                        <button type="button" class="btn_period">6개월</button>
+                        <button type="button" class="btn_period">1년</button>
+                    </div>
+                </div>
+                <ul class="notice">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                      </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                      </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                      </svg> 취소/교환/반품 신청은 배송완료일 기준 7일까지 가능합니다.</li>
+                </ul>
+            </form>
+        </div>
+        
+        <div id="second_state">
+            <form>
+                <div class="period">
+                    <span style="padding-top:10px">기간</span>
+                    <div class="button_group">
+                        <button type="button" class="btn_period">오늘</button>
+                        <button type="button" class="btn_period">1개월</button>
+                        <button type="button" class="btn_period">3개월</button>
+                        <button type="button" class="btn_period">6개월</button>
+                        <button type="button" class="btn_period">1년</button>
+                    </div>
+                </div>
+            <ul class="notice">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+            </ul>
+            </form>
+        </div>
+
+        <div id="third_state">
+            <form>
+                <div class="period">
+                    <span style="padding-top:10px">기간</span>
+                    <div class="button_group">
+                        <button type="button" class="btn_period">오늘</button>
+                        <button type="button" class="btn_period">1개월</button>
+                        <button type="button" class="btn_period">3개월</button>
+                        <button type="button" class="btn_period">6개월</button>
+                        <button type="button" class="btn_period">1년</button>
+                    </div>
+                </div>
+            <ul class="notice">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+            </ul>
+            </form>
+        </div>
+</div>
+
     <!-- 회사 안내 -->
     <hr>
     <div class="multi-layout">
@@ -262,10 +351,23 @@
         document.getElementById('cost').innerHTML = product_cost * pd_count.value;
     })
 
+    $('#btn1').click(function(){
+        $("#first_state").show();
+        $("#second_state").hide();
+        $("#third_state").hide();
+    })
+    $('#btn2').click(function(){
+        $("#first_state").hide();
+        $("#second_state").show();
+        $("#third_state").hide();
+    })
+    $('#btn3').click(function(){
+        $("#first_state").hide();
+        $("#second_state").hide();
+        $("#third_state").show();
+    })
+
 </script>
 
 </body>
 </html>
-
-
-<th></th>

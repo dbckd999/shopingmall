@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>놀이골프 | nollnollgolf</title>
     <link rel="stylesheet" type="text/css" href="./css/write.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="  crossorigin="anonymous"></script>
     <style>
    li {
             list-style-type: none;
@@ -42,12 +44,11 @@
 </head>
 <body>
     <div class="form_box">
-        <h3>(*필수)상품 업로드</h3>
+        <span style="font-size:20px; margin-bottom:10px;">(*필수)상품 업로드</span>
         <input class="input_field" type="text" placeholder="(*필수)상품명과 메뉴명을 입력해주세요"><br>
         <input class="input_field" type="text" placeholder="(*필수)판매 가격을 입력해주세요" ><br>
-        <div class="input_field" style="width:70%;">(*필수)상품 목록을 선택해주세요</div>
-        <select name="item_list">    
-            <option value="new_item" >상품을 골라주세요</option>
+        <span style="padding:5px">(*필수)상품 목록을 선택해주세요</span><br>
+        <select name="item_list" style="margin:5px;">    
             <option value="new_item" >신상품</option>
             <optgroup label="----------------"></optgroup>
             <optgroup label="MAN">
@@ -95,26 +96,26 @@
         </select><br>   
         <div class="input_field">
             <span style="font-size:14px;">(*필수)보유중인 상품의 사이즈를 체크해주세요</span><br>
-            <h4>남성 상의</h4>
+            <p class="list_tag">남성 상의</p>
             <input type="checkbox" name="MAN_90" value="MAN_90"> 90
             <input type="checkbox" name="MAN_95" value="MAN_95"> 95
             <input type="checkbox" name="MAN_100" value="MAN_100"> 100
             <input type="checkbox" name="MAN_105" value="MAN_105"> 105
             <input type="checkbox" name="MAN_110" value="MAN_110"> 110<br>
-            <h4>여성 상의</h4>
+            <p class="list_tag">여성 상의</p>
             <input type="checkbox" name="WOMAN_44" value="WOMAN_XS"> XS(구 44)
             <input type="checkbox" name="WOMAN_55" value="WOMAN_S"> S(구 55)
             <input type="checkbox" name="WOMAN_66" value="WOMAN_M"> M(구 66)
             <input type="checkbox" name="WOMAN_77" value="WOMAN_L"> L(구 77)
             <input type="checkbox" name="WOMAN_88" value="WOMAN_XL"> XL(구 88)<br>
-            <h4>남성 하의</h4>
+            <p class="list_tag">남성 하의</p>
             <input type="checkbox" name="MAN_down_XS" value="MAN_down_XS"> XS(27,28)
             <input type="checkbox" name="MAN_down_S" value="MAN_down_S"> S(29,30)
             <input type="checkbox" name="MAN_down_M" value="MAN_down_M"> M(31,32)
             <input type="checkbox" name="MAN_down_L" value="MAN_down_L"> L(33,34)
             <input type="checkbox" name="MAN_dowm_XL" value="MAN_dowm_XL"> XL(35,36)
             <input type="checkbox" name="MAN_dowm_XXL" value="MAN_dowm_XXL"> XXL(37,38)<br>
-            <h4>여성 하의</h4>
+            <p class="list_tag">여성 하의</p>
             <input type="checkbox" name="WOMAN_XS" value="WOMAN_down_XS"> XS(24,25)
             <input type="checkbox" name="WOMAN_S" value="WOMAN_down_S"> S(26,27)
             <input type="checkbox" name="WOMAN_M" value="WOMAN_down_M"> M(28,29,30)
@@ -122,9 +123,13 @@
             <input type="checkbox" name="WOMAN_XL" value="WOMAN_down_XL"> XL(33,34)
             <input type="checkbox" name="WOMAN_XXL" value="WOMAN_down_XXL"> XXL(35,36)<br>
         </div>
-        <span>사진 업로드하기!!</span>
-        <input class="input_field" type="file" multiple></input> 
-        <button class="judge-thing"><a herf="index.html">게시</a></button>
+        <span>상품용 사진(사진 규격은 370x370입니다.)</span><br>
+        <input class="input_field" name="product_img_main" type="file"></input>
+        <button class="btn-btn" id='a' value="추가" onclick="add1()">추가하기</button><br>
+        <span>상세설명용 사진(사진 규격 X)</span><br>
+        <input class="input_field" type="file"></input>
+        <button class="btn-btn" id='b' name='product_img_detail' value="추가" onclick="add2()">추가하기</button><br>
+        <button type="submit" class="judge-thing"><a herf="index">게시</a></button>
     </div>
     <!-- 회사 안내 -->
     <hr>
@@ -177,6 +182,22 @@
             <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
         </ul>
     </div>
-
+    <script>
+        var i=0;
+        function add1(){
+            if(i==0){
+            var a="<input class='input_field' name='product_img_hover' type='file'></input>";
+            }
+            else if(i>=1){
+                var a="<input class='input_field' name='product_img_sub' type='file'></input>";
+            }
+            document.getElementById('a').insertAdjacentHTML('beforebegin', a)
+            i++;
+        }
+        function add2(){
+            var b="<input class='input_field' name='product_img_detail' type='file'></input>";
+            document.getElementById('b').insertAdjacentHTML('beforebegin', b)
+        }
+    </script>
 </body>
 </html>
