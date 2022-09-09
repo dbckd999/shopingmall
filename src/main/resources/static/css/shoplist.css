@@ -24,17 +24,17 @@
     display:inline-block;
 }
 .shop_list .container .grid .list_box{
-    width:200px;
+    width: 19%;
+    margin: 0 1% 10px 0;
     background-color:#fff;
-    border:1px solid gray;
-    margin:0 20px 20px;
+    border:1px solid #ddd;
     text-align: center;
 }
-.shop_list .container .grid .list_box .deco{
+.shop_list .container .grid a{
     margin-top:5px;
     margin-bottom:5px;
 }
-.shop_list .container .grid .list_box a:hover{
+.shop_list .container .grid a:hover{
     color:#333;
 }
 
