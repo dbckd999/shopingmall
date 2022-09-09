@@ -79,7 +79,6 @@
             color: black;
             background-color: white;
         }
-
         .footer {
             padding-left:22%;
             padding-right:22%;
@@ -535,19 +534,7 @@
         <br>
     </div>
     <hr style="clear:both;">
-    <div class="footer">
-        <ul>
-            <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
-            <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
-            <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
-            <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
-            <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
-                    from</span></li>
-            <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
-        </ul>
-        <a href="/imagetest">테스트용 이미지 삽입 페이지</a>
-    </div>
-
+    <div th:insert="~{fragment/headerfooter :: footer}"></div>
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/owl.carousel.js"></script>
     <script src="./js/owl.autoplay.js"></script>
