@@ -62,15 +62,7 @@
     width:67px; height:30px; border:none; text-align: center;
 }
 
-/* .product_view table .length a{
-    width:26px;
-    height:16px;
-    right:0;
-    top:0;
-    position:absolute;
-    overflow: hidden;
-    color:transparent;
-} */
+
 .product_view .btns{text-align: center; padding:45px 0 0;}
 .product_view .btns > a{
     display:inline-block;
@@ -84,3 +76,104 @@
 }
 .product_view .btns > a.btns1{background:#666;}
 .product_view .btns > a.btns2{background:#0a56a9;}
+
+.jump{padding-top:75px;}
+li a{text-decoration: none;color:#333;}
+li a:hover{color:#333;}
+
+/* -------상세내용------ */
+.btnlist{
+    width:100%;
+    max-width:1260px;
+    vertical-align: center;
+    justify-content: center;
+    margin:0 auto;
+}
+.btnlist button{
+    width:10%;
+    float:left;
+    border:1px solid #888;
+    flex-basis: 100%;
+    justify-content: center;
+    line-height: 1em;
+    align-items: center;
+    color: black;
+    background: #f2f2f2;;
+    font-size:13px;
+    height:40px;
+    margin: 0 auto;
+}
+.btnlist button span{
+    font-size: 13px;
+}
+.active{
+    border:1px solid #333;
+}
+.state_select{
+    width:90%;
+    border:1px solid #d7d5d5;
+    background:#fff;
+    background-size: auto 40px;
+    padding: 0 20px 0 8px;
+    height:30px;
+    margin:0 auto;
+    
+}
+.state{
+    float:left;
+    width:100%;
+    padding:10px;
+}
+.period{
+    float:left;
+    width:100%;
+    vertical-align: center;
+    justify-content: center;
+    margin:0 auto;
+    list-style: nowrap;
+    padding: 10px;
+}
+section span{
+    font-size:16px; float:left; vertical-align: center;
+}
+form span{
+    font-size:16px; float:left; vertical-align: center;
+}
+.button_group{
+    margin-left:5%;
+}
+.button_group button{
+    width: 18%;
+    height:30px;
+    border:1px solid #888;
+    border-radius: 5px;
+    margin: 10px;
+    background: #fff;
+    display:inline-block;
+}
+li{
+    padding: 0 0 2px 18px;
+    line-height: 1.5;
+    text-align: left;
+    background-size: 14px auto;
+}
+.notice{
+    margin: 8px 4px;
+    font-size: 12px;
+    color: #757575;
+    list-style: none;
+}
+.btn1,.btn2,btn3{
+    border-top:1px solid #e8e8e8;
+    border-left:1px solid #e8e8e8;
+    border-right:1px solid #e8e8e8;
+}
+#first_state, #second_state, #third_state{
+    width:100%;
+    padding: 20px;
+
+    /* background:#f1f1f1; */
+}
+#first_state{display:block;}
+#second_state{display:none;}
+#third_state{display:none;}
