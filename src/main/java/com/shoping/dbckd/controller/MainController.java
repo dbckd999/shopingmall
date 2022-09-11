@@ -98,21 +98,15 @@ public class MainController {
 	ProductManagerSev p_srv;
 
 	@PostMapping(value="imagetest")
-	public String postMethodName(@RequestParam("imgName") List<String> imgName, @RequestParam("img") List<MultipartFile> img) {
+	public String postMethodName(@RequestParam("nname") String name, @RequestParam("img") List<MultipartFile> img) {
 		// String[] imgNames = req.getParameterValues("imgName");
-		System.out.println(img);
-		// p_srv.addProduct(imgName2, img2);
-		for(String name: imgName){
-			// p_srv.addProduct(imgName, img);
-			System.out.println(name);
-		}
+
+		System.out.println(name);
+
 		for(MultipartFile i : img){
 			System.out.println(i);
 		}
 
-		// for(int imgIndex = 0; imgIndex < imgName.size(); imgIndex++){
-		// 	p_srv.addProduct(imgName[imgIndex], img[imgIndex]);
-		// }
 		return "redirect:uploaditem";
 	}
 	

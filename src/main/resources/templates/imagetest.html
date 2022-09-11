@@ -7,27 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="btn" onclick="add()">추가하기</button>
     <form action="/imagetest" method="post" enctype="multipart/form-data">
         <table border="1" id="test">
+            <input name="nname" type="text"/>
             <tr>
-                <td>상품명</td>
                 <td>이미지</td>
             </tr>
             <tr>
-                <td><input type="text" name="imgName"></td>
                 <td><input type="file" name="img"></td>
             </tr>
         </table>
         <input type="submit">
     </form>
-    <button id="btn" onclick="add()">추가하기</button>
 
     <script>
         function add(){
-            var tr = "<tr><td><input type='text' name='imgName'></td><td><input type='file' name='img'></td></tr>";
+            var tr = "<tr><td><input type='file' name='img'></td></tr>";
             document.getElementById("test").insertAdjacentHTML('beforeend', tr)
         }
     </script>
-    <div th:insert="~{fragment/headerfooter :: footer}"></div>
 </body>
 </html>
