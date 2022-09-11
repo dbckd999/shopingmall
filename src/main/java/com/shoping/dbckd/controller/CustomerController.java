@@ -104,6 +104,14 @@ public class CustomerController {
 	public String terms_of_service() {
 		return "/user/terms_of_service";
 	}
+	@GetMapping("lookbook")
+	public String lookbook() {
+		return "/user/lookbook";
+	}
+	@GetMapping("events")
+	public String events() {
+		return "/user/events";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
