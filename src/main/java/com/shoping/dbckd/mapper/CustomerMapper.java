@@ -18,4 +18,5 @@ public interface CustomerMapper {
     public CustomerDTO checkID(CustomerDTO customer);
     public CustomerDTO checkNick(CustomerDTO customer);
     public CustomerDTO login(CustomerDTO customer);
+    public CustomerDTO dummy();
 }

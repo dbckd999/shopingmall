@@ -11,8 +11,12 @@
         VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{address_eng}, #{phone_call}, #{general_call}, #{email}, #{birth})
     </insert>
 
-    <select id="login" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="com.shoping.dbckd.model.CustomerDTO">
+    <select id="login" resultType="com.shoping.dbckd.model.CustomerDTO">
         SELECT iden, id, nick, name, address, phone_call, general_call, email, birth, join_date FROM customer WHERE id = #{id} and pw = #{pw}
+    </select>
+
+    <select id="dummy" resultType="com.shoping.dbckd.model.CustomerDTO">
+        select * from customer where iden=13;
     </select>
 <!-- 
     <select id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">

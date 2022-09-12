@@ -1,18 +1,10 @@
 package com.shoping.dbckd;
 
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.shoping.dbckd.mapper.CustomerMapper;
-import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.service.CustomerService;
 
@@ -26,10 +18,11 @@ public class DbckdApplicationTests {
 
     @Test
     public void test() {
-        CustomerDTO customer = new CustomerDTO();
-        customer.setId("test_id");
-        customer.setPw("test_pw");
-        System.out.println(customerService.login(customer));
+        // CustomerDTO customer = new CustomerDTO();
+        // customer.setId("id");
+        // customer.setPw("pwp");
+        // System.out.println(customerMapper.login(customer).getPhone_call());
+        System.out.println(customerMapper.dummy());
     }
 
 }
