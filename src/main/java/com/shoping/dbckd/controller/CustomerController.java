@@ -33,6 +33,14 @@ public class CustomerController {
 		sessoin.setAttribute("customer", customerService.login(customer));
 		return "redirect:/";
 	}
+
+	@GetMapping("logout")
+	public String logout(HttpSession session){
+		//session.invalidate();
+		/*session에 해당하는 이름을 매개변수로 넣어줘야 한다*/
+		session.removeAttribute("customer");
+		return "redirect:/";
+	 }
     
     @GetMapping("find_id")
 	public String find_id() {
