@@ -86,7 +86,7 @@ public class MainController {
 			customer.setGeneral_call("053...01");
 		}
 		customerService.join(customer);
-		return "index";
+		return "redirect:/";
 	}
 
 	@GetMapping("imagetest")
