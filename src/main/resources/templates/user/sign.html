@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/header.css">
 	<link rel="stylesheet" type="text/css" href="./css/sign.css">
 	<link rel="stylesheet" type="text/css" href="./css/header.css">
 
@@ -47,112 +48,7 @@
 </style>
 
 <body>
-	<div class="upclass" style="z-index:9000">
-		<nav class="navbar navbar-expand-lg bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand logoimg" href="index"><img src="images/logo.ico" alt="" width="100" height="50"
-						style="margin-left:40px;"></a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="shopList" role="button" data-bs-toggle="dropdown"
-								aria-expanded="false">
-								SHOP
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">신상품</a></li>
-								<li class="dropend"><a class="dropdown-item" href="#">MAN</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">아우터</a></li>
-										<li><a class="dropdown-item" href="#">상의</a></li>
-										<li><a class="dropdown-item" href="#">하의</a></li>
-									</ul>
-								</li>
-								<li class="dropend"><a class="dropdown-item" href="#">WOMAN</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">아우터</a></li>
-										<li><a class="dropdown-item" href="#">상의</a></li>
-										<li><a class="dropdown-item" href="#">하의</a></li>
-									</ul>
-								</li>
-								<li><a class="dropdown-item" href="#">전체상품</a></li>
-								<li class="dropend"><a class="dropdown-item" href="#">아우터</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">아우터</a></li>
-									</ul>
-								</li>
-								<li class="dropend"><a class="dropdown-item" href="#">상의</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">반팔티셔츠</a></li>
-										<li><a class="dropdown-item" href="#">긴팔티셔츠</a></li>
-										<li><a class="dropdown-item" href="#">맨투맨/후드</a></li>
-										<li><a class="dropdown-item" href="#">니트/카디건</a></li>
-										<li><a class="dropdown-item" href="#">베스트</a></li>
-									</ul>
-								</li>
-								<li class="dropend"><a class="dropdown-item" href="#">하의</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">롱펜츠</a></li>
-										<li><a class="dropdown-item" href="#">숏펜츠</a></li>
-										<li><a class="dropdown-item" href="#">스커트</a></li>
-									</ul>
-								</li>
-								<li><a class="dropdown-item" href="#">슈즈</a></li>
-								<li class="dropend"><a class="dropdown-item" href="#">엑세서리</a>
-									<ul class="dropdown-menu-right">
-										<li><a class="dropdown-item" href="#">모자</a></li>
-										<li><a class="dropdown-item" href="#">헤드커버</a></li>
-										<li><a class="dropdown-item" href="#">볼마커</a></li>
-										<li><a class="dropdown-item" href="#">골프장갑</a></li>
-										<li><a class="dropdown-item" href="#">가방</a></li>
-										<li><a class="dropdown-item" href="#">양말</a></li>
-										<li><a class="dropdown-item" href="#">벨트</a></li>
-										<li><a class="dropdown-item" href="#">기타</a></li>
-										<li><a class="dropdown-item" href="#">악세서리</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="view">NOLNOL STORY</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">LOOKBOOK</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">EVENT</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Thanks, Archive</a>
-						</li>
-					</ul>
-				</div>
-				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown"
-					style="margin-right:40px;">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link" href="sign">SIGN</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">CS center</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="uploaditem"><img src="images/search.png" alt="" width="24"
-									height="24"></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><img src="images/basket.png" alt="" width="24" height="24"></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
+	<div th:insert="~{fragment/headerfooter :: header}"></div>
 	<div class="jump"></div>
 	<div class="login">
 		<h3 style="margin-top:100px;">LOGIN</h3>
