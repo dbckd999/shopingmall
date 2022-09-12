@@ -4,9 +4,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.persistence.Column;
 import lombok.Data;
-import lombok.NonNull;
 @Data
 public class CustomerDTO {
     private int iden;               // 식별자
