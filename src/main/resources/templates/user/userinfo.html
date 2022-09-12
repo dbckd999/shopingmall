@@ -12,14 +12,14 @@
 </head>
 <body>
     <div class="jump"></div>
-    <div id="wrap">
+    <div id="wrap" th:object="${session.customer}">
         <form>
             <fieldset>
                 <legend class="title">필수입력정보</legend>
                 <table class="table_box">
                     <tr>
                         <th class="frist"><label for="user_id">id *</label></th>
-                        <td><input type="text" id="user_id" class="textform" required autofocus>
+                        <td><input type="text" id="user_id" class="textform" required autofocus th:value="*{id}">
                         </td>
                     </tr>
                     <tr>
@@ -34,11 +34,11 @@
                     </tr>
                     <tr>
                         <th><label for="user_pw">이름 *</label></th>
-                        <td><input type="text" id="uesr_name" class="textform" required></td>
+                        <td><input type="text" id="uesr_name" class="textform" required th:value="*{name}"></td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">주소 *</label></th>
-                        <td><input type="text" id="uesr_address" class="textform" required></td>
+                        <td><input type="text" id="uesr_address" class="textform" required th:value="*{address}"></td>
                     </tr>
                     <tr class="grid">
                         <th><label for="user_home">일반전화</label></th>
@@ -64,6 +64,7 @@
                             </select>
                             <input type="text" id="user_home_second" class="callform" maxlength="4">
                             <input type="text" id="user_home_third" class="callform" maxlength="4">
+                            <input type="hidden" name="general_call" th:value="*{general_call}">
                         </td>
                     </tr>
                     <tr>
@@ -78,6 +79,7 @@
                         </select>
                         <input type="text" id="user_phone_second" class="callform " maxlength="4" required>
                         <input type="text" id="user_phone_third" class="callform " maxlength="4" required></td>
+                        <input type="hidden" name="phone_call" th:value="*{phone_call}">
                     </tr>
                     <tr>
                         <th><label for="user_pw">SMS 수신여부</label></th>
@@ -94,7 +96,7 @@
                     </tr>
                     <tr>
                         <th><label for="user_pw">EMail *</label></th>
-                        <td><input type="text" id="user_Email" class="textform" required></td>
+                        <td><input type="text" id="user_Email" class="textform" required th:value="*{email}"></td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">EMail 수신여부</label></th>
@@ -117,7 +119,7 @@
                 <table class="table_box">
                     <tr>
                         <th><label for="user_birthday">생년월일</label></th>
-                        <td><input type="date" id="user_birthday" class="textform"></td>
+                        <td><input type="date" id="user_birthday" class="textform" th:value="*{birth}"></td>
                     </tr>
                 </table>
             </fieldset>
