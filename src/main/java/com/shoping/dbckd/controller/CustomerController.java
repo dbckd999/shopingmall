@@ -124,6 +124,10 @@ public class CustomerController {
 	public String thanks() {
 		return "/user/thanks";
 	}
+	@GetMapping("basket")
+	public String basket() {
+		return "/user/basket";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
