@@ -128,6 +128,10 @@ public class CustomerController {
 	public String basket() {
 		return "/user/basket";
 	}
+	@GetMapping("nollnoll_story")
+	public String nollnoll_story() {
+		return "/user/nollnoll_story";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
