@@ -1,0 +1,31 @@
+.jump{padding-top:80px;}
+.contents{
+    width:100%;
+    max-width:800px;
+    margin:auto;
+}
+.menulist{
+    width:100%;
+    display:inline;
+}
+.btnlist{
+    border:1px solid #d5d5d5;
+    background: #737781;;
+    color:#fff;
+    font-size:20px;
+    padding:20px;
+    margin:20px;
+    cursor:pointer;
+}
+/* .btnlist a{
+    text-decoration: none;
+    color:#fff;
+}
+.btnlist a:hover{color:#fff} */
+.menulist .title{
+    width:100%;
+    text-align:center;
+    font-size:30px;
+    color:#333;
+    margin:20px;
+}
