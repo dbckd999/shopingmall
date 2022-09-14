@@ -177,5 +177,5 @@ $RECYCLE.BIN/
 
 images/*
 
-src/main/resources/file/**
-!src/main/resources/file
+src/main/resources/static/file/**
+!src/main/resources/static/file
