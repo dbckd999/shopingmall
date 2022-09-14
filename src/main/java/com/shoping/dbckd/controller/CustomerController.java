@@ -132,10 +132,7 @@ public class CustomerController {
 	public String nollnoll_story() {
 		return "/user/nollnoll_story";
 	}
-	@GetMapping("manager_menu")
-	public String manager_menu() {
-		return "/user/manager_menu";
-	}
+	
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);

@@ -91,6 +91,11 @@ public class MainController {
 		return "imagetest";
 	}
 
+	@GetMapping("manager_menu")
+	public String manager_menu() {
+		return "manager_menu";
+	}
+
 	@Autowired
 	ProductManagerSev p_srv;
 
