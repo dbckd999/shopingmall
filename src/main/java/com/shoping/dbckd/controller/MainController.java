@@ -42,9 +42,9 @@ public class MainController {
 		return "index";
 	}
 
-	@GetMapping("uploaditem")
-	public String uploaditem() {
-		return "uploaditem";
+	@GetMapping("uploadItem")
+	public String uploadItem() {
+		return "uploadItem";
 	}
 	@GetMapping("shopList")
 	public String shoplist() {
