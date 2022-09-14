@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.model.CustomerDTO;
+import com.shoping.dbckd.model.ProductDTO;
 import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
 import com.shoping.dbckd.service.ProductManagerSev;
@@ -33,6 +34,9 @@ public class MainController {
 	@Autowired
 	CustomerService customerService;
 
+	@Autowired
+	ProductManagerSev productService;
+
 	/**
 	 * @param model 데이터를 가져오는 실험적 기능입니다.
 	 * @return index.html
@@ -42,10 +46,24 @@ public class MainController {
 		return "index";
 	}
 
+	// 관리자가 사용할 페이지 임으로 /admin 하위로 옮기기
 	@GetMapping("uploadItem")
 	public String uploadItem() {
 		return "uploadItem";
 	}
+
+	// 나머지 정보는 나중에..
+	@PostMapping("uploadItem")
+	public String postUploadItem(ProductDTO product, MultipartFile mainImage0, MultipartFile subImage0){
+		System.out.println(product);
+		System.out.println(mainImage0);
+		System.out.println(subImage0);
+
+		productService.addProduct(product, mainImage0, subImage0);
+
+		return "uploadItem";
+	}
+
 	@GetMapping("shopList")
 	public String shoplist() {
 		return "shopList";
@@ -107,10 +125,10 @@ public class MainController {
 
 		for(MultipartFile i : p_img){
 			System.out.println(i);
-			p_srv.addProduct(p_name, i);
+			// p_srv.addProduct(p_name, i);
 		}
 
-		return "redirect:uploaditem";
+		return "redirect:uploadItem";
 	}
 	
 }
