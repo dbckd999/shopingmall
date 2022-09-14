@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shoping.dbckd.mapper.ProductMapper;
+import com.shoping.dbckd.model.ProductDTO;
 import com.shoping.dbckd.model.ProductImageDTO;
 
 @Service
@@ -18,11 +19,22 @@ public class ProductManagerSevImpl implements ProductManagerSev{
     ProductMapper productMapper;
 
     @Override
-    public int addProduct(String name, MultipartFile file) {
+    public int addProduct(ProductDTO product, MultipartFile mainImage, MultipartFile subImage){
+        product.setMainImageId(addProductImage(mainImage));
+        product.setSubImageId(addProductImage(subImage));
+
+        System.out.println(product);
+
+        productMapper.addProduct(product);
+
+        return 0;
+    }
+
+    private int addProductImage(MultipartFile file) {
         UUID uuid = UUID.randomUUID();
         String fileName = uuid.toString() + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         
-        String path = System.getProperty("user.dir") + "/src/main/resources/file";
+        String path = System.getProperty("user.dir") + "/src/main/resources/static/file";
         File saveFile = new File(path, fileName);
 
         ProductImageDTO img = new ProductImageDTO();
@@ -30,7 +42,7 @@ public class ProductManagerSevImpl implements ProductManagerSev{
         img.setOriginalName(file.getOriginalFilename());
         img.setUuid(uuid.toString());
 
-        productMapper.insertProductImage(img);
+        productMapper.addProductImage(img);
 
         try {
             file.transferTo(saveFile);
@@ -40,15 +52,7 @@ public class ProductManagerSevImpl implements ProductManagerSev{
             e.printStackTrace();
         }
 
-        // insert db
-        /*
-         * key
-         * name
-         * filename
-         * path
-         */
-
-        return 0;
+        return productMapper.getProductImageId(img.getUuid());
     }
     
 }
