@@ -7,8 +7,8 @@
 <mapper namespace="com.shoping.dbckd.mapper.CustomerMapper">
 
     <insert id="join" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        INSERT INTO customer (id, pw, nick, name, address, address_eng, phoneCall, generalCall, email, birth)
-        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{address_eng}, #{phoneCall}, #{generalCall}, #{email}, #{birth})
+        INSERT INTO customer (id, pw, nick, name, address, phoneCall, generalCall, email, birth)
+        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{phoneCall}, #{generalCall}, #{email}, #{birth})
     </insert>
 
     <select id="login" resultType="com.shoping.dbckd.model.CustomerDTO">
