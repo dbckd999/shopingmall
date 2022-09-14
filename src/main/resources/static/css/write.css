@@ -1,5 +1,7 @@
-div{width:700px;}
+.jump{padding-top:100px;}
 .form_box {
+    max-width:800px;
+    width:100%;
     background-color: #ffffff;
     margin: 10px;
     border-radius: 4px;
@@ -46,4 +48,7 @@ div{width:700px;}
     font-size:12px;
     padding:3px;
     margin-bottom:7px;
+}
+#man_up, #woman_up, #man_down, #woman_down{
+    display:none;
 }

@@ -4,21 +4,33 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.shoping.dbckd.mapper.ProductMapper;
+import com.shoping.dbckd.model.ProductImageDTO;
 
 @Service
 public class ProductManagerSevImpl implements ProductManagerSev{
 
+    @Autowired
+    ProductMapper productMapper;
+
     @Override
     public int addProduct(String name, MultipartFile file) {
         UUID uuid = UUID.randomUUID();
-        String fileName = uuid + "_" + file.getOriginalFilename();
+        String fileName = uuid.toString() + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         
-        String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+        String path = System.getProperty("user.dir") + "/src/main/resources/file";
         File saveFile = new File(path, fileName);
 
-        System.out.println(fileName);
+        ProductImageDTO img = new ProductImageDTO();
+        img.setFileName(fileName);
+        img.setOriginalName(file.getOriginalFilename());
+        img.setUuid(uuid.toString());
+
+        productMapper.insertProductImage(img);
 
         try {
             file.transferTo(saveFile);

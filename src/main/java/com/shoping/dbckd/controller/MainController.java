@@ -42,9 +42,9 @@ public class MainController {
 		return "index";
 	}
 
-	@GetMapping("uploaditem")
-	public String uploaditem() {
-		return "uploaditem";
+	@GetMapping("uploadItem")
+	public String uploadItem() {
+		return "uploadItem";
 	}
 	@GetMapping("shopList")
 	public String shoplist() {
@@ -89,6 +89,11 @@ public class MainController {
 	@GetMapping("imagetest")
 	public String imgtest(){
 		return "imagetest";
+	}
+
+	@GetMapping("manager_menu")
+	public String manager_menu() {
+		return "manager_menu";
 	}
 
 	@Autowired
