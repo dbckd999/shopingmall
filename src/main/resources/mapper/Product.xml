@@ -15,7 +15,11 @@
     </select>
 
     <insert id="addProduct" parameterType="com.shoping.dbckd.model.ProductDTO">
-        INSERT INTO product(name, inherentNum, price, mainImageId, subImageId) VALUES(#{name}, #{inherentNum}, #{price}, #{mainImageId}, #{subImageId});
+        INSERT INTO product(name, inherentNum, price, mainImageFileName, subImageFileName) VALUES(#{name}, #{inherentNum}, #{price}, #{mainImageFileName}, #{subImageFileName});
     </insert>
 
+    <!-- viewProductList --> 
+
+    <select id="viewProductList" resultType="com.shoping.dbckd.model.ProductDTO">
+    </select>
 </mapper>
