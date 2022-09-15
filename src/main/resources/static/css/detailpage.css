@@ -1,7 +1,8 @@
 @charset "utf-8";
 .product_view{
     padding:0 0 0 395px;
-    width:962px;
+    max-width:962px;
+    width:100%;
     box-sizing: border-box;
     position:relative;
     margin-left: auto;
@@ -22,10 +23,12 @@
 }
 .product_view .img >ul > li{
     float:left; padding:10px 10px 10px 10px;
+    cursor:pointer;
 }
 .product_view .img > img{
-    width:370px;
-    height:370px;
+    max-width:370px;
+    width:100%;
+    /* height:370px; */
     border:1px solid gray;
 }
 
@@ -35,7 +38,9 @@
     width:70px; height:70px; border:1px solid gray;
 }
 .product_view .img li.on img{
-    width:70px; height:70px; border:1px solid blueviolet;
+    max-width:70px;
+    width:100%;
+    height:70px; border:1px solid blueviolet;
 }
 .product_view table th,
 .product_view table td{

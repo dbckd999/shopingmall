@@ -48,65 +48,68 @@
     <div class="jump"></div><div class="jump"></div>
     <div class="product_view">
         <h2>제목 영역 </h2> <a></a>
-    <table>
-        <caption>
-            <details class="hide">
-                <!-- 수정필요 -->
-                <summary>상품정보</summary>
-                임시정보
-            </details>
-        </caption>
-        <colgroup>
-            <col style="width:175px;">
-        </col>
-    
-        </colgroup>
-        <tbody>
-            <tr>
-                <th>판매가</th>
-                <td class="price" id="product_cost">200,000</td>
-            </tr>
-            <tr>
-                <th>구매수량</th>
-                <td>
-                    <div class="length">
-                        <input type="number" min="0" id="pd_count" value='1'>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>사이즈 선택</th>
-                <td>
-                    <select>
-                        <option>사이즈1</option>
-                        <option>사이즈2</option>
-                        <option>사이즈3</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>결제금엑</th>
-                <td class="total"><b id="cost">xxx</b>원</td>
-            </tr>
-        </tbody>
-    </table> 
-    <div class="img">
-        <img src="images/b20.jpg " alt="">
-        <ul>
-            <li class="on"><a href="#"><img src="images/b20.jpg " alt=""></a></li>
-            <li class=""><a href="#"><img src="images/b20.jpg " alt=""></a></li>
-        </ul>
-    </div>
-        <div class="btns">
-            <a href="#" class="btns1">장바구니</a>
-            <a href="#" class="btns2">구매</a>
+        <table>
+            <caption>
+                <details class="hide">
+                    <!-- 수정필요 -->
+                    <summary>상품정보</summary>
+                    임시정보
+                </details>
+            </caption>
+            <colgroup>
+                <col style="width:175px;">
+            </col>
+        
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>판매가</th>
+                    <td class="price" id="product_cost">200,000</td>
+                </tr>
+                <tr>
+                    <th>구매수량</th>
+                    <td>
+                        <div class="length">
+                            <input type="number" min="0" id="pd_count" value='1'>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>사이즈 선택</th>
+                    <td>
+                        <select>
+                            <option>사이즈1</option>
+                            <option>사이즈2</option>
+                            <option>사이즈3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>결제금엑</th>
+                    <td class="total"><b id="cost">xxx</b>원</td>
+                </tr>
+            </tbody>
+        </table> 
+        <div class="img" >
+
+            <img src="images/b20.jpg" alt="" id="thumbnail">
+            <ul>
+                <li class="" id="firstbtn"><img src="images/b20.jpg " alt="" id="first"></li>
+                <li class="" id="secondbtn"><img src="images/b19.jpg " alt="" id="second"></li>
+                <li class="" id="thirdbtn"><img src="images/b18.jpg " alt="" id="third"></li>
+            </ul>
         </div>
+            <div class="btns">
+                <a href="#" class="btns1">장바구니</a>
+                <a href="#" class="btns2">구매</a>
+            </div>
     </div>
     <div class="jump"></div>
     <div class="btnlist">
+        <div class="임시">
         <button type="button" id="btn1" class="translate-middle">상세정보(<span class="">x</span>건)</button>
         <button type="butoon" id="btn2" class="translate-middle">상품후기(<span class="">x</span>건)</button>
-        <button type="butoon" id="btn3" class="translate-middle">상품문의(<span class="">x</span>건)</button>
+        <button type="butoon" id="btn3" class="translate-middle">상품문의(<span class="">x</span>건)</button></div>
         <div id="first_state">
             <form>
                 <div class="state">
@@ -257,7 +260,25 @@
         $("#second_state").hide();
         $("#third_state").show();
     })
+    var first = "images/b20.jpg";
+    var second = "images/b19.jpg";
+    var third = "images/b18.jpg";
+    $("#first").attr("src", first);
+    $("#second").attr("src", second);
+    $("#third").attr("src", third);
 
+    $('#firstbtn').click(function(){
+        $("#thumbnail").attr("src", first);
+    })
+    $('#secondbtn').click(function(){
+        $("#thumbnail").attr("src", second);
+    })
+    $('#thirdbtn').click(function(){
+        $("#thumbnail").attr("src", third);
+    })
+
+    // var imagedelete=null;
+    // imagedelete = $('#thumbnail img').detach();
 </script>
 
 </body>
