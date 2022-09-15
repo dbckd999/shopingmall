@@ -20,6 +20,7 @@
 
     <!-- viewProductList --> 
 
-    <select id="viewProductList" resultType="com.shoping.dbckd.model.ProductDTO">
+    <select id="viewProducts" resultType="com.shoping.dbckd.model.ProductDTO">
+        SELECT name, inherentNum, price, mainImageFileName, subImageFileName FROM product;
     </select>
 </mapper>

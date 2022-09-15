@@ -68,6 +68,22 @@
                     </select>
                 </div>
             </div>
+            <div class="item_list" th:each="product : ${products}">
+                <div class="best_items">
+                    <div class="product_list">
+                        <img th:src="${product.mainImageFileName}" class="before">
+                        <img th:src="${product.subImageFileName}" class="after">
+                        <div class="icon_right">
+                        <button type="submit"><img src="./images/basket.png" class="basket_icon"></button>
+                        <button type="submit"><img src="./images/heart.png" class="like_icon"></button></div>
+                    </div>
+                    <p><span th:text="${product.name}" class="product_name">상품명</span></p>
+                    <p><span th:text="${product.inherentNum}" class="product_code">상품코드</span></p>
+                    <p><span th:text="${product.price}" class="product-price"></span><span class="product-price">원</span></p>
+                </div>
+            </div>
+
+
             <div class="item_list">
                 <div class="best_items">
                     <div class="product_list">

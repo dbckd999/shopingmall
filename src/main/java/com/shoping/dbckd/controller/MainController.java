@@ -1,6 +1,7 @@
 package com.shoping.dbckd.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shoping.dbckd.mapper.MainMapper;
+import com.shoping.dbckd.mapper.ProductMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.model.ProductDTO;
+import com.shoping.dbckd.model.ProductVO;
 import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
 import com.shoping.dbckd.service.ProductManagerSev;
@@ -64,10 +67,27 @@ public class MainController {
 		return "uploadItem";
 	}
 
+	@Autowired
+	ProductMapper productMapper;
+
 	@GetMapping("shopList")
-	public String shoplist() {
+	public String shoplist(Model model) {
+		// 상품 리스트 받아오기(카테고리 없는 버전)
+
+		final String imagePath = "/file/";
+
+		// 일종의 꼼수로 파일 경로는 파일이름에 경로만 덧붙인다.
+		// productVO를 사용해 직관적인 이름을 사용하는 방법은 천천히 생각해 보자
+		List<ProductDTO> products = productMapper.viewProducts();
+		products.forEach(p -> {	
+			p.setMainImageFileName(imagePath + p.getMainImageFileName());
+			p.setSubImageFileName(imagePath + p.getSubImageFileName());}
+		);
+
+		model.addAttribute("products", products);
 		return "shopList";
 	}
+	
 	@GetMapping("detailpage")
 	public String detailpage() {
 		return "detailpage";
