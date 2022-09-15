@@ -110,6 +110,7 @@
     
     <script>
         var i=0;
+        var check=0;
         function add1(){
             if(i==0){
             var a="<input class='input_field' name='product_img_hover' type='file'></input>";
@@ -121,8 +122,12 @@
             i++;
         }
         function add2(){
+            // if(check==2){
+            //     alert("썸내일 사진은 최대 3장까지 첨부 가능합니다.")
+            // }else{check++;
             var b="<input class='input_field' name='product_img_detail' type='file'></input>";
             document.getElementById('b').insertAdjacentHTML('beforebegin', b)
+            // }
         }
 
         function sex(e){
