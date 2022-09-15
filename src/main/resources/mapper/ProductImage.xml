@@ -6,8 +6,16 @@
 <!-- 회원 계정 기능 -->
 <mapper namespace="com.shoping.dbckd.mapper.ProductMapper">
 
-    <insert id="insertProductImage" parameterType="com.shoping.dbckd.model.ProductImageDTO">
+    <insert id="addProductImage" parameterType="com.shoping.dbckd.model.ProductImageDTO">
         INSERT INTO productImage (fileName, originalName, uuid) VALUES(#{fileName}, #{originalName}, #{uuid});
+    </insert>
+
+    <select id="getProductImageId" resultType="Integer">
+        SELECT productImageId FROM productImage WHERE uuid = #{uuid};
+    </select>
+
+    <insert id="addProduct" parameterType="com.shoping.dbckd.model.ProductDTO">
+        INSERT INTO product(name, inherentNum, price, mainImageId, subImageId) VALUES(#{name}, #{inherentNum}, #{price}, #{mainImageId}, #{subImageId});
     </insert>
 
 </mapper>
