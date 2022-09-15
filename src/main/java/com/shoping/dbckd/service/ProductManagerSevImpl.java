@@ -20,8 +20,8 @@ public class ProductManagerSevImpl implements ProductManagerSev{
 
     @Override
     public int addProduct(ProductDTO product, MultipartFile mainImage, MultipartFile subImage){
-        product.setMainImageId(addProductImage(mainImage));
-        product.setSubImageId(addProductImage(subImage));
+        product.setMainImageFileName(addProductImage(mainImage));
+        product.setSubImageFileName(addProductImage(subImage));
 
         System.out.println(product);
 
@@ -30,7 +30,7 @@ public class ProductManagerSevImpl implements ProductManagerSev{
         return 0;
     }
 
-    private int addProductImage(MultipartFile file) {
+    private String addProductImage(MultipartFile file) {
         UUID uuid = UUID.randomUUID();
         String fileName = uuid.toString() + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         
@@ -52,7 +52,7 @@ public class ProductManagerSevImpl implements ProductManagerSev{
             e.printStackTrace();
         }
 
-        return productMapper.getProductImageId(img.getUuid());
+        return fileName;
     }
     
 }

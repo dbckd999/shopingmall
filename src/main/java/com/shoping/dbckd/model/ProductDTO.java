@@ -8,6 +8,6 @@ public class ProductDTO {
     private String name;
     private String inherentNum;
     private int price;
-    private int mainImageId;
-    private int subImageId;
+    private String mainImageFileName;
+    private String subImageFileName;
 }
