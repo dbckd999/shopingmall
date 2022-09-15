@@ -132,7 +132,10 @@ public class CustomerController {
 	public String nollnoll_story() {
 		return "/user/nollnoll_story";
 	}
-	
+	@GetMapping("userlike")
+	public String userlike() {
+		return "/user/userlike";
+	}
 	// @PostMapping(value = "sign_up")
 	// public String sign_up123(CustomerDTO customer){
 	// 	System.out.println(customer);
