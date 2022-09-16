@@ -19,13 +19,13 @@
 </head>
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
-    <div class="jump"></div><div class="jump"></div>
+    <div class="jump"></div>
     <div class="contents">
         <div class="title">
             <span class="abc">CS CENTER</span>
-            <a class="btnright" href="qanda">Q&A</a>
-            <a class="btnright" href="review">REVIEW</a>
-            <a class="btnright" href="notice">NOTICE</a>
+            <a class="btnright" href="#" id="quitcheck" onclick="quitcheck1()">Q&A</a>
+            <a class="btnright" href="#" id="quitcheck" onclick="quitcheck2()">REVIEW</a>
+            <a class="btnright" href="#" id="quitcheck" onclick="quitcheck3()">NOTICE</a>
         </div>
         <span class="line_line">Q&A</span>
         <div id="summernote"></div>
@@ -72,6 +72,34 @@
             ['view', ['fullscreen', 'codeview', 'help']]
             ]
         });
+        
+        function quitcheck1(){
+            if(confirm("이 페이지를 나가시면 작성하시는 정보는 저장되지 않습니다. 정말 나가시겠습니까?") == true){
+                location.href="qanda";
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function quitcheck2(){
+            if(confirm("이 페이지를 나가시면 작성하시는 정보는 저장되지 않습니다. 정말 나가시겠습니까?") == true){
+                location.href="review";
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function quitcheck3(){
+            if(confirm("이 페이지를 나가시면 작성하시는 정보는 저장되지 않습니다. 정말 나가시겠습니까?") == true){
+                location.href="notice";
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
     </script>
     <div th:insert="~{fragment/headerfooter :: footer}"></div>
 </body>
