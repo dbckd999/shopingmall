@@ -3,8 +3,6 @@
 .contents{
     max-width:1260px;
     width:100%;
-    vertical-align: center;
-    justify-content: center;
     margin:0 auto;
 }
 .title{
@@ -36,3 +34,8 @@
     text-decoration: none;
 }
 .btnright:hover{background: #153e35; color: #fff;}
+
+.photoreview{
+    font-size: 13px;
+    font-weight: bold;
+}

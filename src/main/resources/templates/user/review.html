@@ -13,7 +13,7 @@
 </head>
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
-    <div class="jump"></div> <div class="jump"></div>
+    <div class="jump"></div>
     <div class="contents">
         <div class="title">
             <span class="abc">CS CENTER</span>
@@ -21,20 +21,31 @@
             <a class="btnright" href="review">REVIEW</a>
             <a class="btnright" href="notice">NOTICE</a>
         </div>
-        <div class="board">
-            <div class="line">
-                <div class="number">no</div>
-                <div class="line_title">title</div>
-                <div class="name">name</div>
+        <div class="photoreview">
+            <div class="titlespan">
+                <span class="titlephoto">포토리뷰</span>
             </div>
-            <div class="line">
-                <div class="number">x번</div>
-                <div><a class="line_title" href="#">제목</a></div>
-                <!-- 클릭시 해당 게시판 내용으로 하이퍼링크 되어야함 -->
-                <div class="name">작성자</div>
+            <div class="photocard">
+
             </div>
+            <nav aria-label="Page navigation example" style="margin-top: 30px;">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <div>
+            <!-- 아래 내용은 페이지 내용 -->
             <nav aria-label="Page navigation example" style="margin-top: 30px;">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
