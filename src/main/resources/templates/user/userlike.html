@@ -93,14 +93,9 @@
         var product=$('.product').length;
 
         $(function() {
-            // 1 . #checkAll 클릭
             $("#checkAll").click(function() {
-                // 2. #checkAll이 체크되었을 때,
-                // chk라는 name을 가진 input태그를 찾아 checked를 true로 정의
                 if ($("#checkAll").prop("checked")) {
                 $("input[name=chk]").prop("checked", true)
-                // 3. #checkAll이 체크되지 않았을 때,
-                // chk라는 name을 가진 input태그를 찾아 checked를 false로 정의
                 } else {
                 $("input[name=chk]").prop("checked", false)
                 }
@@ -132,6 +127,8 @@
                         list[i].parentElement.parentElement.remove();
                     }
                 }
+            }else{
+                    return;
             }
         }
     </script>
