@@ -15,9 +15,10 @@
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="contents">
         <div class="addlist" id="addlist">
-            <div class="product" id="check1 delete0">
+            <div class="product" id="check1">
+                <!-- id는 한개만 쓰자, 유일한 값으로 써야만 한다! -->
                 <div class="info">
-                    <input type="checkbox" id="check1" name="chk" >
+                    <input type="checkbox" class="checkbox" id="check1" name="chk" >
                 </div>
                 <div class="orderlap">
                     <div class="thumbnail">
@@ -38,19 +39,19 @@
                 <div class="allprice">합계 : <strong>x</strong>원</div>
                 <div class="productcontent">
                     <span class="select">
-                        <button type="button" class="leftbtn removebtn" id="delete0">삭제</button>
+                        <button type="button" class="leftbtn removebtn" id="check1">삭제</button>
                         <a href="#" type="submit" class="leftbtn" >장바구니</a>
                     </span>
                     <a href="" class="rightbtn">주문하기</a>
                 </div>
             </div>
-            <div class="product" id="check2 delete1">
+            <div class="product" id="check2">
                 <div class="info">
-                    <input type="checkbox" id="check2" name="chk" >
+                    <input type="checkbox" class="checkbox" id="check2" name="chk" >
                 </div>
                 <div class="orderlap">
                     <div class="thumbnail">
-                        <a herf="#"><img src="/images/b20.jpg" alt="" width="71px" height="71px"></a>
+                        <a herf="#"><img src="/images/b19.jpg" alt="" width="71px" height="71px"></a>
                     </div>
                     <div class="descript">
                         <strong class="firsttitle"><a href="#">상품 이름!!</a></strong>
@@ -67,8 +68,8 @@
                 <div class="allprice">합계 : <strong>x</strong>원</div>
                 <div class="productcontent">
                     <span class="select">
-                        <button type="button" class="leftbtn removebtn" id="delete1" >삭제</button>
-                        <a href="#" type="submit" class="leftbtn" >장바구니</a>
+                        <button type="button" class="leftbtn removebtn" id="check2" >삭제</button>
+                        <button type="submit" class="leftbtn" >장바구니</button>
                     </span>
                     <a href="" class="rightbtn">주문하기</a>
                 </div>
@@ -78,8 +79,8 @@
             <span class="select">
                 <input type="checkbox"  id="checkAll"  value="전체선택" style="display:none">
                 <label class="leftbtn" for="checkAll">전체선택</label>
-                <input type="checkbox"  id="remove"  value="선택삭제" style="display:none">
-                <label class="leftbtn" for="remove">선택삭제</label>
+                <input type="button"  class="leftbtn" id="del"  value="선택삭제" >
+                <!-- <label class="leftbtn" for="remove">선택삭제</label> -->
             </span>
         </div>
         <div class="noadrress">
@@ -105,31 +106,34 @@
                 }
             })
         });
-
-        // $(function() {
-        //     $(".removebtn").click(function() {
-        //         if(confirm("정말 삭제하시겠습니까 ?") == true){
-        //             alert("삭제되었습니다");
-        //             var compare=$('.removebtn').attr('id');
-        //             $(compare).remove();
-        //         }else{
-        //             return;
-        //         }
-        //     })
-        // });
-        
-        $(function() {
-            $(".removebtn").click(function() {
-                if(confirm("정말 삭제하시겠습니까 ?") == true){
+        $("button#check1").click(function() {
+            if(confirm("정말 삭제하시겠습니까 ?") == true){
                     alert("삭제되었습니다");
-                    var getthing=$('.removebtn').attr('id');
-                    $('div').remove(getthing);
-                    
+                    $('div').remove('#check1'); 
                 }else{
                     return;
                 }
-            })
         });
+        $("button#check2").click(function() {
+            if(confirm("정말 삭제하시겠습니까 ?") == true){
+                    alert("삭제되었습니다");
+                    $('div').remove('#check2'); 
+                }else{
+                    return;
+                }
+        });
+        
+        var del=document.querySelector("#del");
+        var list=document.querySelectorAll(".checkbox");
+        del.onclick=()=>{
+            if(confirm("정말 삭제하시겠습니까 ?") == true){
+                for(var i=0;i<list.length;i++){
+                    if(list[i].checked){
+                        list[i].parentElement.parentElement.remove();
+                    }
+                }
+            }
+        }
     </script>
 </body>
 </html>
