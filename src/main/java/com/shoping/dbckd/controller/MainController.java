@@ -151,21 +151,6 @@ public class MainController {
 		return "FAIL";
 	}
 
-	@ResponseBody
-	@PostMapping("changeMyPW")
-	public String changeMyPW(CustomerDTO customer, Model model){
-
-		// 직접 말본로직 찾아 본 후 한다.
-		// String resultPW = customerService.findMyID(customer);
-		// if(resultPW.equals(null) | resultPW.equals("")){
-		// 	resultPW = "존재하지 않는 계정입니다.";
-		// }
-
-		// model.addAttribute("resultID", resultPW);
-
-		return "redirect:/";
-	}
-
 	@GetMapping("manager_menu")
 	public String manager_menu() {
 		return "manager_menu";
