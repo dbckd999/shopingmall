@@ -45,4 +45,10 @@
     <select id="checkNick" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
         SELECT iden FROM customer WHERE nick = #{nick};
     </select>    
+
+    <!-- checkEmail --> 
+    <select id="checkEmail" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE email = #{email};
+    </select>
+    
 </mapper>

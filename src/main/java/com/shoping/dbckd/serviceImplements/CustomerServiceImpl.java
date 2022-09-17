@@ -39,4 +39,13 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO login(CustomerDTO customer){
         return customerMapper.login(customer);
     }
+
+    @Override
+    public boolean isOverlapEmail(CustomerDTO customer) {
+        if(customerMapper.checkEmail(customer).size() == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
