@@ -34,4 +34,6 @@ public interface CustomerService {
      * @return 로그인 된 사용자의 정보를 반환.
      */
     public CustomerDTO login(CustomerDTO customer);
+
+    public boolean isOverlapEmail(CustomerDTO customer);
 }

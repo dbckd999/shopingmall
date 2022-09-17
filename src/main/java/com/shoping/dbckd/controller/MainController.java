@@ -138,13 +138,23 @@ public class MainController {
 	@GetMapping("nickOverlapCheck")
 	public String nickOverlapCheck(@RequestParam("nick") String nick){
 		CustomerDTO customer = new CustomerDTO();
-		customer.setId(nick);
+		customer.setNick(nick);
 		if(customerService.isOverlapNick(customer)){
 			return "SUCCESS";
 		}
 		return "FAIL";
 	}
-	
+
+	@ResponseBody
+	@GetMapping("emailOverlapCheck")
+	public String emailOverlapCheck(@RequestParam("email") String email){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setEmail(email);
+		if(customerService.isOverlapEmail(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
+	}
 
 	@GetMapping("manager_menu")
 	public String manager_menu() {
