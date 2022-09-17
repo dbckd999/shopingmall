@@ -4,9 +4,16 @@
     margin: 0 auto;
 }
 #wrap .title{
-    font-size: 1.5em;
+    font-size: 20px;
     border:1px solid #ddd;
     background-color: #ddd;
+    font-family: "맑은 고딕";
+}
+.startitle{
+    float:right;
+    font-size:15px;
+    font-family:"맑은 고딕";
+
 }
 
 .table_box th, .table_box td{

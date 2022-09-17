@@ -51,24 +51,27 @@
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
     <div id="wrap">
-        <form action="sign_up" method="post" id="sign_up">
+        <form action="sign_up" method="post" id="sign_up" onsubmit="return checkz()">
             <fieldset>
-                <legend class="title">필수입력정보</legend>
+                <legend class="title">필수입력정보<span class="startitle">*:별표는 필수 입력정보입니다.</span></legend>
                 <table class="table_box">
                     <tr>
                         <th class="frist"><label for="user_id">id *</label></th>
-                        <td><input type="text" id="user_id" name="id" class="textform" required autofocus>
+                        <td><input type="text" id="user_id" name="id" class="textform" 
+                            placeholder="4자 이상 16자 이하 영어 대소문자 숫자 조합" required autofocus>
                             <button type="button" class="btn" onclick="idCheck()">ID중복확인</button>
                         </td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">pw *</label></th>
                         <td><input type="password" id="user_pw" name="pw" class="textform"
-                            placeholder="8자 이상 14자 이하 영어 대소문자 숫자 조합" required></td>
+                            placeholder="8자 이상 14자 이하 영어 대소문자 숫자 특수문자 조합" required></td>
                         </tr>
                         <tr>
                             <th><label for="user_pw">pw 확인 *</label></th>
-                            <td><input type="password" id="user_pwcheck" class="textform" required></td>
+                            <td><input type="password" id="user_pwcheck" class="textform" required><br>
+                            <span id="pwsuccess" style="color:green">비밀번호가 일치합니다.</span>
+                            <span id="nopwsuccess" style="color:red">비밀번호가 일치하지 않습니다.</span></td>
                         </tr>
                         <tr>
                             <th><label for="user_pw">이름 *</label></th>
@@ -130,26 +133,26 @@
                         <th><label for="user_pw">EMail *</label></th>
                         <td><input type="text" id="email" name="email" class="textform" required></td>
                     </tr>
-
-                </table>
-            </fieldset>
-            <br><br>
-            <fieldset>
-                <legend class="title">선택입력정보</legend>
-                <table class="table_box">
                     <tr>
                         <th><label for="user_birthday">생년월일</label></th>
                         <td><input type="date" id="birth" name="birth" class="textform"></td>
                     </tr>
                 </table>
             </fieldset>
+            <br><br>
             <div class="btn_area">
                 <button type="reset">초기화하기</button>
-                <input type="submit" class="btn_join" id="checkall" value="회원가입">
+                <input type="submit" class="btn_join" id="submit" value="회원가입">
             </div>
         </form>
     </div>
     <script>
+        var blank_pattern = /\s/;
+        var getidCheck= RegExp(/^[a-zA-Z0-9]{4,16}$/);
+        var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+        var getCheck= RegExp(/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,14}$/);
+        var getName= RegExp(/^[가-힣]+$/);
+
         document.getElementById("sign_up").addEventListener("change", () => {
             document.getElementById("phone_call").value =
                 document.getElementById("user_phone_first").value
@@ -162,54 +165,41 @@
                 + document.getElementById("user_home_third").value
         })
         function checkz() {
+            var getidCheck= RegExp(/^[a-zA-Z0-9]{4,16}$/);
             var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
-            var getCheck= RegExp(/^[a-zA-Z0-9]{8,14}$/);
-            var getName= RegExp(/^[가-힣]+$/);
+            var getCheck= RegExp(/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,14}$/);
+            var getName= RegExp(/^[가-힣]{2,4}$/);
             var fmt = RegExp(/^\d{6}[1234]\d{6}$/); //형식 설정
-
-            //아이디 공백 확인
-            if($("#user_id").val() == ""){
-                alert("아이디를 입력해주세요");
-                $("#user_id").focus();
-                return false;
-            }
         
             //아이디의 유효성 검사
-            if(!getCheck.test($("#user_id").val())){
-                alert("형식에 맞게 입력해주세요");
+            if(!getidCheck.test($("#user_id").val())){
+                alert("형식에 맞게 ID를 입력해주세요");
                 $("#user_id").val("");
                 $("#user_id").focus();
                 return false;
             }
-        
+
             //비밀번호
             if(!getCheck.test($("#user_pw").val())) {
-            alert("형식에 맞춰서 PW를 입력해주세요");
-            $("#user_pw").val("");
-            $("#user_pw").focus();
-            return false;
+                alert("형식에 맞춰서 PW를 입력해주세요");
+                $("#user_pw").val("");
+                $("#user_pw").focus();
+                return false;
             }
         
             //아이디랑 비밀번호랑 같은지
-            if ($("#user_id").val()==($("#user_pw").val())) {
-            alert("비밀번호가 ID가 동일하면 안됩니다.");
-            $("#user_pw").val("");
-            $("#user_pw").focus();
+                if ($("#user_id").val()==($("#user_pw").val())) {
+                alert("비밀번호가 ID가 동일하면 안됩니다.");
+                $("#user_pw").val("");
+                $("#user_pw").focus();
             }
         
             //비밀번호 똑같은지
             if($("#user_pw").val() != ($("#user_pwcheck").val())){ 
-            alert("비밀번호 확인이 실패했습니다.");
-            $("#tbPwd").val("");
-            $("#user_pwcheck").val("");
-            $("#tbPwd").focus();
-            return false;
-            }
-        
-            //이메일 공백 확인
-            if($("#mail").val() == ""){
-                alert("이메일을 입력해주세요");
-                $("#mail").focus();
+                alert("비밀번호 확인이 실패했습니다.");
+                $("#user_pw").val("");
+                $("#user_pwcheck").val("");
+                $("#user_pw").focus();
                 return false;
             }
                 
@@ -227,61 +217,31 @@
                 $("#user_name").val("");
                 $("#user_name").focus();
                 return false;
-            }
-                
+            }  
         }
-        $('#checkall').submit(function(){
-            var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
-            var getCheck= RegExp(/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,12}$/);
-            var getName= RegExp(/^[가-힣]+$/);
-            var fmt = RegExp(/^\d{6}[1234]\d{6}$/);
+        $(function(){
+            $("#pwsuccess").hide();
+            $("#nopwsuccess").hide();
+            $("input").keyup(function(){
+                var pwd1=$("#user_pw").val();
+                var pwd2=$("#user_pwcheck").val();
+                if(pwd1 != "" || pwd2 != ""){
+                    if(pwd1 == pwd2){
+                        $("#pwsuccess").show();
+                        $("#nopwsuccess").hide();
+                        $("#submit").removeAttr("disabled");
+                    }else{
+                        $("#pwsuccess").hide();
+                        $("#nopwsuccess").show();
+                        $("#submit").attr("disabled", "disabled");
+                    }        
+                }
+            });        
+        });         
+        $("#nowrite").hide();
+        $("#idblank").hide();
+        $("#idcheckfail").hide();
 
-            if(!getCheck.test($("#user_id").val())){
-                alert("형식에 맞게 입력해주세요");
-                $("#user_id").val("");
-                $("#user_id").focus();
-                return false;
-            }
-
-            if($("#user_id").val() == $("#user_pw").val()){
-                alert("아이디와 비밀번호가 같습니다");
-                $("#user_pw").val("");
-                $("#user_pw").focus();
-                return false;
-            }
-
-            if(!getCheck.test($("#user_pw").val())){
-                alert("형식에 맞게 입력해주세요");
-                $("#user_pw").val("");
-                $("#user_pw").focus();
-                return false;
-            }
-
-            if($("#user_pw").val() != $("#user_pwcheck").val()){
-                alert("비밀번호가 상이합니다");
-                $("#user_pw").val("");
-                $("#user_pwcheck").val("");
-                $("#user_pw").focus();
-                return false;
-            }
-
-            if(!getMail.test($("#email").val())){
-                alert("이메일형식에 맞게 입력해주세요")
-                $("#email").val("");
-                $("#email").focus();
-                return false;
-            }
-
-            if(!getCheck.test($("#user_name").val())){
-                alert("이름형식에 맞게 입력해주세요")
-                $("#user_name").val("");
-                $("#user_name").focus();
-                return false;
-            }
-        })
-    </script>
-    <script>
-        var blank_pattern = /\s/;
         function idCheck(){
             if($('#user_id').val()==""){
                 alert("입력하시고 중복검사를 진행해주세요.")
