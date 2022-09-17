@@ -1,0 +1,77 @@
+.findbox{
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
+}
+h3{
+    margin-top:80px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+}
+.multi-layout {
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    overflow: hidden;
+    font-size: 0.8em;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.inner_multi-layout {
+    text-align: left;
+    display: inline-block;
+    margin: 0px 60px;
+    top: 0;
+}
+.footer {
+    padding-left:22%;
+    padding-right:22%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 0.8em;
+    text-align: left;
+}
+li {
+    list-style-type: none;
+    font-family: arial;
+    padding: 0;
+    margin: 0;
+}            
+.jump{padding-top:75px;}
+.findbtn{
+    background: #333;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 360px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    border:1px solid #333;
+    border-radius: 30px;
+}
+.inputbox{
+    border: 1px solid #999;
+    min-height: 40px;
+    width:100%;
+}
+.hrefline{
+    width:100%;
+    margin:auto;
+    text-align: center;
+    margin:20px;
+}
+.hreftext{
+    text-decoration: none;
+    color:#333;
+    padding:10px;
+}
+.hreftext:hover{
+    color:#333;
+}

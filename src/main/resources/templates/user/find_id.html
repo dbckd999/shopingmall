@@ -6,70 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>놀이골프 | nollnollgolf</title>
     <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/css/find_id.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <style>
-    .findbox{
-    width:360px;
-    margin:0 auto;
-    }
-    h3{
-    margin-top:80px;
-    margin: 0 0 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 1;
-    }
-    .multi-layout {
-        justify-content: center;
-        text-align: center;
-        height: auto;
-        overflow: hidden;
-        font-size: 0.8em;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    .inner_multi-layout {
-        text-align: left;
-        display: inline-block;
-        margin: 0px 60px;
-        top: 0;
-    }
-    .footer {
-        padding-left:22%;
-        padding-right:22%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        font-size: 0.8em;
-        text-align: left;
-    }
-    li {
-            list-style-type: none;
-            font-family: arial;
-            padding: 0;
-            margin: 0;
-        }
-    .jump{padding-top:75px;}
-    </style>
 </head>
 <body>
 	<div th:insert="~{fragment/headerfooter :: header}"></div>
     <!-- 상단메뉴 다른 컨텐츠 가리는것 방지 -->
-    <div class="jump"></div>
     <div class="findbox">        
             <fieldset>
                 <h3 style="margin-top:100px;">ID 찾기</h3>
 		        <fidelset>
+                <div class="hrefline">
+                    <a href="find_id" class="hreftext">아이디</a>
+                    <font>|</font>
+                    <a href="find_pw" class="hreftext">비밀번호</a>
+                </div>
 		        <div class="mb-3 ">
-			        <label for="loginid" class="form-label">이름</label>
-			        <input type="text" class="form-control" id="loginid" placeholder="ID를 입력해주세요">
+			        <label for="loginid" class="form-label">이름</label><br>
+			        <input type="text" class="inputbox" id="user_name" placeholder="이름을 입력해주세요">
 		        </div>
 		        <div class="mb-3">
-			        <label for="loginpw" class="form-label">이메일</label>
-			    <input type="password" class="form-control" id="loginpw" placeholder="EMAIL를 입력해주세요">
+			        <label for="loginpw" class="form-label">이메일</label><br>
+			    <input type="text" class="inputbox" id="email" placeholder="EMAIL를 입력해주세요">
 		        </div>
-                <button type="submit" class="btn btn-primary">ID찾기</button>
+                <button type="submit" class="findbtn">ID찾기</button>
             </fieldset>        
     </div>
     <div class="jump"></div>
