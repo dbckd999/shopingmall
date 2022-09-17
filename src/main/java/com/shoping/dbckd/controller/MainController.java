@@ -1,7 +1,6 @@
 package com.shoping.dbckd.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shoping.dbckd.mapper.MainMapper;
 import com.shoping.dbckd.mapper.ProductMapper;
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.model.ProductDTO;
-import com.shoping.dbckd.model.ProductVO;
 import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
 import com.shoping.dbckd.service.ProductManagerSev;
@@ -124,31 +123,32 @@ public class MainController {
 		return "redirect:/";
 	}
 
-	@GetMapping("imagetest")
-	public String imgtest(){
-		return "imagetest";
+	@ResponseBody
+	@GetMapping("idOverlapCheck")
+	public String idOverlapCheck(@RequestParam("id") String id){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setId(id);
+		if(customerService.isUniqueID(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
 	}
+
+	@ResponseBody
+	@GetMapping("nickOverlapCheck")
+	public String nickOverlapCheck(@RequestParam("nick") String nick){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setId(nick);
+		if(customerService.isOverlapNick(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
+	}
+	
 
 	@GetMapping("manager_menu")
 	public String manager_menu() {
 		return "manager_menu";
 	}
 
-	@Autowired
-	ProductManagerSev p_srv;
-
-	@PostMapping(value="imagetest")
-	public String postMethodName(@RequestParam("p_name") String p_name, @RequestParam("p_img") List<MultipartFile> p_img) {
-		// String[] imgNames = req.getParameterValues("imgName");
-
-		System.out.println(p_name);
-
-		for(MultipartFile i : p_img){
-			System.out.println(i);
-			// p_srv.addProduct(p_name, i);
-		}
-
-		return "redirect:uploadItem";
-	}
-	
 }

@@ -35,4 +35,14 @@
         DELETE FROM customer WHERE iden = #{iden}
     </delete>
  -->
+
+    <!-- checkID --> 
+    <select id="checkID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE id = #{id};
+    </select>
+
+    <!-- checkNick --> 
+    <select id="checkNick" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE nick = #{nick};
+    </select>    
 </mapper>

@@ -1,5 +1,7 @@
 package com.shoping.dbckd.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.shoping.dbckd.model.CustomerDTO;
@@ -14,8 +16,8 @@ public interface CustomerMapper {
      * @return 회원가입 성공여부를 반환합니다
      */
     public Integer join(CustomerDTO customer);
-    public CustomerDTO checkID(CustomerDTO customer);
-    public CustomerDTO checkNick(CustomerDTO customer);
+    public List<CustomerDTO> checkID(CustomerDTO customer);
+    public List<CustomerDTO> checkNick(CustomerDTO customer);
     public CustomerDTO login(CustomerDTO customer);
     public CustomerDTO dummy();
 }
