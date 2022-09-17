@@ -14,7 +14,7 @@
 </head>
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
-    <div class="jump"></div><div class="jump"></div>
+    <div class="jump"></div>
     <div class="btnlist">
             <button type="button" id="btn1">주문내역 조회(<span class="">x</span>건)</button>
             <button type="butoon" id="btn2">취소/교환/반품 내역(<span class="">x</span>건)</button>
@@ -80,6 +80,8 @@
                 </form>
             </div>
     </div>
+    <div class="jump"></div>
+    <div th:insert="~{fragment/headerfooter :: footer}"></div>
     <script>
         $('#btn1').click(function(){
             $("#first_state").show();
@@ -90,6 +92,6 @@
             $("#second_state").show();
         })
     </script>
-    <div th:insert="~{fragment/headerfooter :: footer}"></div>
+    
 </body>
 </html>
