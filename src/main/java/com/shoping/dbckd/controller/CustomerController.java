@@ -135,8 +135,8 @@ public class CustomerController {
 		return "/user/userlike";
 	}
 	@GetMapping("findidresult")
-	public String findidresult() {
-		return "/user/findidresult";
+	public String findIdResult() {
+		return "/user/findIdResult";
 	}
 
 }
