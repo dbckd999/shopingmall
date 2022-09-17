@@ -44,3 +44,16 @@
 .hreftext:hover{
     color:#333;
 }
+.move{
+    width:100%;
+    margin:auto;
+    margin-top:30px;
+    text-decoration: none;
+    color:#333;
+    padding:10px;
+    vertical-align: middle;
+    text-align: center;
+}
+.move:hover{
+    color:#333;
+}
