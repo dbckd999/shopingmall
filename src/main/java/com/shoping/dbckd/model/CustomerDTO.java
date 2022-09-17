@@ -19,6 +19,12 @@ public class CustomerDTO {
     private Date birth;        // 생년월일
 
     public void setBirth(String date) {
+
+        if(date.equals("")){
+            this.birth = null;
+            return;
+        }
+
         java.util.Date date2 = null;
         try {
             date2 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
