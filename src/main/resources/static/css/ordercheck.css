@@ -8,6 +8,10 @@ li a:hover{color:#333;}
     justify-content: center;
     margin:0 auto;
 }
+.buttonzip{
+    display:inline-block;
+    width:100%;
+}
 .btnlist button{
     width:50%;
     float:left;
@@ -35,7 +39,6 @@ li a:hover{color:#333;}
     padding: 0 20px 0 8px;
     height:30px;
     margin:0 auto;
-    
 }
 .state{
     float:left;
@@ -127,3 +130,8 @@ li{
 .firsttitle a:hover{color:#333;}
 .product_code{font-size:12px;color:#777777;}
 .product-price{font-size:13px;color:#153e35;font-weight:bold;}
+
+.orderstatus{
+    margin-left:20px;
+    font-weight:bold;
+}
