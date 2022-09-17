@@ -14,7 +14,7 @@
 </head>
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
-    <div class="jump"></div><div class="jump"></div>
+    <div class="jump"></div>
     <div class="btnlist">
             <button type="button" id="btn1">주문내역 조회(<span class="">x</span>건)</button>
             <button type="butoon" id="btn2">취소/교환/반품 내역(<span class="">x</span>건)</button>
@@ -55,6 +55,19 @@
                           </svg> 취소/교환/반품 신청은 배송완료일 기준 7일까지 가능합니다.</li>
                     </ul>
                 </form>
+                <div class="orderlap">
+                    <div class="thumbnail">
+                        <a herf="#"><img src="/images/b19.jpg" alt="" width="100px"></a>
+                    </div>
+                    <div class="descript">
+                        <strong class="firsttitle"><a href="#">상품 이름!!</a></strong>
+                        <!-- 상품이름이랑 섬네일 링크 전부 같은 상세페이지 링크로 -->
+                        <div class="info"> 
+                            <span class="product_code">상품코드</span><br>
+                            <span class="product-price"><span>x</span>원</span><br>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div id="second_state">
@@ -69,17 +82,32 @@
                             <button type="button" class="btn_period">1년</button>
                         </div>
                     </div>
-                <ul class="notice">
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
-                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
-                      </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
-                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
-                      </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
-                </ul>
+                    <ul class="notice">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                        </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                            <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                        </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+                    </ul>
                 </form>
+                <div class="orderlap">
+                    <div class="thumbnail">
+                        <a herf="#"><img src="/images/b18.jpg" alt="" width="100px"></a>
+                    </div>
+                    <div class="descript">
+                        <strong class="firsttitle"><a href="#">상품 이름!!</a></strong>
+                        <!-- 상품이름이랑 섬네일 링크 전부 같은 상세페이지 링크로 -->
+                        <div class="info"> 
+                            <span class="product_code">상품코드</span><br>
+                            <span class="product-price"><span>x</span>원</span><br>
+                        </div>
+                    </div>
+                </div>
             </div>
     </div>
+    <div class="jump"></div>
+    <div th:insert="~{fragment/headerfooter :: footer}"></div>
     <script>
         $('#btn1').click(function(){
             $("#first_state").show();
@@ -90,6 +118,6 @@
             $("#second_state").show();
         })
     </script>
-    <div th:insert="~{fragment/headerfooter :: footer}"></div>
+    
 </body>
 </html>

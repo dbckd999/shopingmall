@@ -50,8 +50,6 @@
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
-    <div class="jump"></div>
-    
     <div id="wrap">
         <form action="sign_up" method="post" id="sign_up">
             <fieldset>
@@ -80,8 +78,8 @@
                             <th><label for="user_pw">별명 *</label></th>
                             <td><input type="text" id="user_nick" name="nick" class="textform" required>
                                 <button type="button" onclick="nickCheck()" class="btn">별명중복확인</button>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
                     <tr>
                         <th><label for="user_pw">주소 *</label></th>
                         <td><input type="text" id="user_address" name="address" class="textform" required></td>
@@ -147,7 +145,7 @@
             </fieldset>
             <div class="btn_area">
                 <button type="reset">초기화하기</button>
-                <input type="submit" class="btn_join">
+                <input type="submit" class="btn_join" id="checkall" value="회원가입">
             </div>
         </form>
     </div>
@@ -163,8 +161,76 @@
                 + document.getElementById("user_home_second").value
                 + document.getElementById("user_home_third").value
         })
+        function checkz() {
+            var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+            var getCheck= RegExp(/^[a-zA-Z0-9]{8,14}$/);
+            var getName= RegExp(/^[가-힣]+$/);
+            var fmt = RegExp(/^\d{6}[1234]\d{6}$/); //형식 설정
 
-        function checks(){
+            //아이디 공백 확인
+            if($("#user_id").val() == ""){
+                alert("아이디를 입력해주세요");
+                $("#user_id").focus();
+                return false;
+            }
+        
+            //아이디의 유효성 검사
+            if(!getCheck.test($("#user_id").val())){
+                alert("형식에 맞게 입력해주세요");
+                $("#user_id").val("");
+                $("#user_id").focus();
+                return false;
+            }
+        
+            //비밀번호
+            if(!getCheck.test($("#user_pw").val())) {
+            alert("형식에 맞춰서 PW를 입력해주세요");
+            $("#user_pw").val("");
+            $("#user_pw").focus();
+            return false;
+            }
+        
+            //아이디랑 비밀번호랑 같은지
+            if ($("#user_id").val()==($("#user_pw").val())) {
+            alert("비밀번호가 ID가 동일하면 안됩니다.");
+            $("#user_pw").val("");
+            $("#user_pw").focus();
+            }
+        
+            //비밀번호 똑같은지
+            if($("#user_pw").val() != ($("#user_pwcheck").val())){ 
+            alert("비밀번호 확인이 실패했습니다.");
+            $("#tbPwd").val("");
+            $("#user_pwcheck").val("");
+            $("#tbPwd").focus();
+            return false;
+            }
+        
+            //이메일 공백 확인
+            if($("#mail").val() == ""){
+                alert("이메일을 입력해주세요");
+                $("#mail").focus();
+                return false;
+            }
+                
+            //이메일 유효성 검사
+            if(!getMail.test($("#email").val())){
+                alert("이메일형식에 맞게 입력해주세요")
+                $("#email").val("");
+                $("#email").focus();
+                return false;
+            }
+        
+            //이름 유효성
+            if (!getName.test($("#user_name").val())) {
+                alert("이름을 형식에 맞춰 다시 쓰세요.");
+                $("#user_name").val("");
+                $("#user_name").focus();
+                return false;
+            }
+                
+        }
+        $('#checkall').submit(function(){
             var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
             var getCheck= RegExp(/^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,12}$/);
             var getName= RegExp(/^[가-힣]+$/);
@@ -212,7 +278,7 @@
                 $("#user_name").focus();
                 return false;
             }
-        }
+        })
     </script>
     <script>
         function idCheck(){
