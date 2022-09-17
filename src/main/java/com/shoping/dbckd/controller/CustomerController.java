@@ -36,8 +36,6 @@ public class CustomerController {
 
 	@GetMapping("logout")
 	public String logout(HttpSession session){
-		//session.invalidate();
-		/*session에 해당하는 이름을 매개변수로 넣어줘야 한다*/
 		session.removeAttribute("customer");
 		return "redirect:/";
 	 }
@@ -136,16 +134,5 @@ public class CustomerController {
 	public String userlike() {
 		return "/user/userlike";
 	}
-	// @PostMapping(value = "sign_up")
-	// public String sign_up123(CustomerDTO customer){
-	// 	System.out.println(customer);
-    //     System.out.println("회원가입 완료.");
-    //     return "sign";
-	// }
-
-	// @GetMapping("test")
-	// public String test(){
-	// 	return "/";
-	// }
 
 }

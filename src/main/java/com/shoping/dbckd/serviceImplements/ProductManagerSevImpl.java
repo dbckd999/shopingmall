@@ -1,4 +1,4 @@
-package com.shoping.dbckd.service;
+package com.shoping.dbckd.serviceImplements;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.shoping.dbckd.mapper.ProductMapper;
 import com.shoping.dbckd.model.ProductDTO;
 import com.shoping.dbckd.model.ProductImageDTO;
+import com.shoping.dbckd.service.ProductManagerSev;
 
 @Service
 public class ProductManagerSevImpl implements ProductManagerSev{

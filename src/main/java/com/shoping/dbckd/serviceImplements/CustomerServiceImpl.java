@@ -1,10 +1,11 @@
-package com.shoping.dbckd.service;
+package com.shoping.dbckd.serviceImplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shoping.dbckd.mapper.CustomerMapper;
 import com.shoping.dbckd.model.CustomerDTO;
+import com.shoping.dbckd.service.CustomerService;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -18,15 +19,16 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean isUniqueID(CustomerDTO customer) {
-        if(customer.getId().equals(customerMapper.checkID(customer).getId())){
+        if(customerMapper.checkID(customer).size() == 0){
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     @Override
     public boolean isOverlapNick(CustomerDTO customer) {
-        if(customer.getNick().equals(customerMapper.checkNick(customer).getNick())){
+        if(customerMapper.checkNick(customer).size() == 0){
             return true;
         } else {
             return false;
