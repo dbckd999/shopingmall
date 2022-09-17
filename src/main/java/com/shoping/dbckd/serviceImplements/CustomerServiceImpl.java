@@ -48,4 +48,10 @@ public class CustomerServiceImpl implements CustomerService {
             return false;
         }
     }
+
+    @Override
+    public String findMyID(CustomerDTO customer) {
+        CustomerDTO result = customerMapper.findMyID(customer);
+        return result.getId();
+    }
 }

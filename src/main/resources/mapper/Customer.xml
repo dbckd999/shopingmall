@@ -50,5 +50,16 @@
     <select id="checkEmail" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
         SELECT iden FROM customer WHERE email = #{email};
     </select>
-    
+
+    <!-- findMyID --> 
+    <select id="findMyID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT id FROM customer WHERE name = #{name} and email = #{email};
+    </select>    
+
+    <!-- chageMyPassword -->
+    <update id="chageMyPassword" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        UPDATE customer set pw = #{pw} WHERE id = #{id} and name = #{name} and email = #{email};
+    </update>
+
+
 </mapper>
