@@ -42,3 +42,10 @@ h3{
   margin-left: 4px; 
 }
 .jump{padding-top:75px;}
+.hreftext{
+  text-decoration: none;
+  color:#333;
+}
+.hreftext:hover{
+  color:#333;
+}

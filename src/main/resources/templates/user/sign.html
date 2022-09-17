@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
@@ -49,7 +49,6 @@
 
 <body>
 	<div th:insert="~{fragment/headerfooter :: header}"></div>
-	<div class="jump"></div>
 	<div class="login">
 		<h3 style="margin-top:100px;">LOGIN</h3>
 		<fidelset>
@@ -68,8 +67,8 @@
 						<label class="form-check-label" for="flexCheckChecked" style="margin-right: 60px;">
 							ID 저장
 						</label>
-						<li><a onclick="location.href='find_id'" sytle="cursor:pointer">아이디 찾기</a></li>
-						<li><a onclick="location.href='find_pw'" sytle="cursor:pointer">비밀번호 찾기</a></li>
+						<li><a class="hreftext" href="/sign/find_id" sytle="cursor:pointer">아이디 찾기</a></li>
+						<li><a class="hreftext" href="/sing/find_pw" sytle="cursor:pointer">비밀번호 찾기</a></li>
 					</ul>
 				</div>
 				
