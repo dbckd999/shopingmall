@@ -281,30 +281,43 @@
         })
     </script>
     <script>
+        var blank_pattern = /\s/;
         function idCheck(){
-            $.ajax("idOverlapCheck/?id="+$("#user_id").val(), {
-                type: 'GET',
-                success: function(data, status, jqXHR){
-                    if(data === "SUCCESS"){
-                        alert("사용 가능한 ID입니다.")
-                    } else if(data === "FAIL") {
-                        alert("사용 불가능한 ID입니다.")
+            if($('#user_id').val()==""){
+                alert("입력하시고 중복검사를 진행해주세요.")
+            }else if(blank_pattern.test($('#user_id').val())==true){
+                alert("id에 띄어쓰기를 입력하지 말아주세요.")
+            }else{
+                $.ajax("idOverlapCheck/?id="+$("#user_id").val(), {
+                    type: 'GET',
+                    success: function(data, status, jqXHR){
+                        if(data === "SUCCESS"){
+                            alert("사용 가능한 ID입니다.")
+                        } else if(data === "FAIL") {
+                            alert("사용 불가능한 ID입니다.")
+                        }
                     }
-                }
-            })
+                })
+            }
         }
 
         function nickCheck(){
-            $.ajax("nickOverlapCheck/?nick="+$("#user_nick").val(), {
-                type: 'GET',
-                success: function(data, status, jqXHR){
-                    if(data === "SUCCESS"){
-                        alert("사용 가능한 별명입니다.")
-                    } else if(data === "FAIL") {
-                        alert("사용 불가능한 별명입니다.")
+            if($('#user_nick').val()==""){
+                alert("입력하시고 중복검사를 진행해주세요.")
+            }else if(blank_pattern.test($('#user_nick').val())==true){
+                alert("별명에 띄어쓰기를 입력하지 말아주세요.")
+            }else{
+                $.ajax("nickOverlapCheck/?nick="+$("#user_nick").val(), {
+                    type: 'GET',
+                    success: function(data, status, jqXHR){
+                        if(data === "SUCCESS"){
+                            alert("사용 가능한 별명입니다.")
+                        } else if(data === "FAIL") {
+                            alert("사용 불가능한 별명입니다.")
+                        }
                     }
-                }
-            })
+                })
+            }
         }
     </script>
     <!-- 회사 안내 -->
