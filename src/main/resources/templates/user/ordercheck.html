@@ -16,8 +16,10 @@
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
     <div class="btnlist">
+        <div class="buttonzip">
             <button type="button" id="btn1">주문내역 조회(<span class="">x</span>건)</button>
             <button type="butoon" id="btn2">취소/교환/반품 내역(<span class="">x</span>건)</button>
+        </div>
             <div id="first_state">
                 <form>
                     <div class="state">
@@ -56,6 +58,8 @@
                     </ul>
                 </form>
                 <div class="orderlap">
+                    <span class="orderstatus"><strong>배송여부</strong></span>
+                    <!-- 주문에서 어떤 상태인지 확인 -->
                     <div class="thumbnail">
                         <a herf="#"><img src="/images/b19.jpg" alt="" width="100px"></a>
                     </div>
@@ -92,6 +96,8 @@
                     </ul>
                 </form>
                 <div class="orderlap">
+                    <span class="orderstatus"><strong>배송여부</strong></span>
+                    <!-- 주문에서 어떤 상태인지 확인 -->
                     <div class="thumbnail">
                         <a herf="#"><img src="/images/b18.jpg" alt="" width="100px"></a>
                     </div>
