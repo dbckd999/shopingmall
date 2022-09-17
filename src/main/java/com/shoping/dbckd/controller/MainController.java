@@ -91,11 +91,6 @@ public class MainController {
 	public String detailpage() {
 		return "detailpage";
 	}
-	
-	@GetMapping("index")
-	public String index(){
-		return "index";
-	}
 
 	// 파일을 저장하는 태그. 실험용으로써 삭제할 수도 있음.
 	@PostMapping("fileTest")
@@ -154,6 +149,21 @@ public class MainController {
 			return "SUCCESS";
 		}
 		return "FAIL";
+	}
+
+	@ResponseBody
+	@PostMapping("changeMyPW")
+	public String changeMyPW(CustomerDTO customer, Model model){
+
+		// 직접 말본로직 찾아 본 후 한다.
+		// String resultPW = customerService.findMyID(customer);
+		// if(resultPW.equals(null) | resultPW.equals("")){
+		// 	resultPW = "존재하지 않는 계정입니다.";
+		// }
+
+		// model.addAttribute("resultID", resultPW);
+
+		return "redirect:/";
 	}
 
 	@GetMapping("manager_menu")

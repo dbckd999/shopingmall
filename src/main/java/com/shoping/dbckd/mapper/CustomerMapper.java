@@ -21,4 +21,6 @@ public interface CustomerMapper {
     public CustomerDTO login(CustomerDTO customer);
     public CustomerDTO dummy();
     public List<CustomerDTO> checkEmail(CustomerDTO customer);
+    public CustomerDTO findMyID(CustomerDTO customer);
+    public Integer chageMyPassword(CustomerDTO customer);
 }

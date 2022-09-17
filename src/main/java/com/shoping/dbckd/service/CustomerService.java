@@ -36,4 +36,6 @@ public interface CustomerService {
     public CustomerDTO login(CustomerDTO customer);
 
     public boolean isOverlapEmail(CustomerDTO customer);
+
+    public String findMyID(CustomerDTO customer);
 }
