@@ -134,5 +134,9 @@ public class CustomerController {
 	public String userlike() {
 		return "/user/userlike";
 	}
+	@GetMapping("findidresult")
+	public String findidresult() {
+		return "/user/findidresult";
+	}
 
 }
