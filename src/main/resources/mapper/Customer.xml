@@ -12,7 +12,7 @@
     </insert>
 
     <select id="login" resultType="com.shoping.dbckd.model.CustomerDTO">
-        SELECT iden, id, nick, name, address, phoneCall, generalCall, email, birth, joinDate FROM customer WHERE id = #{id} and pw = #{pw}
+        SELECT iden, id, nick, name, address, phoneCall, generalCall, email, birth, joinDate, smsReceive, emailReceive FROM customer WHERE id = #{id} and pw = #{pw}
     </select>
 
     <update id="chageMyInfo" parameterType="com.shoping.dbckd.model.CustomerDTO">
@@ -34,27 +34,27 @@
         select * from customer where iden=13;
     </select>
 
-    <!-- checkID --> 
+    <!-- ID 중복 확인 --> 
     <select id="checkID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
         SELECT iden FROM customer WHERE id = #{id};
     </select>
 
-    <!-- checkNick --> 
+    <!-- 별명 중복 확인 --> 
     <select id="checkNick" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
         SELECT iden FROM customer WHERE nick = #{nick};
-    </select>    
+    </select>
 
-    <!-- checkEmail --> 
+    <!-- 이메일 중복 확인 --> 
     <select id="checkEmail" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
         SELECT iden FROM customer WHERE email = #{email};
     </select>
 
-    <!-- findMyID --> 
+    <!-- ID 찾기 --> 
     <select id="findMyID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="com.shoping.dbckd.model.CustomerDTO">
         SELECT id FROM customer WHERE name = #{name} and email = #{email};
-    </select>    
+    </select>
 
-    <!-- chageMyPassword -->
+    <!-- 비밀번호 변경 -->
     <update id="chageMyPassword" parameterType="com.shoping.dbckd.model.CustomerDTO">
         UPDATE customer set pw = #{pw} WHERE id = #{id} and name = #{name} and email = #{email};
     </update>
