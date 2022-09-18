@@ -90,6 +90,8 @@
                         <li class="nav-item" th:object="${session.customer}">
                             <a class="nav-link" href="/sign" th:if="${session.customer} == null">SIGN</a>
                             <a class="nav-link" href="/sign/logout" th:if="${session.customer} != null">SIGN OUT</a>
+                        </li>
+                        <li class="nav-item" th:if="${session.customer} != null">
                             <a class="nav-link" href="/sign/mypage" th:if="${session.customer} != null">MY PAGE</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -123,13 +125,51 @@
 </div>
 
 <div class="footer" th:fragment="footer">
+    <hr>
+    <div class="multi-layout">
+        <div class="inner_multi-layout">
+            <ul>
+                <li class="limargin"><a class ="hyper" href="/sign/policy">개인정보처리방침</a></li>
+                <li class="limargin"><a class ="hyper" href="/sign/terms-of-service">이용약관</a></li>
+                <li class="limargin"><a class ="hyper" href="/sign/ordercheck">주문조회</a></li>
+                <li class="limargin"><a class ="hyper" href="/sign/notice">공지사항</a></li>
+                <li class="limargin"><a class ="hyper" href="/sign/qanda">Q&A</a></li>
+                <li class="limargin"><a class ="hyper" href="/sign/sign_up">회원가입</a></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>CS Center</b></span></li>
+                <li><span>Mon-Fri(10:00 - 17:00)</span></li>
+                <li><span>031-8060-2090</span></li>
+                <li><span>반품배송지: 경기도 안산시 단원구 시화호수로 835</span></li>
+                <li><span>로지스벨리 3층</span></li>
+                <li><span>마케팅 제휴 : marketing@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <div class="inner_multi-layout">
+            <ul style="margin-bottom: 10px;">
+                <li style="margin-bottom: 10px;"><span><b>계좌 안내</b></li>
+                <li><span>계좌번호 : 신한은행 140-013-349110</span></li>
+                <li><span>예금주 : 주식회사 하이라이트브랜즈</span></li>
+
+            </ul>
+            <ul>
+                <li style="margin-bottom: 10px;"><span><b>매장 안내</b></li>
+                <li><span>전국 매장 정보</span></li>
+                <li><span>대리점 입점문의 : insung.park@hibs.co.kr</span></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+    </div>
+    <hr style="clear:both;">
     <ul>
-        <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
-        <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
-        <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
-        <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
-        <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
-                from</span></li>
-        <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
+        <li class="bottomspace"><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
+        <li class="bottomspace"><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
+        <li class="bottomspace"><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
+        <li class="bottomspace"><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
+        <li class="bottomspace"><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license from</span></li>
+        <li class="bottomspace"><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
     </ul>
 </div>

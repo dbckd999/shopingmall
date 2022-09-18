@@ -1,12 +1,12 @@
 #bootstrap-overrides .navbar{position:fixed;}
 .upclass{
-	background:rgba(250, 250, 250, 0.96);
+	background:rgba(250,250,250,0.96);
 	position:fixed;
 	z-index:1;
 	width:100%;
 }
 .navbar-nav li{
-    font:montserrat;
+    font:"montserrat";
     font-size: 13px;
     margin-right:10px;
 }
@@ -14,15 +14,16 @@
     display: block;
     margin-top: 0;
  }
- .footer {
-    padding-left:22%;
-    padding-right:22%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 0.8em;
+.footer {
+    max-width:1260px;
+    width:100%;
+    margin:auto;
     text-align: left;
+    color:#707070;
+    font-size:13px;
+    font-family: "맑은 고딕";
+    margin-bottom:60px;
 }
-
 .footer ul{
     list-style:none;
 }
@@ -80,5 +81,27 @@
 	display:block;
 	margin-top:0;
 }
-
-
+.multi-layout {
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.inner_multi-layout {
+    text-align: left;
+    display: inline-block;
+    margin: 0px 60px;
+    color:#707070;
+    font-size:13px;
+    font-family:"맑은 고딕";
+}
+.hyper{
+    text-decoration: none;
+    color:#707070;
+}
+.hyper:hover{
+    color:#707070;
+}
+.limargin{margin-top:5px;margin-bottom:5px;}
+.bottomspace{margin-bottom:14px;}
