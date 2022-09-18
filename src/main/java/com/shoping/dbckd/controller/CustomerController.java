@@ -91,8 +91,10 @@ public class CustomerController {
 			CustomerDTO _customer = (CustomerDTO)session.getAttribute("customer");
 			customer.setIden(_customer.getIden());
 			customer.setPw(pw1);
+			return "/user/mypage";
+		} else {
+			return "/user/userinfo";
 		}
-		return "/user/mypage";
 	}
 	
 	@GetMapping("usablereserve")

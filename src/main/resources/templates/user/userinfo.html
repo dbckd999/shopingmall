@@ -136,7 +136,7 @@
             </fieldset>
             <div class="btn_area">
                 <!-- <button type="submit" onclick="javascript:checkchange()">회원정보수정</button> -->
-                <input type="submit" value="회원정보수정"/>
+                <input type="submit" value="회원정보수정" class="btn_join">
                 <button type="button" onclick="location.href='mypage'" class="btn_join">취소</button>
                 <button type="button" onclick="javascript:userbye()" class="btn_join">회원탈퇴</button>
             </div>
@@ -150,16 +150,15 @@
                     location.href="index"
                 }
                 return false;
-                
+            } else {
+                return false;
             }
-            else{return false;}
         }
         function checkchange(){
             if(confirm("정말로 회원정보를 수정하시겠습니까?")){
                 alert("회원정보가 수정되었습니다.")
                 location.href="mypage"
             }
-
         }
 
         // 비밀번호 일치 확인
