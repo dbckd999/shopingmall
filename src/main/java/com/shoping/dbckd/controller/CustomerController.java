@@ -90,7 +90,14 @@ public class CustomerController {
 			HttpSession session = request.getSession();
 			CustomerDTO _customer = (CustomerDTO)session.getAttribute("customer");
 			customer.setIden(_customer.getIden());
+			customer.setId(_customer.getId());
 			customer.setPw(pw1);
+			customer.setName(_customer.getName());
+
+			customerService.chageMyInfo(customer);
+			System.out.println(customer);
+			session.removeAttribute("customer");
+			session.setAttribute("customer", customerService.login(customer));
 			return "/user/mypage";
 		} else {
 			return "/user/userinfo";

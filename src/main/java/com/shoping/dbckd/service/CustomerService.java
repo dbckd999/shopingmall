@@ -38,4 +38,6 @@ public interface CustomerService {
     public boolean isOverlapEmail(CustomerDTO customer);
 
     public String findMyID(CustomerDTO customer);
+
+    public Integer chageMyInfo(CustomerDTO customer);
 }

@@ -55,4 +55,9 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println(result);
         return result.getId();
     }
+
+    @Override
+    public Integer chageMyInfo(CustomerDTO customer) {
+        return customerMapper.chageMyInfo(customer);
+    }
 }
