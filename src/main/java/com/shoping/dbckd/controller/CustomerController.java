@@ -43,9 +43,9 @@ public class CustomerController {
 		return "redirect:/";
 	 }
     
-    @GetMapping("find_id")
-	public String find_id() {
-		return "/user/find_id";
+    @GetMapping("findid")
+	public String findId() {
+		return "/user/findId";
 	}
 	
 	@ResponseBody
@@ -68,9 +68,9 @@ public class CustomerController {
 		return mav;
 	}
 
-	@GetMapping("find_pw")
-	public String find_pw() {
-		return "/user/find_pw";
+	@GetMapping("findpw")
+	public String findPw() {
+		return "/user/findPw";
 	}
 
 	@GetMapping("indexlogin")

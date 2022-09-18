@@ -48,4 +48,5 @@ h3{
 }
 .hreftext:hover{
   color:#333;
+  cursor:pointer;
 }
