@@ -141,9 +141,9 @@ public class CustomerController {
 	public String policy() {
 		return "/user/policy";
 	}
-	@GetMapping("terms_of_service")
-	public String terms_of_service() {
-		return "/user/terms_of_service";
+	@GetMapping("termsofservice")
+	public String termsOfService() {
+		return "/user/termsOfService";
 	}
 	@GetMapping("lookbook")
 	public String lookbook() {
@@ -161,9 +161,9 @@ public class CustomerController {
 	public String basket() {
 		return "/user/basket";
 	}
-	@GetMapping("nollnoll_story")
-	public String nollnoll_story() {
-		return "/user/nollnoll_story";
+	@GetMapping("nollnollstory")
+	public String nollnollStory() {
+		return "/user/nollnollStory";
 	}
 	@GetMapping("userlike")
 	public String userlike() {
