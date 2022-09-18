@@ -13,10 +13,12 @@ public class CustomerDTO {
     private String nick;            // 별명
     private String name;            // 이름(본명)
     private String address;         // 주소
-    private String phoneCall;      // 휴대전화 번호
-    private String generalCall;    // 집 전화번호
+    private String phoneCall;       // 휴대전화 번호
+    private String generalCall;     // 집 전화번호
     private String email;           // 이메일
-    private Date birth;        // 생년월일
+    private Date birth;             // 생년월일
+    private boolean smsReceive;     // sms수신여부
+    private boolean emailReceive;   // 이메일 수신여부
 
     public void setBirth(String date) {
 

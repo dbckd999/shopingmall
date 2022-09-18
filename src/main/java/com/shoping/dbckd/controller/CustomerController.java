@@ -80,6 +80,18 @@ public class CustomerController {
 
 	@GetMapping("mypage")
 	public String mypage() {
+		return "user/mypage";
+	}
+
+	// @ResponseBody
+	@PostMapping("chageMyInfo")
+	public String chageMyInfo(CustomerDTO customer, String pw1, String pw2, HttpServletRequest request){
+		if(pw1.equals(pw2)){
+			HttpSession session = request.getSession();
+			CustomerDTO _customer = (CustomerDTO)session.getAttribute("customer");
+			customer.setIden(_customer.getIden());
+			customer.setPw(pw1);
+		}
 		return "/user/mypage";
 	}
 	

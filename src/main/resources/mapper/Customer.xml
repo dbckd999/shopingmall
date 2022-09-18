@@ -7,34 +7,32 @@
 <mapper namespace="com.shoping.dbckd.mapper.CustomerMapper">
 
     <insert id="join" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        INSERT INTO customer (id, pw, nick, name, address, phoneCall, generalCall, email, birth)
-        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{phoneCall}, #{generalCall}, #{email}, #{birth})
+        INSERT INTO customer (id, pw, nick, name, address, phoneCall, generalCall, email, birth, smsReceive, emailReceive)
+        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{phoneCall}, #{generalCall}, #{email}, #{birth}, #{smsReceive}, #{emailReceive})
     </insert>
 
     <select id="login" resultType="com.shoping.dbckd.model.CustomerDTO">
         SELECT iden, id, nick, name, address, phoneCall, generalCall, email, birth, joinDate FROM customer WHERE id = #{id} and pw = #{pw}
     </select>
 
+    <update id="chageMyInfo" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        UPDATE customer
+        SET
+        pw = #{pw},
+        nick = #{nick},
+        address = #{address},
+        phoneCall = #{phoneCall},
+        generalCall = #{generalCall},
+        email = #{email},
+        birth = #{birth},
+        smsReceive = #{smsReceive},
+        emailReceive = #{emailReceive}
+        WHERE iden = #{iden};
+    </update>
+
     <select id="dummy" resultType="com.shoping.dbckd.model.CustomerDTO">
         select * from customer where iden=13;
     </select>
-<!-- 
-    <select id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        SELECT id, nick, name, address, address_eng, phone_call, general_call, email, birth 
-        FROM customer
-        WHERE iden = #{iden}
-    </select>
-
-    <update id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        UPDATE customer
-        SET id = #{id}, pw = #{pw}, nick = #{nick}, name = #{name}, address = #{address}, address_eng = #{address_eng}, phone_call = #{phone_call}, general_call = #{general_call}, email = #{email}, birth = #{birth}
-        WHERE iden = ${iden}
-    </update>
-
-    <delete id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        DELETE FROM customer WHERE iden = #{iden}
-    </delete>
- -->
 
     <!-- checkID --> 
     <select id="checkID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">

@@ -15,13 +15,14 @@
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
     <div id="wrap" th:object="${session.customer}">
-        <form>
+        <form action="chageMyInfo" method="post" id="chageMyInfo">
             <fieldset>
                 <legend class="title">기본정보</legend>
                 <table class="table_box">
                     <tr>
-                        <th class="frist"><label for="user_id">id *</label></th>
-                        <td><input type="text" id="user_id" class="textform" required autofocus th:value="*{id}">
+                        <th class="frist"><label for="user_id">id</label></th>
+                        <td>
+                            <span th:text="*{id}"></span>
                         </td>
                     </tr>
                     <tr>
@@ -35,12 +36,20 @@
                             <font id="checkPW"></font></td>
                     </tr>
                     <tr>
-                        <th><label for="user_pw">이름 *</label></th>
-                        <td><input type="text" id="uesr_name" class="textform" required th:value="*{name}"></td>
+                        <th><label for="user_pw">이름</label></th>
+                        <td>
+                            <span th:text="*{name}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>별명</th>
+                        <td>
+                            <input type="text" name="nick" class="textform" required th:value="*{nick}">
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">주소 *</label></th>
-                        <td><input type="text" id="uesr_address" class="textform" required th:value="*{address}"></td>
+                        <td><input type="text" name="address" id="uesr_address" class="textform" required th:value="*{address}"></td>
                     </tr>
                     <tr class="grid">
                         <th><label for="user_home">일반전화</label></th>
@@ -66,7 +75,7 @@
                             </select>
                             <input type="text" id="user_home_second" class="callform" maxlength="4">
                             <input type="text" id="user_home_third" class="callform" maxlength="4">
-                            <input type="hidden" name="generalCall" th:value="*{generalCall}">
+                            <input type="hidden" id="generalCall" name="generalCall" th:value="*{generalCall}">
                         </td>
                     </tr>
                     <tr>
@@ -81,34 +90,34 @@
                         </select>
                         <input type="text" id="user_phone_second" class="callform " maxlength="4" required>
                         <input type="text" id="user_phone_third" class="callform " maxlength="4" required></td>
-                        <input type="hidden" name="phoneCall" th:value="*{phoneCall}">
+                        <input type="hidden" id="phoneCall" name="phoneCall" th:value="*{phoneCall}">
                     </tr>
                     <tr>
                         <th><label for="user_pw">SMS 수신여부</label></th>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="issmsok" id="inlineRadio1" value="T">
+                                <input type="radio" name="smsReceive" value="true" th:checked="*{smsReceive}" id="inlineRadio1" class="form-check-input">
                                 <label class="form-check-label" for="inlineRadio1">수신함</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="issmsok" id="inlineRadio2" value="F">
+                                <input type="radio" name="smsReceive" value="false" th:checked="*{smsReceive == false}" id="inlineRadio2" class="form-check-input">
                                 <label class="form-check-label" for="inlineRadio2">수신안함</label>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">EMail *</label></th>
-                        <td><input type="text" id="user_Email" class="textform" required th:value="*{email}"></td>
+                        <td><input type="text" name="email" id="user_Email" class="textform" required th:value="*{email}"></td>
                     </tr>
                     <tr>
                         <th><label for="user_pw">EMail 수신여부</label></th>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="isemailok" id="inlineRadio1" value="T">
+                                <input type="radio" value="true" name="emailReceive" th:checked="*{emailReceive}" id="inlineRadio1" class="form-check-input">
                                 <label class="form-check-label" for="inlineRadio1">수신함</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="isemailok" id="inlineRadio2" value="F">
+                                <input type="radio" name="emailReceive" th:checked="*{emailReceive == false}" value="false" id="inlineRadio2" class="form-check-input">
                                 <label class="form-check-label" for="inlineRadio2">수신안함</label>
                             </div>
                         </td>
@@ -121,12 +130,13 @@
                 <table class="table_box">
                     <tr>
                         <th><label for="user_birthday">생년월일</label></th>
-                        <td><input type="date" id="user_birthday" class="textform" th:value="*{birth}"></td>
+                        <td><input type="date" name="birth" id="user_birthday" class="textform" th:value="*{birth}"></td>
                     </tr>
                 </table>
             </fieldset>
             <div class="btn_area">
-                <button type="submit" onclick="javascript:checkchange()">회원정보수정</button>
+                <!-- <button type="submit" onclick="javascript:checkchange()">회원정보수정</button> -->
+                <input type="submit" value="회원정보수정"/>
                 <button type="button" onclick="location.href='mypage'" class="btn_join">취소</button>
                 <button type="button" onclick="javascript:userbye()" class="btn_join">회원탈퇴</button>
             </div>
@@ -151,6 +161,8 @@
             }
 
         }
+
+        // 비밀번호 일치 확인
         $('.textform').focusout(function(){
             let pass1=$("#password1").val();
             let pass2=$("#password2").val();
@@ -165,6 +177,37 @@
                 }
             }
         })
+
+        // 일반, 휴대전화번호 나누기, 합치기
+
+        // 합치기
+        document.getElementById("chageMyInfo").addEventListener("change", () => {
+            document.getElementById("phoneCall").value =
+                    document.getElementById("user_phone_first").value
+                    + document.getElementById("user_phone_second").value
+                    + document.getElementById("user_phone_third").value;
+
+            document.getElementById("generalCall").value = 
+                document.getElementById("user_home_first").value
+                + document.getElementById("user_home_second").value
+                + document.getElementById("user_home_third").value;
+        })
+
+        // 나누기 (최초 한번만 실행됨)
+        var reg = new RegExp("(^[0-9]{3})+([0-9]{4})+([0-9]{4})")
+        var phoneNum = reg.exec(document.getElementById("phoneCall").value);
+        document.getElementById("user_phone_first").value = phoneNum[1]
+        document.getElementById("user_phone_second").value = phoneNum[2]
+        document.getElementById("user_phone_third").value = phoneNum[3]
+        delete phoneNum;
+
+        var reg2 = new RegExp("(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))+([0-9]{3,4})+([0-9]{4})");
+        var generalNum = reg2.exec(document.getElementById("generalCall").value);
+        console.log(generalNum);
+        document.getElementById("user_home_first").value = generalNum[1]
+        document.getElementById("user_home_second").value = generalNum[3]
+        document.getElementById("user_home_third").value = generalNum[4]
+        delete generalNum;
 
     </script>
     <div th:insert="~{fragment/headerfooter :: footer}"></div>
