@@ -5,9 +5,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.shoping.dbckd.model.CustomerDTO;
 import com.shoping.dbckd.service.CustomerService;
@@ -43,6 +46,26 @@ public class CustomerController {
     @GetMapping("find_id")
 	public String find_id() {
 		return "/user/find_id";
+	}
+	
+	@ResponseBody
+	@PostMapping("findMyID")
+	public ModelAndView findMyID(CustomerDTO customer, Model model){
+		System.out.println("id find..");
+		String resultID = customerService.findMyID(customer);
+
+		if(resultID.equals(null) | resultID.equals("")){
+			resultID = "존재하지 않는 계정입니다.";
+		}
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.setViewName("/user/findidresult");
+		mav.addObject("resultID", resultID);
+
+		model.addAttribute("resultID", resultID);
+
+		return mav;
 	}
 
 	@GetMapping("find_pw")

@@ -52,6 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public String findMyID(CustomerDTO customer) {
         CustomerDTO result = customerMapper.findMyID(customer);
+        System.out.println(result);
         return result.getId();
     }
 }
