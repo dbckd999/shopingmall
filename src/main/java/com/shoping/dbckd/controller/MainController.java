@@ -100,6 +100,11 @@ public class MainController {
 		return "redirect:/";
 	}
 
+	@GetMapping("agreeMent")
+	public String agreeMent(){
+		return "/user/agreeMent";
+	}
+
 	/**
 	 * @return 회원가입 페이지
 	 */
