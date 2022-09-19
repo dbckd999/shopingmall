@@ -12,41 +12,6 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <title>놀이골프 | nollnollgolf</title>
 </head>
-<style>
-    li {
-        list-style-type: none;
-        font-family: arial;
-        padding: 0;
-        margin: 0;
-    }
-
-    .multi-layout {
-        justify-content: center;
-        text-align: center;
-        height: auto;
-        overflow: hidden;
-        font-size: 0.8em;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .inner_multi-layout {
-        text-align: left;
-        display: inline-block;
-        margin: 0px 60px;
-        top: 0;
-    }
-
-    .footer {
-        padding-left: 22%;
-        padding-right: 22%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        font-size: 0.8em;
-        text-align: left;
-    }
-</style>
-
 <body>
     <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
@@ -307,46 +272,7 @@
             }
         }
     </script>
-    <!-- 회사 안내 -->
-    <hr>
-    <div class="multi-layout">
-        <div class="inner_multi-layout">
-            <ul>
-                <li><span>개인정보처리방침</span></li>
-                <li><span>이용약관</span></li>
-                <li><span>주문조회</span></li>
-                <li><span>공지사항</span></li>
-                <li><span>Q&A</span></li>
-                <li><span>회원가입</span></li>
-            </ul>
-        </div>
-        <div class="inner_multi-layout">
-            <ul>
-                <li style="margin-bottom: 10px;"><span><b>CS Center</b></span></li>
-                <li><span>Mon-Fri(10:00 - 17:00)</span></li>
-                <li><span>031-8060-2090</span></li>
-                <li><span>반품배송지: 경기도 안산시 단원구 시화호수로 835</span></li>
-                <li><span>로지스벨리 3층</span></li>
-                <li><span>마케팅 제휴 : marketing@hibs.co.kr</span></li>
-            </ul>
-        </div>
-        <div class="inner_multi-layout">
-            <ul style="margin-bottom: 10px;">
-                <li style="margin-bottom: 10px;"><span><b>계좌 안내</b></li>
-                <li><span>계좌번호 : 신한은행 140-013-349110</span></li>
-                <li><span>예금주 : 주식회사 하이라이트브랜즈</span></li>
-
-            </ul>
-            <ul>
-                <li style="margin-bottom: 10px;"><span><b>매장 안내</b></li>
-                <li><span>전국 매장 정보</span></li>
-                <li><span>대리점 입점문의 : insung.park@hibs.co.kr</span></li>
-            </ul>
-        </div>
-        <br>
-        <br>
-    </div>
-    <hr style="clear:both;">
+    
     <div th:insert="~{fragment/headerfooter :: footer}"></div>
 </body>
 
