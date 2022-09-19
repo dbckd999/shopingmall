@@ -109,3 +109,11 @@
     background:#fff;
     color:#333;
 }
+.hrefText{
+    text-decoration: none;
+    color:#fff;
+  }
+.hrefText:hover{
+    color:#333;
+    cursor:pointer;
+}

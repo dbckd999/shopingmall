@@ -182,7 +182,7 @@ public class CustomerController {
 	public String findIdResult() {
 		return "/user/findIdResult";
 	}
-	@GetMapping("agreeMent")
+	@GetMapping("agreement")
 	public String agreeMent() {
 		return "/user/agreeMent";
 	}
