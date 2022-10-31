@@ -132,7 +132,7 @@
     <div class="upclass" style="z-index:9000">
 	<nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand logoimg" href="index"><img src="images/logo.ico" alt="" width="100" height="50" style="margin-left:40px;"></a>
+            <a class="navbar-brand logoimg" href="/index"><img src="/images/logo.ico" alt="" width="100" height="50" style="margin-left:40px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -222,10 +222,10 @@
                         <a class="nav-link" href="mypage">MY PAGE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="uploaditem"><img src="images/search.png" alt="" width="24" height="24" ></a>
+                        <a class="nav-link" href="uploaditem"><img src="/images/search.png" alt="" width="24" height="24" ></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="images/basket.png" alt="" width="24" height="24" ></a>
+                        <a class="nav-link" href="#"><img src="/images/basket.png" alt="" width="24" height="24" ></a>
                     </li>
                 </ul>
             </div>
@@ -525,18 +525,7 @@
         <br>
     </div>
     <hr style="clear:both;">
-    <div class="footer">
-        <ul>
-            <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
-            <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
-            <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
-            <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
-            <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
-                    from</span></li>
-            <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
-        </ul>
-    </div>
-
+    <div th:insert="~{fragment/headerfooter :: footer}"></div>
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/owl.carousel.js"></script>
     <script src="./js/owl.autoplay.js"></script>

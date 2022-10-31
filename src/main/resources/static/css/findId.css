@@ -1,0 +1,48 @@
+.findBox{
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
+}
+h3{
+    margin-top:45px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+}
+.jump{padding-top:75px;}
+.findBtn{
+    background: #333;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 360px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    border:1px solid #333;
+    border-radius: 30px;
+}
+.inputBox{
+    border: 1px solid #999;
+    min-height: 40px;
+    width:100%;
+}
+.hrefLine{
+    width:100%;
+    margin:auto;
+    text-align: center;
+    margin:20px;
+}
+.hrefText{
+    text-decoration: none;
+    color:#333;
+    padding:10px;
+}
+.hrefText:hover{
+    color:#333;
+}

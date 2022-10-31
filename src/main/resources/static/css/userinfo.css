@@ -1,6 +1,7 @@
 
 #wrap{
-    width: 1260px;
+    width:100%;
+    max-width: 1260px;
     margin: 0 auto;
 }
 #wrap .title{
@@ -10,14 +11,14 @@
     font-size: 13px;
     font-weight: bold;
     color: #4a5164;
-    font-family: "¸¼Àº °íµñ",Malgun Gothic,"µ¸¿ò",Dotum;
+    font-family: "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½",Malgun Gothic,"ï¿½ï¿½ï¿½ï¿½",Dotum;
     background: #f1f1f1;
     list-style: none;margin: 0;
 }
 .table_box{width:100%;}
 .table_box th, .table_box td{
     font-size:13px;
-    font-family: "¸¼Àº °íµñ",Malgun Gothic,"µ¸¿ò",Dotum;
+    font-family: "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½",Malgun Gothic,"ï¿½ï¿½ï¿½ï¿½",Dotum;
     padding: 10px 10px 10px 20px;
     box-sizing: border-box;
     border-bottom:1px solid #ddd;

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>놀이골프 | 상세페이지</title>
+    <title>놀이골프 | nollnollgolf</title>
     <link rel="stylesheet" type="text/css" href="./css/detailpage.css">
     <link rel="stylesheet" type="text/css" href="./css/header.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="  crossorigin="anonymous"></script>
 </head>
 <style>
    li {
@@ -43,165 +43,124 @@
         }
 </style>
 <body>
-<div class="upclass">
-	<nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand logoimg" href="index"><img src="images/logo.ico" alt="" width="100" height="50" style="margin-left:40px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="shopList" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        SHOP
-                        </a>                        
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">신상품</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">MAN</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>
-                            		<li><a class="dropdown-item" href="#">상의</a></li>
-                            		<li><a class="dropdown-item" href="#">하의</a></li>
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">WOMAN</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>
-                            		<li><a class="dropdown-item" href="#">상의</a></li>
-                            		<li><a class="dropdown-item" href="#">하의</a></li>
-                            	</ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">전체상품</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">아우터</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">아우터</a></li>                            		
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">상의</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">반팔티셔츠</a></li>
-                            		<li><a class="dropdown-item" href="#">긴팔티셔츠</a></li>
-                            		<li><a class="dropdown-item" href="#">맨투맨/후드</a></li>
-                            		<li><a class="dropdown-item" href="#">니트/카디건</a></li>
-                            		<li><a class="dropdown-item" href="#">베스트</a></li>
-                            	</ul>
-                            </li>
-                            <li class="dropend"><a class="dropdown-item" href="#">하의</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">롱펜츠</a></li>
-                            		<li><a class="dropdown-item" href="#">숏펜츠</a></li>
-                            		<li><a class="dropdown-item" href="#">스커트</a></li>
-                            	</ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">슈즈</a></li>
-                            <li class="dropend"><a class="dropdown-item" href="#">엑세서리</a>
-                            	<ul class="dropdown-menu-right">
-                            		<li><a class="dropdown-item" href="#">모자</a></li>
-                            		<li><a class="dropdown-item" href="#">헤드커버</a></li>
-                            		<li><a class="dropdown-item" href="#">볼마커</a></li>
-                            		<li><a class="dropdown-item" href="#">골프장갑</a></li>
-                            		<li><a class="dropdown-item" href="#">가방</a></li>
-                            		<li><a class="dropdown-item" href="#">양말</a></li>
-                            		<li><a class="dropdown-item" href="#">벨트</a></li>
-                            		<li><a class="dropdown-item" href="#">기타</a></li>
-                            		<li><a class="dropdown-item" href="#">악세서리</a></li>
-                            	</ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">NOLNOL STORY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LOOKBOOK</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">EVENT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Thanks, Archive</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" style="margin-right:40px;">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="sign">SIGN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CS center</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="uploaditem"><img src="images/search.png" alt="" width="24" height="24" ></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="images/basket.png" alt="" width="24" height="24" ></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </div>
-    <div class="jump"></div>
+    <div th:insert="~{fragment/headerfooter :: header}"></div>
     <div class="jump"></div>
     <div class="product_view">
-        <h2>제목 영역 에베베베벱벱벱베베베베베베베베베</h2>
-    <table>
-        <caption>
-            <details class="hide">
-                <!-- 수정필요 -->
-                <summary>상품정보</summary>
-                에베베베베베베벱베베베베베벱
-            </details>
-        </caption>
-        <colgroup>
-            <col style="width:175px;">
-        </col>
-    
-        </colgroup>
-        <tbody>
-            <tr>
-                <th>판매가</th>
-                <td class="price" id="product_cost">200,000</td>
-            </tr>
-            <tr>
-                <th>구매수량</th>
-                <td>
-                    <div class="length">
-                    <input type="number" min="0" id="pd_count">
-                    <!-- <a href="#a">증가</a>
-                    <a href="#a">감소</a> -->
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>사이즈 선택</th>
-                <td>
-                    <select>
-                        <option>에베벱ㅂㅂ베베베베</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>결제금엑</th>
-                <td class="total"><b id="cost">xxx</b>원</td>
-            </tr>
-        </tbody>
-    </table> 
-    <div class="img">
-        <img src="images/b20.jpg " alt="">
-        <ul>
-            <li class="on"><a href="#"><img src="images/b20.jpg " alt=""></a></li>
-            <li><a href="#"><img src="images/b20.jpg " alt=""></a></li>
-        </ul>
-    </div>
-    <div class="btns">
-        <a href="#" class="btns1">장바구니</a>
-        <a href="#" class="btns2">구매</a>
-    </div>
+        <h2>제목 영역 </h2> <a></a>
+        <table>
+
+            <colgroup>
+                <col style="width:175px;">
+            </col>
+        
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>판매가</th>
+                    <td class="price" id="product_cost">200,000</td>
+                </tr>
+                <tr>
+                    <th>구매수량</th>
+                    <td>
+                        <div class="length">
+                            <input type="number" min="0" id="pd_count" value='1'>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>사이즈 선택</th>
+                    <td>
+                        <select>
+                            <option>사이즈1</option>
+                            <option>사이즈2</option>
+                            <option>사이즈3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>결제금엑</th>
+                    <td class="total"><b id="cost">xxx</b>원</td>
+                </tr>
+            </tbody>
+        </table> 
+        <div class="img" >
+            <!-- 사진은 최대 3개까지만 저장할 수 있도록 수정 예정 -->
+            <img src="images/b20.jpg" alt="" id="thumbnail">
+            <!-- 첫번째 사진파일 저장 -->
+            <ul>
+                <li class="" id="firstbtn"><img src="images/b20.jpg " alt="" id="first"></li>
+                <!-- 첫번째 사진 -->
+                <li class="" id="secondbtn"><img src="images/b19.jpg " alt="" id="second"></li>
+                <!-- 두번째 사진 -->
+                <li class="" id="thirdbtn"><img src="images/b18.jpg " alt="" id="third"></li>
+                <!-- 새번째 사진 -->
+            </ul>
+        </div>
+            <div class="btns">
+                <a href="#" class="btns1">장바구니</a>
+                <a href="#" class="btns2">구매</a>
+            </div>
     </div>
     <div class="jump"></div>
+    <div style="padding-top:50px"></div>
+    <div class="btnlist">
+        <div class="temporary text-center">
+            <button type="button" id="btn1" >상세정보(<span class="">x</span>건)</button>
+            <button type="butoon" id="btn2" >상품후기(<span class="">x</span>건)</button>
+            <button type="butoon" id="btn3" >상품문의(<span class="">x</span>건)</button>
+        </div>
+        <div id="first_state">
+            <div class="detailimage">
+                <img src="/images/gift_0907.jpg">
+            </div>
+        </div>
+        
+        <div id="second_state">
+            <form>
+                <div class="period">
+                    <span style="padding-top:10px">기간</span>
+                    <div class="button_group">
+                        <button type="button" class="btn_period">오늘</button>
+                        <button type="button" class="btn_period">1개월</button>
+                        <button type="button" class="btn_period">3개월</button>
+                        <button type="button" class="btn_period">6개월</button>
+                        <button type="button" class="btn_period">1년</button>
+                    </div>
+                </div>
+            <ul class="notice">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 완료 후 36개월 이상 경과한 주문은 <a href="">[과거주문내역]</a>에서 확인할 수 있습니다.</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                  </svg> 리뉴얼 전에 주문한 내역은 <a href="#">[이전 주문내역]</a>에서 확인할 수 있습니다.</li>
+            </ul>
+            </form>
+        </div>
+
+        <div id="third_state">
+            <form>
+                <div class="qnalist">
+                    <div class="qnarequest">
+                        <a href="#" class="requesta"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-lock2" viewBox="0 0 16 16">
+                            <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
+                        </svg><strong>제목영역</strong></a>
+                        <span class="writerqna">작성자</span>
+                        <span class="dateqna">1234-56-78</span>
+                    </div>
+                    <div class="qnarequest">
+                        <a href="#" class="replya"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-lock2" viewBox="0 0 16 16">
+                            <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
+                        </svg><strong>제목영역</strong></a>
+                        <span class="managerqna">놀이골프 | nollnollgolf</span>
+                        <span class="dateqna">1234-56-78</span>
+                    </div>
+                    <!-- 고객이 q@a로 물어보는 것 -->
+                </div>
+            </form>
+        </div>
+</div>
+
     <!-- 회사 안내 -->
     <hr>
     <div class="multi-layout">
@@ -242,18 +201,7 @@
         <br>
     </div>
     <hr style="clear:both;">
-    <div class="footer">
-        <ul>
-            <li><span>Hilight Brands 주식회사 하이라이트브랜즈 CEO. Jun Kwon Lee</span></li>
-            <li><span>Business License No. 788-81-01239 [사업자정보확인]</span></li>
-            <li><span>Mail Order Business Registration. 2019-성남분당B-0523</span></li>
-            <li><span>Address. 경기도 성남시 분당구 판교로 242 (삼평동) PDC 빌딩 A동 8F</span></li>
-            <li><span>The Malbon golf's trademark, logo and other rights are solely used by Modern Works under license
-                    from</span></li>
-            <li><span>Malbon golf. Hilight Brands is a division within Modern Works.</span></li>
-        </ul>
-    </div>
-
+    <div th:insert="~{fragment/headerfooter :: footer}"></div>
 <script>
     const product_cost = document.getElementById('product_cost').innerText.replace(',', '');
     var pd_count = document.getElementById('pd_count');
@@ -262,10 +210,50 @@
         document.getElementById('cost').innerHTML = product_cost * pd_count.value;
     })
 
+    $('#btn1').click(function(){
+        $("#first_state").show();
+        $("#second_state").hide();
+        $("#third_state").hide();
+        $('#btn1').css('border', '1px solid #555');
+        $('#btn2').css('border', '1px solid #e8e8e8');
+        $('#btn3').css('border', '1px solid #e8e8e8');
+    })
+    $('#btn2').click(function(){
+        $("#first_state").hide();
+        $("#second_state").show();
+        $("#third_state").hide();
+        $('#btn1').css('border', '1px solid #e8e8e8');
+        $('#btn2').css('border', '1px solid #555');
+        $('#btn3').css('border', '1px solid #e8e8e8');
+    })
+    $('#btn3').click(function(){
+        $("#first_state").hide();
+        $("#second_state").hide();
+        $("#third_state").show();
+        $('#btn1').css('border', '1px solid #e8e8e8');
+        $('#btn2').css('border', '1px solid #e8e8e8');
+        $('#btn3').css('border', '1px solid #555');
+    })
+    var first = "images/b20.jpg";
+    var second = "images/b19.jpg";
+    var third = "images/b18.jpg";
+    $("#first").attr("src", first);
+    $("#second").attr("src", second);
+    $("#third").attr("src", third);
+
+    $('#firstbtn').click(function(){
+        $("#thumbnail").attr("src", first);
+    })
+    $('#secondbtn').click(function(){
+        $("#thumbnail").attr("src", second);
+    })
+    $('#thirdbtn').click(function(){
+        $("#thumbnail").attr("src", third);
+    })
+
+    // var imagedelete=null;
+    // imagedelete = $('#thumbnail img').detach();
 </script>
 
 </body>
 </html>
-
-
-<th></th>

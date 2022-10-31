@@ -1,6 +1,7 @@
 package com.shoping.dbckd.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,16 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mysql.cj.jdbc.Blob;
 import com.shoping.dbckd.mapper.MainMapper;
+import com.shoping.dbckd.mapper.ProductMapper;
 import com.shoping.dbckd.model.CustomerDTO;
+import com.shoping.dbckd.model.ProductDTO;
 import com.shoping.dbckd.service.CustomerService;
 import com.shoping.dbckd.service.MainService;
-
-import ch.qos.logback.core.util.SystemInfo;
-
+import com.shoping.dbckd.service.ProductManagerSev;
 @Controller
 @RequestMapping("/")
 /**
@@ -35,35 +36,60 @@ public class MainController {
 	@Autowired
 	CustomerService customerService;
 
+	@Autowired
+	ProductManagerSev productService;
+
 	/**
 	 * @param model 데이터를 가져오는 실험적 기능입니다.
 	 * @return index.html
 	 */
 	@GetMapping
 	public String index(Model model) {
-		// 데이터베이스 가져오기 기능(실험적)
-		System.out.println(mapper.test(1));
-//		CustomerDTO dto = mapper.test(1);
-//		model.addAttribute("var123", dto.getNick());
-
 		return "index";
 	}
 
-	@GetMapping("uploaditem")
-	public String uploaditem() {
-		return "uploaditem";
+	// 관리자가 사용할 페이지 임으로 /admin 하위로 옮기기
+	@GetMapping("uploadItem")
+	public String uploadItem() {
+		return "uploadItem";
 	}
+
+	// 나머지 정보는 나중에..
+	@PostMapping("uploadItem")
+	public String postUploadItem(ProductDTO product, MultipartFile mainImage0, MultipartFile subImage0){
+		System.out.println(product);
+		System.out.println(mainImage0);
+		System.out.println(subImage0);
+
+		productService.addProduct(product, mainImage0, subImage0);
+
+		return "uploadItem";
+	}
+
+	@Autowired
+	ProductMapper productMapper;
+
 	@GetMapping("shopList")
-	public String shoplist() {
+	public String shoplist(Model model) {
+		// 상품 리스트 받아오기(카테고리 없는 버전)
+
+		final String imagePath = "/file/";
+
+		// 일종의 꼼수로 파일 경로는 파일이름에 경로만 덧붙인다.
+		// productVO를 사용해 직관적인 이름을 사용하는 방법은 천천히 생각해 보자
+		List<ProductDTO> products = productMapper.viewProducts();
+		products.forEach(p -> {	
+			p.setMainImageFileName(imagePath + p.getMainImageFileName());
+			p.setSubImageFileName(imagePath + p.getSubImageFileName());}
+		);
+
+		model.addAttribute("products", products);
 		return "shopList";
 	}
+	
 	@GetMapping("detailpage")
 	public String detailpage() {
 		return "detailpage";
-	}
-	@GetMapping("deposit")
-	public String deposit() {
-		return "deposit";
 	}
 
 	// 파일을 저장하는 태그. 실험용으로써 삭제할 수도 있음.
@@ -72,6 +98,11 @@ public class MainController {
 		System.out.println("test...");
 		service.saveImg(file);
 		return "redirect:/";
+	}
+
+	@GetMapping("agreeMent")
+	public String agreeMent(){
+		return "/user/agreeMent";
 	}
 
 	/**
@@ -85,16 +116,49 @@ public class MainController {
 	@PostMapping("sign_up")
 	public String sign_up(CustomerDTO customer) {
 		System.out.println(customer);
-		if(customer.getAddress_eng() == null){
-			customer.setAddress_eng("n/a");
-		}
-		if(customer.getPhone_call() == null){
-			customer.setPhone_call("010...1");
-		}
-		if(customer.getGeneral_call() == null){
-			customer.setGeneral_call("053...01");
+		if(customer.getGeneralCall() == null){
+			customer.setGeneralCall("053...01");
 		}
 		customerService.join(customer);
-		return "index";
+		return "redirect:/";
 	}
+
+	@ResponseBody
+	@GetMapping("idOverlapCheck")
+	public String idOverlapCheck(@RequestParam("id") String id){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setId(id);
+		if(customerService.isUniqueID(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
+	}
+
+	@ResponseBody
+	@GetMapping("nickOverlapCheck")
+	public String nickOverlapCheck(@RequestParam("nick") String nick){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setNick(nick);
+		if(customerService.isOverlapNick(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
+	}
+
+	@ResponseBody
+	@GetMapping("emailOverlapCheck")
+	public String emailOverlapCheck(@RequestParam("email") String email){
+		CustomerDTO customer = new CustomerDTO();
+		customer.setEmail(email);
+		if(customerService.isOverlapEmail(customer)){
+			return "SUCCESS";
+		}
+		return "FAIL";
+	}
+
+	@GetMapping("manager_menu")
+	public String manager_menu() {
+		return "manager_menu";
+	}
+
 }

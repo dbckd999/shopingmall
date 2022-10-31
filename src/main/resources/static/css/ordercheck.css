@@ -1,11 +1,14 @@
 .jump{padding-top:75px;}
-li a{text-decoration: none;color:#333;}
-li a:hover{color:#333;}
 .btnlist{
-    width:1260px;
+    width:100%;
+    max-width:1260px;
     vertical-align: center;
     justify-content: center;
     margin:0 auto;
+}
+.buttonzip{
+    display:inline-block;
+    width:100%;
 }
 .btnlist button{
     width:50%;
@@ -34,7 +37,6 @@ li a:hover{color:#333;}
     padding: 0 20px 0 8px;
     height:30px;
     margin:0 auto;
-    
 }
 .state{
     float:left;
@@ -68,12 +70,7 @@ form span{
     background: #fff;
     display:inline-block;
 }
-li{
-    padding: 0 0 2px 18px;
-    line-height: 1.5;
-    text-align: left;
-    background-size: 14px auto;
-}
+
 .notice{
     margin: 8px 4px;
     font-size: 12px;
@@ -82,9 +79,54 @@ li{
 }
 #first_state, #second_state{
     width:100%;
-    padding: 20px;
-    border:1px solid #888;
-    background:#f1f1f1;
 }
 #first_state{display:block;}
 #second_state{display:none;}
+#second_state form{
+    border:1px solid #888;
+    background:#f1f1f1;
+}
+#first_state form{
+    border:1px solid #888;
+    background:#f1f1f1;
+}
+.orderlap{
+    width:100%;
+    display:inline-block;
+    margin-top:10px;
+    border:1px solid #d5d5d5;
+}
+
+.thumbnail{
+    overflow: hidden;
+    width: 100px;
+    /* border: 1px solid #d5d5d5; */
+    box-sizing: border-box;
+    float:left;
+    vertical-align: middle;
+    margin:5px 15px 0 30px;
+}
+.descript{
+    flex: 1;
+    overflow: hidden;
+    padding:20px;
+}
+.firsttitle{
+    display: block;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.firsttitle a{
+    color:#333;
+    text-decoration: none;
+}
+.firsttitle a:hover{color:#333;}
+.product_code{font-size:12px;color:#777777;}
+.product-price{font-size:13px;color:#153e35;font-weight:bold;}
+
+.orderstatus{
+    margin-left:20px;
+    font-weight:bold;
+}
+.hreftxt{text-decoration: none;color:#333;}
+.hreftxt:hover{color:#333;}

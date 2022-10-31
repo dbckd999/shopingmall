@@ -1,5 +1,7 @@
-div{width:700px;}
+.jump{padding-top:100px;}
 .form_box {
+    max-width:800px;
+    width:100%;
     background-color: #ffffff;
     margin: 10px;
     border-radius: 4px;
@@ -31,4 +33,22 @@ div{width:700px;}
     border-radius: 4px;
     padding: 2px 8px;
     font-size: 18px;
+}
+.list_tag{
+    font-size:16px;
+    padding:10px;
+    margin:0;
+}
+.judge-thing{border:1px solid #e8e8e8}
+
+.btn-btn{
+    border:1px solid gray;
+    background: #e8e8e8;
+    border-radius:5px;
+    font-size:12px;
+    padding:3px;
+    margin-bottom:7px;
+}
+#man_up, #woman_up, #man_down, #woman_down{
+    display:none;
 }

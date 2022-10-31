@@ -176,3 +176,6 @@ $RECYCLE.BIN/
 .vscode
 
 images/*
+
+src/main/resources/static/file/**
+!src/main/resources/static/file

@@ -6,25 +6,58 @@
 <!-- 회원 계정 기능 -->
 <mapper namespace="com.shoping.dbckd.mapper.CustomerMapper">
 
-    <insert id="Join" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        INSERT INTO customer (id, pw, nick, name, address, address_eng, phone_call, general_call, email, birth)
-        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{address_eng}, #{phone_call}, #{general_call}, #{email}, #{birth})
+    <insert id="join" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        INSERT INTO customer (id, pw, nick, name, address, phoneCall, generalCall, email, birth, smsReceive, emailReceive)
+        VALUES(#{id}, #{pw}, #{nick}, #{name}, #{address}, #{phoneCall}, #{generalCall}, #{email}, #{birth}, #{smsReceive}, #{emailReceive})
     </insert>
-<!-- 
-    <select id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        SELECT id, nick, name, address, address_eng, phone_call, general_call, email, birth 
-        FROM customer
-        WHERE iden = #{iden}
+
+    <select id="login" resultType="com.shoping.dbckd.model.CustomerDTO">
+        SELECT iden, id, nick, name, address, phoneCall, generalCall, email, birth, joinDate, smsReceive, emailReceive FROM customer WHERE id = #{id} and pw = #{pw}
     </select>
 
-    <update id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
+    <update id="chageMyInfo" parameterType="com.shoping.dbckd.model.CustomerDTO">
         UPDATE customer
-        SET id = #{id}, pw = #{pw}, nick = #{nick}, name = #{name}, address = #{address}, address_eng = #{address_eng}, phone_call = #{phone_call}, general_call = #{general_call}, email = #{email}, birth = #{birth}
-        WHERE iden = ${iden}
+        SET
+        pw = #{pw},
+        nick = #{nick},
+        address = #{address},
+        phoneCall = #{phoneCall},
+        generalCall = #{generalCall},
+        email = #{email},
+        birth = #{birth},
+        smsReceive = #{smsReceive},
+        emailReceive = #{emailReceive}
+        WHERE iden = #{iden};
     </update>
 
-    <delete id="_" parameterType="com.shoping.dbckd.model.CustomerDTO">
-        DELETE FROM customer WHERE iden = #{iden}
-    </delete>
- -->
+    <select id="dummy" resultType="com.shoping.dbckd.model.CustomerDTO">
+        select * from customer where iden=13;
+    </select>
+
+    <!-- ID 중복 확인 --> 
+    <select id="checkID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE id = #{id};
+    </select>
+
+    <!-- 별명 중복 확인 --> 
+    <select id="checkNick" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE nick = #{nick};
+    </select>
+
+    <!-- 이메일 중복 확인 --> 
+    <select id="checkEmail" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="String">
+        SELECT iden FROM customer WHERE email = #{email};
+    </select>
+
+    <!-- ID 찾기 --> 
+    <select id="findMyID" parameterType="com.shoping.dbckd.model.CustomerDTO" resultType="com.shoping.dbckd.model.CustomerDTO">
+        SELECT id FROM customer WHERE name = #{name} and email = #{email};
+    </select>
+
+    <!-- 비밀번호 변경 -->
+    <update id="chageMyPassword" parameterType="com.shoping.dbckd.model.CustomerDTO">
+        UPDATE customer set pw = #{pw} WHERE id = #{id} and name = #{name} and email = #{email};
+    </update>
+
+
 </mapper>

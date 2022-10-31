@@ -1,7 +1,8 @@
 @charset "utf-8";
 .product_view{
     padding:0 0 0 395px;
-    width:962px;
+    max-width:962px;
+    width:100%;
     box-sizing: border-box;
     position:relative;
     margin-left: auto;
@@ -22,20 +23,24 @@
 }
 .product_view .img >ul > li{
     float:left; padding:10px 10px 10px 10px;
+    cursor:pointer;
 }
 .product_view .img > img{
-    width:370px;
-    height:370px;
-    border:1px solid gray;
+    max-width:370px;
+    width:100%;
+    /* height:370px; */
+    border:1px solid #e8e8e8;
 }
 
 .product_view img li{float:left; padding : 10px 10px 0 0; display:inline;} 
 .product_view img li:after{content:"";display:block;clear:both;}
 .product_view .img li img{
-    width:70px; height:70px; border:1px solid gray;
+    width:70px; height:70px; border:1px solid #e8e8e8;
 }
 .product_view .img li.on img{
-    width:70px; height:70px; border:1px solid blueviolet;
+    max-width:70px;
+    width:100%;
+    height:70px; border:1px solid blueviolet;
 }
 .product_view table th,
 .product_view table td{
@@ -62,15 +67,7 @@
     width:67px; height:30px; border:none; text-align: center;
 }
 
-/* .product_view table .length a{
-    width:26px;
-    height:16px;
-    right:0;
-    top:0;
-    position:absolute;
-    overflow: hidden;
-    color:transparent;
-} */
+
 .product_view .btns{text-align: center; padding:45px 0 0;}
 .product_view .btns > a{
     display:inline-block;
@@ -84,3 +81,175 @@
 }
 .product_view .btns > a.btns1{background:#666;}
 .product_view .btns > a.btns2{background:#0a56a9;}
+
+.jump{padding-top:75px;}
+li a{text-decoration: none;color:#333;}
+li a:hover{color:#333;}
+
+/* -------상세내용------ */
+.btnlist{
+    width:100%;
+    max-width:1260px;
+    vertical-align: center;
+    justify-content: center;
+    margin:0 auto;
+}
+.btnlist button{
+    width:15%;
+    /* float:center; */
+    border:1px solid #888;
+    flex-basis: 100%;
+    justify-content: center;
+    line-height: 1em;
+    align-items: center;
+    color: black;
+    background: #f2f2f2;;
+    font-size:13px;
+    height:40px;
+    margin: 0 auto;
+}
+.btnlist button span{
+    font-size: 13px;
+}
+.active{
+    border:1px solid #333;
+}
+.state_select{
+    width:90%;
+    border:1px solid #d7d5d5;
+    background:#fff;
+    background-size: auto 40px;
+    padding: 0 20px 0 8px;
+    height:30px;
+    margin:0 auto;
+    
+}
+.state{
+    float:left;
+    width:100%;
+    padding:10px;
+}
+.period{
+    float:left;
+    width:100%;
+    vertical-align: center;
+    justify-content: center;
+    margin:0 auto;
+    list-style: nowrap;
+    padding: 10px;
+}
+section span{
+    font-size:16px; float:left; vertical-align: center;
+}
+form span{
+    font-size:16px; float:left; vertical-align: center;
+}
+.button_group{
+    margin-left:5%;
+}
+.button_group button{
+    width: 18%;
+    height:30px;
+    border:1px solid #888;
+    border-radius: 5px;
+    margin: 10px;
+    background: #fff;
+    display:inline-block;
+}
+li{
+    padding: 0 0 2px 18px;
+    line-height: 1.5;
+    text-align: left;
+    background-size: 14px auto;
+}
+.notice{
+    margin: 8px 4px;
+    font-size: 12px;
+    color: #757575;
+    list-style: none;
+}
+
+#first_state, #second_state, #third_state{
+    width:100%;
+    padding: 20px;
+
+    /* background:#f1f1f1; */
+}
+#first_state{display:block;}
+#second_state{display:none;}
+#third_state{display:none;}
+.btnlist .temporary{
+    width:100%;
+    display:inline-block;
+    border-bottom:1px solid #555;
+    text-align:center;
+    justify-content: center;
+    place-content: center;
+    margin:auto;
+}
+.btnlist .temporary #btn1,#btn2,#btn3{
+    border:1px solid #e8e8e8;
+    display:inline-block;
+}
+.temporary button{
+    display:block;
+
+}
+
+.qnalist{
+    display:inline-block;
+    width:100%;
+}
+.qnarequest{
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 14px 0;
+    min-height: 43px;
+    color: #757575;
+    display:inline-block;
+    width:100%;
+}
+.requesta{
+    text-decoration: none;
+    display: block;
+    padding: 0 15px 10px 10px;
+    color: #1b1b1b;
+    font-size: 15px;
+}
+.replya{
+    text-decoration: none;
+    display: block;
+    padding: 0 15px 10px 20px;
+    color: #1b1b1b;
+    font-size: 15px;
+}
+.requesta:hover{color: #1b1b1b;}
+.writerqna{
+    padding: 0 7px 0 10px;
+    font-size: 11px;
+    color: #757575;
+    display: inline-block;
+    border-right: 1px solid #d6d6d6;
+}
+.managerqna{
+    padding: 0 7px 0 20px;
+    font-size: 11px;
+    color: #757575;
+    display: inline-block;
+    border-right: 1px solid #d6d6d6;
+}
+.dateqna{
+    padding: 0 7px 0 10px;
+    font-size: 11px;
+    color: #757575;
+    display: inline-block;
+}
+.detailimage{
+    max-width:900px;
+    width:100%;
+    margin:0 auto;
+}
+.detailimage img{
+    display:block;
+    text-align: center;
+}

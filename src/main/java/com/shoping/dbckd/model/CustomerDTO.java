@@ -1,12 +1,10 @@
 package com.shoping.dbckd.model;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import lombok.Data;
-
 @Data
 public class CustomerDTO {
     private int iden;               // 식별자
@@ -15,13 +13,20 @@ public class CustomerDTO {
     private String nick;            // 별명
     private String name;            // 이름(본명)
     private String address;         // 주소
-    private String address_eng;     // 영문주소(외국인)
-    private String phone_call;      // 휴대전화 번호
-    private String general_call;    // 집 전화번호
+    private String phoneCall;       // 휴대전화 번호
+    private String generalCall;     // 집 전화번호
     private String email;           // 이메일
-    public Date birth;        // 생년월일
+    private Date birth;             // 생년월일
+    private boolean smsReceive;     // sms수신여부
+    private boolean emailReceive;   // 이메일 수신여부
 
     public void setBirth(String date) {
+
+        if(date.equals("")){
+            this.birth = null;
+            return;
+        }
+
         java.util.Date date2 = null;
         try {
             date2 = new SimpleDateFormat("yyyy-MM-dd").parse(date);

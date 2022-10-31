@@ -1,0 +1,50 @@
+.jump{padding-top:100px;}
+.contents{
+    max-width: 1781px;
+    margin: auto;
+    width:100%;
+}
+
+.contents .title{
+    margin-top: 20px;
+    width:100%;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom:20px;
+}
+
+.cases{
+    width:100%;
+    display:inline-block;
+}
+.onecase{
+    width: 30.953%;
+    margin: 1%;
+    float:left;
+    display:block;
+}
+
+.onecase .imgright{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border:1px solid #fff;
+}
+
+.imgtext{
+    text-align: left;
+    display: block;
+    line-height: 1.4;
+    font-family: 'Montserrat';
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 20px ;
+    white-space: normal;
+}
+.imgtext a{
+    text-decoration: none;
+    color: #333 ;
+}
+.imgtext a:hover{
+    color: #333 ;
+}

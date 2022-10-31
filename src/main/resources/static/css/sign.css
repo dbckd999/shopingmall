@@ -13,9 +13,9 @@ h3{
   width:360px;
   margin:0 auto;
 }
-.area-one{float:left;}
+.areaOne{float:left;}
 
-.bottom_link{
+.bottomLink{
   height:42px;
   width:100%;
   border:1px solid gray;
@@ -42,3 +42,11 @@ h3{
   margin-left: 4px; 
 }
 .jump{padding-top:75px;}
+.hrefText{
+  text-decoration: none;
+  color:#333;
+}
+.hrefText:hover{
+  color:#333;
+  cursor:pointer;
+}
